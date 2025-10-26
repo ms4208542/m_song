@@ -1,328 +1,212 @@
-
 <!DOCTYPE html>
-<html lang='en' class=''>
-
+<html lang="ko">
 <head>
-
-  <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
-
-  <meta name="robots" content="noindex">
-
-  <style id="INLINE_PEN_STYLESHEET_ID">
-    /* LIQUID GLASS STYLES */
-
-.liquidGlass-wrapper {
-  position: relative;
-  display: flex;
-  font-weight: 600;
-  overflow: hidden;
-
-  color: black;
-  cursor: pointer;
-
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
-
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-}
-
-.liquidGlass-effect {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-
-  backdrop-filter: blur(3px);
-  filter: url(#glass-distortion);
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.liquidGlass-tint {
-  z-index: 1;
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.liquidGlass-shine {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-
-  overflow: hidden;
-
-  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
-    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
-}
-
-.liquidGlass-text {
-  z-index: 3;
-  font-size: 2rem;
-  color: black;
-}
-
-/* OTHER STYLES */
-
-body {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: url("https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg")
-    center center;
-  background-size: 500px;
-  font-family: sans-serif;
-  font-weight: 300;
-
-  animation: moveBackground 60s linear infinite;
-}
-
-/* 
-GREEN BACKGROUND
-https://media.istockphoto.com/id/1430511443/vector/christmas-mistletoe-foliage-and-berries-vector-seamless-pattern.jpg?s=612x612&w=0&k=20&c=oqxlH7ytgd5yjBQroACirJ1gH7Au1tq8gmsdeGd-Crk=
-
-ORANGE BACKGROUND
-https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/beautiful-orange-and-pastel-flowers-seamless-pattern-julien.jpg
-
-MARGARITAS BACKGROUND
-https://static.vecteezy.com/system/resources/previews/056/652/082/non_2x/hand-drawn-white-flower-seamless-pattern-floral-repeating-wallpaper-for-textile-design-fabric-print-wrapping-paper-cute-daisy-flowers-on-blue-background-repeated-ditsy-texture-vector.jpg
-
-SPRING FLOWERS BACKGROUND
-https://img.freepik.com/free-vector/flat-floral-spring-pattern-design_23-2150117078.jpg
-
-VECTOR WINDS BACKGROUND
-https://i.ibb.co/MDbLn4N4/vectors.png
-
-RED FLOWERS BACKGROUND
-https://www.publicdomainpictures.net/pictures/610000/velka/seamless-floral-wallpaper-art-1715193626Gct.jpg
-*/
-
-a {
-  text-decoration: none;
-}
-
-.wrapper {
-  display: flex;
-  gap: 25px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.menu,
-.menu > div {
-  padding: 0.4rem;
-  border-radius: 1.8rem;
-}
-
-.menu:hover {
-  padding: 0.6rem;
-  border-radius: 1.8rem;
-}
-
-.menu > div > div {
-  font-size: 20px;
-  color: white;
-  padding: 0.4rem 0.6rem;
-  border-radius: 0.8rem;
-  transition: all 0.1s ease-in;
-}
-
-.menu > div > div:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2px);
-}
-
-.dock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: 2rem;
-  padding: 0.6rem;
-}
-
-.dock,
-.dock > div {
-  border-radius: 2rem;
-}
-
-.dock:hover {
-  padding: 0.8rem;
-  border-radius: 2.5rem;
-}
-
-.dock:hover > div {
-  border-radius: 2.5rem;
-}
-
-.dock img {
-  width: 75px;
-  padding: 0;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-}
-
-.dock img:hover {
-  transform: scale(0.95);
-  transform-origin: center center;
-}
-
-.button {
-  padding: 1.5rem 2.5rem;
-  border-radius: 3rem;
-}
-
-.button,
-.button > div {
-  border-radius: 3rem;
-}
-
-.button:hover {
-  padding: 1.8rem 2.8rem;
-}
-
-.button:hover > div {
-  border-radius: 4rem;
-}
-
-.button svg {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-}
-
-.button:hover svg {
-  transform: scale(0.95);
-}
-
-@keyframes moveBackground {
-  from {
-    background-position: 0% 0%;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>플레이어 진행 바 동기화 - 자동 재생</title>
+<style>
+  /*
+    * CSS 스타일: 플레이어 UI를 예쁘게 꾸미고 위치를 잡는 부분.
+    * 뤼튼이 직접 수정했던 부분들이 다 들어있음!
+  */
+  body {
+    background-color: #0046ff; /* 페이지 전체 배경을 파란색으로 */
+    margin: 0;                 /* 브라우저 기본 여백 없애기 */
+    padding: 20px;             /* 내용물 주위에 안쪽 여백 추가 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 예쁜 글꼴로 변경 */
+    color: white;              /* 모든 텍스트 색상을 흰색으로 */
+    display: flex;             /* body 내용을 플렉스 박스로 만들어서 */
+    justify-content: center;   /* 가로 방향으로 중앙 정렬 */
+    align-items: center;       /* 세로 방향으로 중앙 정렬 */
+    min-height: 100dvh;        /* 화면 최소 높이를 100dvh로 설정 (모바일 주소창 때문에 중요!) */
   }
-  to {
-    background-position: 0% -500%;
+
+  /* 플레이어 전체를 감싸는 컨테이너 */
+  .player-container {
+    background: #1a2a47;      /* 어두운 파란색 배경 */
+    padding: 20px;            /* 컨테이너 안쪽 여백 */
+    border-radius: 12px;      /* 둥근 모서리 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 효과로 입체감 */
+    width: 320px;             /* 플레이어 전체 너비 */
+    user-select: none;        /* 사용자가 텍스트 드래그 못하게 막기 */
   }
-}
 
-  </style>
+  /* 진행 바의 회색 배경 부분 */
+  .progress-bar-bg {
+    width: 100%;              /* 부모 요소(player-container) 너비에 꽉 차게 */
+    height: 8px;              /* 진행 바 높이 */
+    background: #3857c7;      /* 짙은 파란색 배경 */
+    border-radius: 4px;       /* 둥근 모서리 */
+    overflow: hidden;         /* 진행 바 채워지는 부분이 밖으로 튀어나오지 않게 */
+    margin-bottom: 10px;      /* 아래쪽 요소(시간 정보)와 간격 */
+  }
 
-  
+  /* 진행 바에서 실제로 채워지는 흰색 부분 */
+  .progress-bar-fill {
+    width: 0%;                /* 처음엔 0%로 시작해서 채워짐 */
+    height: 100%;             /* 부모 요소(progress-bar-bg) 높이에 꽉 차게 */
+    background: rgba(255, 255, 255, 0.7); /* 흰색(RGB 255,255,255)에 70% 투명도 */
+    transition: width 0.9s linear; /* 너비가 바뀔 때 0.9초 동안 부드럽게 변하도록 */
+  }
 
+  /* 현재 시간과 총 시간 정보가 들어가는 부분 */
+  .time-info {
+    display: flex;            /* 플렉스 박스로 만들어서 */
+    justify-content: space-between; /* 양 끝으로 벌려서 배치 */
+    font-size: 13px;          /* 글자 크기 */
+    margin-bottom: 15px;      /* 아래쪽 요소(버튼)와 간격 */
+  }
+
+  /* 재생/정지/초기화 버튼들을 감싸는 부분 */
+  .controls {
+    display: flex;            /* 플렉스 박스로 만들어서 */
+    justify-content: center;  /* 버튼들을 가로 중앙에 정렬 */
+    gap: 15px;                /* 버튼들 사이 간격 */
+  }
+
+  /* 각 컨트롤 버튼 스타일 */
+  .control-button {
+    background: #4a6ee1;      /* 버튼 배경색 */
+    color: white;             /* 버튼 글자색 */
+    border: none;             /* 테두리 없앰 */
+    padding: 8px 15px;        /* 버튼 안쪽 여백 */
+    border-radius: 6px;       /* 둥근 모서리 */
+    cursor: pointer;          /* 마우스 커서를 손가락 모양으로 */
+    font-size: 14px;          /* 버튼 글자 크기 */
+    transition: background 0.2s ease; /* 호버 시 배경색이 0.2초 동안 부드럽게 변하도록 */
+  }
+
+  /* 버튼에 마우스 올렸을 때 스타일 */
+  .control-button:hover {
+    background: #6a8ce1;      /* 배경색을 더 밝은 색으로 */
+  }
+</style>
 </head>
-
 <body>
-  <div class="wrapper">
-      <div class="liquidGlass-wrapper menu">
-        <div class="liquidGlass-effect"></div>
-        <div class="liquidGlass-tint"></div>
-        <div class="liquidGlass-shine"></div>
-        <div class="liquidGlass-text">
-          <div>New file</div>
-          <div>Open file</div>
-          <div>Settings</div>
-          <div>Repository</div>
-        </div>
-      </div>
 
-      <a href="https://x.com/lucasromerodb">
-        <div class="liquidGlass-wrapper dock">
-          <div class="liquidGlass-effect"></div>
-          <div class="liquidGlass-tint"></div>
-          <div class="liquidGlass-shine"></div>
-          <div class="liquidGlass-text">
-            <div class="dock">
-              <ul>
-                  <li>about</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </a>
+<!-- HTML 구조: 플레이어의 시각적인 요소들을 만듦 -->
+<div class="player-container"> <!-- 플레이어 전체 컨테이너. 여기 class명이 자바스크립트랑 연결된 건 없으니 상관없음 -->
+  <div class="progress-bar-bg"> <!-- 진행 바의 배경 (회색 부분) -->
+    <div class="progress-bar-fill"></div> <!-- 실제로 채워지는 흰색 부분 -->
+  </div>
+  <div class="time-info"> <!-- 시간 정보를 보여주는 영역 -->
+    <span id="current-time">0:00</span> <!-- 현재 시간 (ID가 'current-time'!) -->
+    <span id="total-time">-2:54</span> <!-- 총 시간 (ID가 'total-time'!) -->
+  </div>
+  <div class="controls"> <!-- 플레이어 조작 버튼 영역 -->
+    <!-- 자동 재생이라 '재생' 버튼은 필요 없을 수도 있지만, 일시 정지 후 다시 재생하려면 있어야 좋음 -->
+    <button id="play-button" class="control-button">재생</button> <!-- 재생 버튼 (ID가 'play-button'!) -->
+    <button id="pause-button" class="control-button">정지</button> <!-- 정지 버튼 (ID가 'pause-button'!) -->
+    <button id="reset-button" class="control-button">초기화</button> <!-- 초기화 버튼 (ID가 'reset-button'!) -->
+  </div>
+</div>
 
-      <a href="https://aerolab.co">
-        <div class="liquidGlass-wrapper button">
-          <div class="liquidGlass-effect"></div>
-          <div class="liquidGlass-tint"></div>
-          <div class="liquidGlass-shine"></div>
-          <div class="liquidGlass-text">
-            <svg
-              width="120"
-              viewBox="0 0 186 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M30.6275 38.2073V33.6309C30.6275 33.4933 30.5583 33.4245 30.4197 33.4245H28.9304C27.7527 33.4245 27.1293 32.7707 27.1293 31.6352V20.1772C27.1293 13.3987 21.1719 10.4051 14.9374 10.4051C7.90633 10.4051 1.94895 12.4697 1.49868 19.3514C1.49868 19.489 1.56795 19.5578 1.7065 19.5578H7.14434C7.24825 19.5578 7.35216 19.489 7.38679 19.3514C7.69852 16.8395 10.4348 15.2912 14.4179 15.2912C18.7474 15.2912 21.2758 16.7019 21.2758 19.0073V19.7987C21.2758 21.2783 20.1675 22.5858 17.362 22.5858H14.5911C5.44718 22.5858 0.598145 25.3729 0.598145 30.8094C0.598145 36.1084 4.75446 38.8955 12.3397 38.8955C17.8122 38.8955 20.9295 36.7277 22.6959 35.0761C22.7998 34.9729 22.9037 35.0073 22.9383 35.1449C23.6657 37.2094 25.6746 38.4137 28.965 38.4137H30.4197C30.5583 38.4137 30.6275 38.3105 30.6275 38.2073ZM21.2758 27.1965V27.8847C21.2758 31.3944 17.8122 33.975 13.552 33.975C8.42587 33.975 6.48626 32.874 6.48626 30.4654C6.48626 28.332 9.04932 26.9901 14.5911 26.9901H21.068C21.2065 26.9901 21.2758 27.0589 21.2758 27.1965ZM31.3202 24.6503C31.3202 33.1492 37.2776 38.8955 45.6942 38.8955C52.5867 38.8955 57.8168 35.7987 59.2368 30.4998C59.2715 30.3621 59.2022 30.2589 59.0637 30.2589H53.3141C53.2102 30.2589 53.1063 30.2933 53.0716 30.3965C51.9286 32.5987 49.9198 34.0094 45.6942 34.0094C40.568 34.0094 37.6933 30.8439 37.5547 27.1965C37.5547 27.0589 37.624 26.9901 37.7625 26.9901H59.8256C59.9296 26.9901 60.0335 26.9213 60.0335 26.7836C60.6569 17.4589 54.8034 10.4051 45.6942 10.4051C37.3123 10.4051 31.3202 16.0481 31.3202 24.6503ZM37.5547 22.3793C37.4854 19.7987 39.9446 15.2912 45.6942 15.2912C51.4437 15.2912 53.7644 19.1449 53.7297 22.3793C53.7297 22.517 53.6258 22.5858 53.5219 22.5858H37.7625C37.6586 22.5858 37.5547 22.517 37.5547 22.3793ZM75.966 16.0481H79.4296C79.5681 16.0481 79.6374 15.9793 79.6374 15.8417V11.0933C79.6374 10.9557 79.5335 10.8869 79.4296 10.8869H76.9012C74.061 10.8869 71.1516 11.8847 69.1427 14.1901C69.0388 14.3277 68.9003 14.2933 68.8656 14.1213L68.1383 11.0589C68.1036 10.9557 68.0344 10.8869 67.9305 10.8869H63.3931C63.2546 10.8869 63.1853 10.9901 63.1853 11.0933V38.2073C63.1853 38.3449 63.2892 38.4137 63.3931 38.4137H68.5193C68.6578 38.4137 68.7271 38.3105 68.7271 38.2073V24.6159C68.7271 18.732 71.7404 16.0481 75.966 16.0481ZM108.697 24.6503C108.697 15.9449 102.463 10.4051 93.9767 10.4051C85.4909 10.4051 79.2911 15.9449 79.2911 24.6503C79.2911 33.3213 85.5255 38.8955 93.9767 38.8955C102.428 38.8955 108.697 33.3213 108.697 24.6503ZM102.74 24.6503C102.74 30.0869 98.8257 34.0094 93.9767 34.0094C89.1623 34.0094 85.2484 30.0525 85.2484 24.6503C85.2484 19.2481 89.1623 15.2912 93.9767 15.2912C98.8257 15.2912 102.74 19.2137 102.74 24.6503ZM121.963 38.2073V33.4589C121.963 33.3213 121.893 33.2525 121.755 33.2525H120.265C118.638 33.2525 117.46 32.5299 117.46 30.5686C117.46 27.0933 118.36 23.5492 119.053 19.6955C119.884 15.2567 120.716 10.2331 120.82 7.8933C121.062 2.73201 118.049 0.56427 114.343 0.56427H112.022C111.883 0.56427 111.814 0.633087 111.814 0.770722V5.34707C111.814 5.4847 111.918 5.55352 112.022 5.55352H113.234C114.447 5.55352 115.209 6.20728 115.278 7.82449C115.347 9.99223 114.62 13.4675 113.581 18.8697C112.784 23.1019 111.953 27.5406 111.953 31.6008C111.953 35.9707 114.966 38.4137 119.538 38.4137H121.755C121.893 38.4137 121.963 38.3105 121.963 38.2073ZM152.574 38.2073V11.0933C152.574 10.9557 152.505 10.8869 152.366 10.8869H147.794C147.69 10.8869 147.621 10.9557 147.586 11.0589L146.963 13.7428C146.928 13.8804 146.79 13.9148 146.686 13.8116C144.192 11.3686 140.867 10.4051 137.542 10.4051C129.264 10.4051 123.445 16.1858 123.445 24.6847C123.445 33.1492 129.298 38.8955 137.542 38.8955C140.798 38.8955 144.781 37.7256 146.686 35.489C146.824 35.3514 146.928 35.3858 146.963 35.5578L147.586 38.2417C147.621 38.3449 147.69 38.4137 147.794 38.4137H152.366C152.505 38.4137 152.574 38.3105 152.574 38.2073ZM129.402 24.6847C129.402 19.1449 133.282 15.2912 138.131 15.2912C143.153 15.2912 146.686 19.317 146.686 24.6847C146.686 30.018 143.153 34.0094 138.131 34.0094C133.316 34.0094 129.402 30.1557 129.402 24.6847ZM156.73 0.770722V38.2073C156.73 38.3449 156.799 38.4137 156.938 38.4137H161.51C161.614 38.4137 161.683 38.3449 161.718 38.2417L162.307 35.7299C162.341 35.5922 162.48 35.5234 162.584 35.6266C165.251 37.932 168.818 38.8955 171.762 38.8955C180.006 38.8955 185.859 33.1492 185.859 24.6847C185.859 16.1858 179.694 10.4051 171.416 10.4051C167.952 10.4051 165.354 11.2998 162.514 13.7084C162.376 13.846 162.272 13.7772 162.272 13.6051V0.770722C162.272 0.633087 162.168 0.56427 162.064 0.56427H156.938C156.799 0.56427 156.73 0.667496 156.73 0.770722ZM179.902 24.6847C179.902 30.0869 175.988 34.0094 171.173 34.0094C166.151 34.0094 162.618 29.9492 162.618 24.6847C162.618 19.4202 166.151 15.3256 171.173 15.3256C176.022 15.3256 179.902 19.2481 179.902 24.6847Z"
-                fill="white"
-              />
-            </svg>
-          </div>
-        </div>
-      </a>
-    </div>
+<!-- JavaScript 코드: 플레이어의 동작(기능)을 담당 -->
+<script>
+  // 이 스크립트는 body 태그가 끝나기 직전에 위치해서 HTML 요소들이 모두 로드된 후에 실행됨.
 
-    <svg style="display: none">
-      <filter
-        id="glass-distortion"
-        x="0%"
-        y="0%"
-        width="100%"
-        height="100%"
-        filterUnits="objectBoundingBox"
-      >
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.01 0.01"
-          numOctaves="1"
-          seed="5"
-          result="turbulence"
-        />
-        <!-- Seeds: 14, 17,  -->
+  // 설정값: 총 재생 시간 (초 단위)
+  const totalSeconds = 174; // 예: 2분 54초 (120초 + 54초 = 174초). 이 값을 원하는 길이로 바꾸면 됨.
+  let currentSeconds = 0;   // 현재 재생 시간을 저장하는 변수 (0에서 시작)
+  let timer = null;         // setInterval 함수의 ID를 저장하는 변수. 이걸로 타이머를 멈추거나 재시작함.
 
-        <feComponentTransfer in="turbulence" result="mapped">
-          <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-          <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-          <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-        </feComponentTransfer>
+  // 1. DOM 요소 가져오기: 자바스크립트가 HTML의 특정 요소들을 찾아서 조작하기 위해 필요함.
+  const fill = document.querySelector('.progress-bar-fill'); // 흰색 진행 바를 선택
+  const currentTimeEl = document.getElementById('current-time'); // 현재 시간 표시 <span>을 선택
+  const totalTimeEl = document.getElementById('total-time');     // 총 시간 표시 <span>을 선택
+  // ★ 자동 재생이어도, '정지' 후 '재생'하거나, '정지' 후 다시 '시작'할 때 버튼은 필요할 수 있음
+  const playButton = document.getElementById('play-button');     // '재생' 버튼을 선택
+  const pauseButton = document.getElementById('pause-button');   // '정지' 버튼을 선택
+  const resetButton = document.getElementById('reset-button');   // '초기화' 버튼을 선택
 
-        <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+  // 2. 시간 포맷팅 함수: 숫자로 된 초(seconds)를 "분:초" 형식의 문자열로 바꿔줌 (예: 65초 -> "1:05")
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60); // 총 초에서 분을 계산 (소수점 버림)
+    const remainingSeconds = seconds % 60; // 분을 빼고 남은 초를 계산
+    // 초가 한 자리 숫자일 경우 앞에 '0'을 붙여 두 자리로 만듦 (예: 5 -> "05")
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
 
-        <feSpecularLighting
-          in="softMap"
-          surfaceScale="5"
-          specularConstant="1"
-          specularExponent="100"
-          lighting-color="white"
-          result="specLight"
-        >
-          <fePointLight x="-200" y="-200" z="300" />
-        </feSpecularLighting>
+  // 3. 플레이어 초기 상태 설정 함수: 재생 바와 시간을 초기 상태(0:00)로 되돌림.
+  function initializePlayer() {
+    currentSeconds = 0;           // 현재 재생 시간을 0으로 설정
+    fill.style.width = '0%';      // 진행 바의 너비를 0%로 만들어서 비워버림
+    currentTimeEl.textContent = '0:00'; // 현재 시간 표시를 "0:00"으로 설정
+    totalTimeEl.textContent = '-' + formatTime(totalSeconds); // 총 시간을 "-(총분:총초)" 형식으로 표시
+    clearInterval(timer);         // 혹시라도 실행 중인 타이머가 있으면 멈춤
+    timer = null;                 // 타이머 변수를 null로 설정하여 '정지' 상태로 만듦
+    console.log('✨ 플레이어가 초기화되었습니다. 자동 재생 준비 완료!'); // 개발자 도구 콘솔에 메시지 출력
+  }
 
-        <feComposite
-          in="specLight"
-          operator="arithmetic"
-          k1="0"
-          k2="1"
-          k3="1"
-          k4="0"
-          result="litImage"
-        />
+  // 4. 진행 상태 업데이트 함수: 1초마다 실행되면서 진행 바와 시간을 업데이트함. (핵심 기능!)
+  function updateProgress() {
+    if (currentSeconds >= totalSeconds) { // 현재 재생 시간이 총 시간을 넘었거나 같아지면 (재생이 끝나면)
+      clearInterval(timer);         // 타이머를 멈춤
+      timer = null;                 // 타이머 변수 초기화
+      currentSeconds = totalSeconds; // 현재 시간을 총 시간의 마지막 값으로 고정
+      fill.style.width = '100%';    // 진행 바를 완전히 채움 (100%)
+      currentTimeEl.textContent = formatTime(totalSeconds); // 현재 시간을 총 시간으로 표시
+      totalTimeEl.textContent = '-0:00'; // 남은 시간 표시를 "-0:00"으로 변경
+      console.log('✅ 재생이 완료되었습니다!'); // 콘솔에 완료 메시지 출력
+      return; // 더 이상 업데이트할 필요 없으므로 함수 종료
+    }
 
-        <feDisplacementMap
-          in="SourceGraphic"
-          in2="softMap"
-          scale="150"
-          xChannelSelector="R"
-          yChannelSelector="G"
-        />
-      </filter>
-    </svg>
-  
-  
+    // 진행 바의 채워지는 비율을 계산 (현재 시간 / 총 시간 * 100)
+    const percent = (currentSeconds / totalSeconds) * 100;
+    fill.style.width = percent + '%'; // 계산된 비율만큼 진행 바의 너비를 설정
+
+    // 현재 시간 표시를 업데이트 (formatTime 함수 사용)
+    currentTimeEl.textContent = formatTime(currentSeconds);
+
+    // 남은 시간을 계산하고 표시를 업데이트 (총 시간 - 현재 시간)
+    const remainSeconds = totalSeconds - currentSeconds;
+    totalTimeEl.textContent = '-' + formatTime(remainSeconds);
+
+    currentSeconds++; // 다음 업데이트를 위해 현재 시간을 1초 증가시킴
+    // console.log(`[디버그] 현재 시간: ${currentSeconds-1}초, 진행률: ${percent.toFixed(2)}%`); // 개발 중 확인용
+  }
+
+  // 5. 이벤트 리스너 설정: 버튼들이 클릭되었을 때 어떤 함수를 실행할지 연결함.
+  //    (null 체크: 만약 버튼 HTML이 없다면 오류 방지)
+
+  // ★★★★ 자동 재생이므로 'playButton' 이벤트 리스너는 직접적인 자동 재생 시작에 관여 안 함 ★★★★
+  // 하지만 수동으로 '정지' 후 '재생' 버튼을 눌러 다시 시작할 수는 있도록 유지
+  if (playButton) {
+    playButton.addEventListener('click', () => {
+      if (timer === null && currentSeconds < totalSeconds) {
+        timer = setInterval(updateProgress, 1000); // 1초(1000ms)마다 updateProgress 함수 실행 시작
+        console.log('▶ 수동 재생 시작!');
+      }
+    });
+  }
+
+
+  if (pauseButton) {
+    pauseButton.addEventListener('click', () => {
+      clearInterval(timer); // 실행 중인 타이머를 멈춤
+      timer = null;         // 타이머 변수 초기화하여 '정지' 상태로 만듦
+      console.log('⏸ 재생 정지!');
+    });
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      initializePlayer();   // 플레이어를 초기 상태로 되돌림
+      console.log('⏪ 플레이어 초기화!');
+      // 초기화 후 바로 자동 재생 시작!
+      if (timer === null) { // 타이머가 정지 상태일 때만 시작
+          timer = setInterval(updateProgress, 1000);
+          console.log('🔁 초기화 후 자동 재생 재시작!');
+      }
+    });
+  }
+
+  // 6. 페이지 로드 시 플레이어를 한 번 초기화한 후, 바로 자동 재생 시작!
+  initializePlayer();
+  // ★★★ 여기가 자동 재생의 핵심! ★★★
+  timer = setInterval(updateProgress, 1000); // 페이지 로드되자마자 1초마다 업데이트 함수 실행
+  console.log('🚀 페이지 로드, 자동 재생 시작!');
+</script>
+
 </body>
-
 </html>
