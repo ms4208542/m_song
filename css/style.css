@@ -1,0 +1,230 @@
+* {
+    font-family:
+        "Pretendard Variable",
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        system-ui,
+        Roboto,
+        "Helvetica Neue",
+        "Segoe UI",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        sans-serif;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+}
+
+.main_wrap {
+    display: block;
+    width: 100%;
+}
+.visual {
+    height: 930px;
+    background: url(../img/02_bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+.header {
+    padding: 30px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_ul {
+    display: flex;
+    padding: 20px 8px;
+    font-weight: bold;
+}
+.header_ul > li > a {
+    padding: 14px 20px;
+    mix-blend-mode: multiply;
+}
+
+.liquidGlass-wrapper {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    box-shadow:
+        0 6px 6px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    transform: translateZ(0);
+    border-radius: 30px;
+}
+
+.liquidGlass-effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    filter: url(#glass-distortion);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.liquidGlass-tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+.liquidGlass-tint_b {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+.liquidGlass-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow:
+        inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+        inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.liquidGlass-text {
+    z-index: 3;
+}
+.list-item > a:hover {
+    color: #004ce1;
+    transition: 0.3s ease;
+}
+.list-item {
+    cursor: pointer;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.list-item.active {
+    color: white;
+    background-color: #7cb9e8;
+}
+.highlight {
+    position: absolute;
+    left: 0;
+    background: rgba(0, 0, 0, 0.085);
+    transition: 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 30px;
+    top: 5px;
+    height: calc(100% - 10px);
+}
+
+.content_wrap {
+    width: 100%;
+    display: block;
+}
+.play {
+    width: 426px;
+    height: 670px;
+    margin: 0 auto;
+}
+.cover {
+    display: flex !important;
+    justify-content: center !important;
+}
+.album_cover {
+    border-radius: 20px;
+    width: 355px;
+    height: 348px;
+    background-color: #004ce1;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.diamond-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.diamond-container {
+    width: 202px;
+    height: 360px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diamond-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.diamond-path {
+    stroke: white;
+    stroke-width: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    animation: none;
+}
+
+@keyframes drawDiamond {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.horizontal-drawing-line-html {
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    background-color: white;
+    top: calc(280px + 30px);
+    left: 0;
+    overflow: hidden;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: drawLineHTML 3s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes drawLineHTML {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.play_text {
+    padding-inline: 35px;
+    width: 355px;
+    margin-top: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.play_title > p {
+    font-weight: bold;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.38);
+}
+.play_title > h2 {
+    font-size: 20px;
+    font-weight: bold;
+}

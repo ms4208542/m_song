@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="lib/fullpage.min.css" />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <script src="lib/fullpage.min.js"></script>
+    <script src="lib/jquery-latest.min.js"></script>
+  </head>
+  <body>
+    <div class="main_wrap">
+      <div class="visual">
+        <div class="header">
+          <a href="01_index.html"><img src="img/logo_black.svg" alt="" /></a>
+          <div class="liquidGlass-wrapper menu">
+            <div class="liquidGlass-effect"></div>
+            <div class="liquidGlass-tint"></div>
+            <div class="liquidGlass-shine"></div>
+            <div class="liquidGlass-text">
+              <ul class="header_ul">
+                   <li class="list-item"><a href="#">ABOUT<span class="bg-hover-effect"></span></a></li>
+             <li class="list-item"><a href="#">WEB<span class="bg-hover-effect"></span></a></li>
+             <li class="list-item"><a href="#">E-DESIGN<span class="bg-hover-effect"></span></a></li>
+             <li class="list-item"><a href="#">CONTECT<span class="bg-hover-effect"></span></a></li>
+              </ul>
+              <div class="highlight"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content_wrap">
+          <div class="liquidGlass-wrapper play">
+            <div class="liquidGlass-effect"></div>
+            <div class="liquidGlass-tint_b"></div>
+            <div class="liquidGlass-shine"><div class="play_text">
+               <div class="play_title">
+                <h2>Myeoungseon - Portfolio</h2>
+                <p>WEB Designer&amp;Publisher</p>
+                </div>
+                <div class="p_icon"><img src="img/play_icon.svg" alt=""></div>
+            </div></div>
+            <div class="liquidGlass-text cover">
+              <div class="album_cover">
+                <div class="diamond-wrapper">
+                  <div class="diamond-container">
+                    <svg width="101" height="147" viewbox="0 0 101 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="diamond-path"
+                        d="M50.6084 6.21777C51.0401 10.0208 51.7288 15.2573 52.7578 20.9893C54.8106 32.4242 58.2335 45.9353 63.7275 53.9316C69.2408 61.9558 78.5718 66.9644 86.4619 69.9648C90.4155 71.4683 94.0273 72.4748 96.6504 73.1055C97.2858 73.2582 97.8633 73.3895 98.374 73.5C97.8633 73.6105 97.2858 73.7418 96.6504 73.8945C94.0273 74.5252 90.4155 75.5317 86.4619 77.0352C78.5718 80.0356 69.2408 85.0442 63.7275 93.0684C58.2335 101.065 54.8106 114.576 52.7578 126.011C51.7288 131.743 51.0401 136.979 50.6084 140.782C50.5691 141.129 50.5351 141.464 50.5 141.786C50.4649 141.464 50.4309 141.129 50.3916 140.782C49.9599 136.979 49.2712 131.743 48.2422 126.011C46.1894 114.576 42.7665 101.065 37.2725 93.0684C31.7592 85.0442 22.4282 80.0356 14.5381 77.0352C10.5845 75.5317 6.97269 74.5252 4.34961 73.8945C3.71382 73.7417 3.13594 73.6105 2.625 73.5C3.13594 73.3895 3.71382 73.2583 4.34961 73.1055C6.97269 72.4748 10.5845 71.4683 14.5381 69.9648C22.4282 66.9644 31.7592 61.9558 37.2725 53.9316C42.7665 45.9353 46.1894 32.4242 48.2422 20.9893C49.2712 15.2573 49.9599 10.0208 50.3916 6.21777C50.431 5.87086 50.4648 5.53528 50.5 5.21289C50.5352 5.53528 50.569 5.87086 50.6084 6.21777Z"
+                        stroke="white" />
+                    </svg>
+                  </div>
+                  <div class="horizontal-drawing-line-html"></div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg style="display: none">
+      <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterunits="objectboundingbox">
+        <feturbulence type="fractalnoise" basefrequency="0.01 0.01" numoctaves="1" seed="5" result="turbulence" />
+        <!-- Seeds: 14, 17,  -->
+
+        <fecomponenttransfer in="turbulence" result="mapped">
+          <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5" />
+          <fefuncg type="gamma" amplitude="0" exponent="1" offset="0" />
+          <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5" />
+        </fecomponenttransfer>
+
+        <fegaussianblur in="turbulence" stddeviation="3" result="softMap" />
+
+        <fespecularlighting
+          in="softmap"
+          surfacescale="5"
+          specularconstant="1"
+          specularexponent="100"
+          lighting-color="white"
+          result="specLight">
+          <fepointlight x="-200" y="-200" z="300" />
+        </fespecularlighting>
+
+        <fecomposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+
+        <fedisplacementmap in="SourceGraphic" in2="softMap" scale="150" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </svg>
+    <script src="js/script.js"></script>
+  </body>
+</html>
