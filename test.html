@@ -20,7 +20,48 @@
     align-items: center;       /* 세로 방향으로 중앙 정렬 */
     min-height: 100dvh;        /* 화면 최소 높이를 100dvh로 설정 (모바일 주소창 때문에 중요!) */
   }
+.my-awesome-button {
+  /* 버튼 기본 스타일 */
+  padding: 10px 20px;
+  background-color: #6a1b9a; /* 보라색 좋아 */
+  color: white;
+  border: none;
+  border-radius: 8px; /* 버튼은 살짝 둥근 네모! */
+  cursor: pointer;
+  font-size: 16px;
+  position: relative; /* 중요! ::after 요소를 얘가 기준으로 잡게 */
+  z-index: 1; /* 그림자보다 위에 있어야 하니까 */
+  transition: transform 0.2s ease-out; /* 클릭 시 살짝 움직이는 효과 */
+}
 
+.my-awesome-button:hover {
+  transform: translateY(-2px); /* 호버 시 살짝 떠오르는 느낌 */
+}
+
+.my-awesome-button::after {
+  content: ''; /* 가상 요소는 content 속성 필수 */
+  display: block; /* 블록 요소로 만들어야 크기 조절 가능 */
+  position: absolute; /* 버튼을 기준으로 위치 잡음 */
+  z-index: 0; /* 버튼보다 아래에 깔려야 함 */
+  bottom: -5px; /* 버튼보다 살짝 아래에 */
+  left: 50%; /* 가운데 정렬을 위해 */
+  transform: translateX(-50%); /* 정확히 가운데로 이동 */
+
+  width: 80%; /* 버튼 너비보다 좀 작게 */
+  height: 20px; /* 동그란 그림자 높이. 납작한 원 */
+  background-color: rgba(0, 0, 0, 0.3); /* 그림자 색깔로 채워버렷! */
+  border-radius: 50%; /* ✨ 핵심! 동그랗게 만듦 */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); /* x오프셋, y오프셋, 블러, 색상 */
+
+  /* 그림자도 버튼과 함께 움직이게 하고 싶으면 */
+  transition: all 0.2s ease-out;
+}
+
+.my-awesome-button:hover::after {
+  bottom: -3px;
+  background-color: rgba(0, 0, 0, 0.25); /* 호버 시 색깔 살짝 연하게 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* 그림자도 살짝 연하게 *
+}
   /* 플레이어 전체를 감싸는 컨테이너 */
   .player-container {
     background: #1a2a47;      /* 어두운 파란색 배경 */
@@ -80,6 +121,48 @@
   .control-button:hover {
     background: #6a8ce1;      /* 배경색을 더 밝은 색으로 */
   }
+  .view_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* 실제 버튼 배경색 */
+    border-radius: inherit; /* 버튼의 둥근 모서리 상속 */
+    z-index: -1; /* 이 배경은 버튼 컨텐츠 뒤로 가게 */
+    transition: all 0.2s ease-in-out;
+}
+
+/* 그림자 (::after 사용) */
+.view_btn::after {
+    content: '';
+    position: absolute;
+    z-index: -2; /* ::before보다도 더 뒤로! */
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    opacity: 0; /* 기본엔 투명 */
+    pointer-events: none; /* 마우스 이벤트 무시 */
+    transition: opacity 0.2s ease-in-out, bottom 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* 호버 효과 */
+.view_btn:hover {
+    transform: translateY(-2px);
+}
+
+.view_btn:hover::after {
+    opacity: 1; /* 호버 시 그림자 보임 */
+    bottom: -10px; /* 살짝 위로 */
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
 </style>
 </head>
 <body>
@@ -100,7 +183,11 @@
     <button id="reset-button" class="control-button">초기화</button> <!-- 초기화 버튼 (ID가 'reset-button'!) -->
   </div>
 </div>
+<button class="my-awesome-button">클릭해보시지?</button>
 
+<button class="view_btn">
+  MORE <span class="shadow"></span>
+</button>
 <!-- JavaScript 코드: 플레이어의 동작(기능)을 담당 -->
 <script>
   // 이 스크립트는 body 태그가 끝나기 직전에 위치해서 HTML 요소들이 모두 로드된 후에 실행됨.
