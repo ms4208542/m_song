@@ -1,299 +1,219 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>플레이어 진행 바 동기화 - 자동 재생</title>
-<style>
-  /*
-    * CSS 스타일: 플레이어 UI를 예쁘게 꾸미고 위치를 잡는 부분.
-    * 뤼튼이 직접 수정했던 부분들이 다 들어있음!
-  */
-  body {
-    background-color: #0046ff; /* 페이지 전체 배경을 파란색으로 */
-    margin: 0;                 /* 브라우저 기본 여백 없애기 */
-    padding: 20px;             /* 내용물 주위에 안쪽 여백 추가 */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 예쁜 글꼴로 변경 */
-    color: white;              /* 모든 텍스트 색상을 흰색으로 */
-    display: flex;             /* body 내용을 플렉스 박스로 만들어서 */
-    justify-content: center;   /* 가로 방향으로 중앙 정렬 */
-    align-items: center;       /* 세로 방향으로 중앙 정렬 */
-    min-height: 100dvh;        /* 화면 최소 높이를 100dvh로 설정 (모바일 주소창 때문에 중요!) */
-  }
-.my-awesome-button {
-  /* 버튼 기본 스타일 */
-  padding: 10px 20px;
-  background-color: #6a1b9a; /* 보라색 좋아 */
-  color: white;
-  border: none;
-  border-radius: 8px; /* 버튼은 살짝 둥근 네모! */
-  cursor: pointer;
-  font-size: 16px;
-  position: relative; /* 중요! ::after 요소를 얘가 기준으로 잡게 */
-  z-index: 1; /* 그림자보다 위에 있어야 하니까 */
-  transition: transform 0.2s ease-out; /* 클릭 시 살짝 움직이는 효과 */
-}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>home</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="lib/fullpage.min.css"/>
+        <script src="lib/jquery-latest.min.js"></script>
+        <script src="lib/fullpage.min.js"></script>
+        <script src="https://kit.fontawesome.com/0c69fdf2c0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
 
-.my-awesome-button:hover {
-  transform: translateY(-2px); /* 호버 시 살짝 떠오르는 느낌 */
-}
+        <div id="fullpage-container-background"></div>
 
-.my-awesome-button::after {
-  content: ''; /* 가상 요소는 content 속성 필수 */
-  display: block; /* 블록 요소로 만들어야 크기 조절 가능 */
-  position: absolute; /* 버튼을 기준으로 위치 잡음 */
-  z-index: 0; /* 버튼보다 아래에 깔려야 함 */
-  bottom: -5px; /* 버튼보다 살짝 아래에 */
-  left: 50%; /* 가운데 정렬을 위해 */
-  transform: translateX(-50%); /* 정확히 가운데로 이동 */
+        <div class="header_wrap">
+            <div class="header">
+                <a href="01_index.html"><img src="img/logo_black.svg" alt=""/></a>
+                <div class="liquidGlass-wrapper menu">
+                    <div class="liquidGlass-effect"></div>
+                    <div class="liquidGlass-tint"></div>
+                    <div class="liquidGlass-shine"></div>
+                    <div class="liquidGlass-text">
+                        <ul class="header_ul">
+                            <li class="list-item">
+                                <a href="#">ABOUT<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">WEB<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">E-DESIGN<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">CONTECT<span class="bg-hover-effect"></span></a>
+                            </li>
+                        </ul>
+                        <div class="highlight"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  width: 80%; /* 버튼 너비보다 좀 작게 */
-  height: 20px; /* 동그란 그림자 높이. 납작한 원 */
-  background-color: rgba(0, 0, 0, 0.3); /* 그림자 색깔로 채워버렷! */
-  border-radius: 50%; /* ✨ 핵심! 동그랗게 만듦 */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); /* x오프셋, y오프셋, 블러, 색상 */
+        <div id="poFull" class="main_wrap">
 
-  /* 그림자도 버튼과 함께 움직이게 하고 싶으면 */
-  transition: all 0.2s ease-out;
-}
+            <div class="content_wrap section">
+                <div class="liquidGlass-wrapper play">
+                    <div class="liquidGlass-effect"></div>
+                    <div class="liquidGlass-tint_b"></div>
+                    <div class="liquidGlass-shine">
+                        <div class="play_wrap">
+                            <div class="play_text">
+                                <div class="play_title">
+                                    <h2>Myeoungseon - Portfolio</h2>
+                                    <p>WEB Designer&amp;Publisher</p>
+                                </div>
+                                <div class="p_icon"><img src="img/play_icon_w.svg" alt=""></div>
+                            </div>
+                            <div class="player-container">
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill"></div>
+                                </div>
+                                <div class="time-info">
+                                    <span id="current-time">0:00</span>
+                                    <span id="total-time">-2:54</span>
+                                </div>
+                                <div class="controls">
+                                    <button class="prev"><img src="img/prev.svg" alt=""></button>
+                                    <button id="toggle-play" class="control-button">
+                                        <img id="play-pause-icon" src="img/stop.svg" alt="정지">
+                                    </button>
+                                    <button class="next"><img src="img/next.svg" alt=""></button>
+                                </div>
+                                <div class="sound_bar">
+                                    <img src="img/mute.svg" alt="">
+                                    <div class="sound_bar_bg">
+                                        <div class="sound"></div>
+                                    </div>
+                                    <img src="img/sound.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="liquidGlass-text cover">
+                        <div class="album_cover">
+                            <div class="diamond-wrapper">
+                                <div class="diamond-container">
+                                    <svg
+                                        width="101"
+                                        height="147"
+                                        viewbox="0 0 101 170"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            class="diamond-path"
+                                            d="M50.6084 6.21777C51.0401 10.0208 51.7288 15.2573 52.7578 20.9893C54.8106 32.4242 58.2335 45.9353 63.7275 53.9316C69.2408 61.9558 78.5718 66.9644 86.4619 69.9648C90.4155 71.4683 94.0273 72.4748 96.6504 73.1055C97.2858 73.2582 97.8633 73.3895 98.374 73.5C97.8633 73.6105 97.2858 73.7418 96.6504 73.8945C94.0273 74.5252 90.4155 75.5317 86.4619 77.0352C78.5718 80.0356 69.2408 85.0442 63.7275 93.0684C58.2335 101.065 54.8106 114.576 52.7578 126.011C51.7288 131.743 51.0401 136.979 50.6084 140.782C50.5691 141.129 50.5351 141.464 50.5 141.786C50.4649 141.464 50.4309 141.129 50.3916 140.782C49.9599 136.979 49.2712 131.743 48.2422 126.011C46.1894 114.576 42.7665 101.065 37.2725 93.0684C31.7592 85.0442 22.4282 80.0356 14.5381 77.0352C10.5845 75.5317 6.97269 74.5252 4.34961 73.8945C3.71382 73.7417 3.13594 73.6105 2.625 73.5C3.13594 73.3895 3.71382 73.2583 4.34961 73.1055C6.97269 72.4748 10.5845 71.4683 14.5381 69.9648C22.4282 66.9644 31.7592 61.9558 37.2725 53.9316C42.7665 45.9353 46.1894 32.4242 48.2422 20.9893C49.2712 15.2573 49.9599 10.0208 50.3916 6.21777C50.431 5.87086 50.4648 5.53528 50.5 5.21289C50.5352 5.53528 50.569 5.87086 50.6084 6.21777Z"
+                                            stroke="white"/>
+                                    </svg>
+                                </div>
+                                <div class="horizontal-drawing-line-html"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-.my-awesome-button:hover::after {
-  bottom: -3px;
-  background-color: rgba(0, 0, 0, 0.25); /* 호버 시 색깔 살짝 연하게 */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); /* 그림자도 살짝 연하게 *
-}
-  /* 플레이어 전체를 감싸는 컨테이너 */
-  .player-container {
-    background: #1a2a47;      /* 어두운 파란색 배경 */
-    padding: 20px;            /* 컨테이너 안쪽 여백 */
-    border-radius: 12px;      /* 둥근 모서리 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 효과로 입체감 */
-    width: 320px;             /* 플레이어 전체 너비 */
-    user-select: none;        /* 사용자가 텍스트 드래그 못하게 막기 */
-  }
+            <div class="section me_wrap">
+                <div class="me">
+                    <div class="about">
+                        <h2>ABOUT<br>ME</h2>
+                        <p>UIUX에 높은 가치를 두고 웹 사이트 성능 최적화에 지속적인 관심을 기울이는<br>8년차 웹디자이너 & 웹 퍼블리셔 송명선입니다.</p>
+                    </div>
+                    <div class="work about_li">
+                        <div class="li_title"><img src="img/t_deco.svg" alt="">
+                            <h2>WORK EXPERIENCE</h2>
+                        </div>
+                        <ul>
+                            <li>2016. 02 ~ 2016. 07<br>강릉시립미술관 행정업무</li>
+                            <li>2017. 07 ~ 2024. 02<br>비전모바일코리아주식회사 웹 디자이너/퍼블리셔</li>
+                            <li>2025. 02 ~<br>스마트포트테크놀로지 UI/UX 디자이너/퍼블리셔</li>
+                        </ul>
+                    </div>
+                    <div class="cretificate about_li">
+                        <div class="li_title"><img src="img/t_deco.svg" alt="">
+                            <h2>CERTIFICATE</h2>
+                        </div>
+                        <ul>
+                            <li>2013. 02<br>자동차 운전면허 1종 보통 | 강원지방경찰청</li>
+                            <li>2014. 08<br>GTQ 그래픽 기술자격 | 한국생산성 본부</li>
+                            <li>2015. 04<br>컴퓨터그래픽스운용기능사 | 한국산업인력공단</li>
+                            <li>2016. 01<br>Microsoft Office MOS PPT 2010 | Microsoft Office</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="li_title">
+                        <img src="img/t_deco.svg" alt="">
+                        <h2>SKILL</h2>
+                    </div>
+                    <div class="skill_list">
+                        <ul>
+                            <li><img src="img/photoshop.svg" alt=""></li>
+                            <li><img src="img/illust.svg" alt=""></li>
+                            <li><img src="img/indesign.svg" alt=""></li>
+                            <li><img src="img/figma.svg" alt=""></li>
+                            <li><img src="img/wordpress.svg" alt=""></li>
+                            <li><img src="img/html.svg" alt=""></li>
+                            <li><img src="img/css.svg" alt=""></li>
+                            <li><img src="img/js.svg" alt=""></li>
+                            <li><img src="img/sass.svg" alt=""></li>
+                            <li><img src="img/nexa.svg" alt=""></li>
+                        </ul>
+                        <button class="view_btn">MORE<i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-  /* 진행 바의 회색 배경 부분 */
-  .progress-bar-bg {
-    width: 100%;              /* 부모 요소(player-container) 너비에 꽉 차게 */
-    height: 8px;              /* 진행 바 높이 */
-    background: #3857c7;      /* 짙은 파란색 배경 */
-    border-radius: 4px;       /* 둥근 모서리 */
-    overflow: hidden;         /* 진행 바 채워지는 부분이 밖으로 튀어나오지 않게 */
-    margin-bottom: 10px;      /* 아래쪽 요소(시간 정보)와 간격 */
-  }
+            <div class="section work_section">
+                <div class="work_content">
+                    <h2>WORK</h2>
+                    <p>이곳은 새로운 배경을 가진 작업물 섹션입니다.</p>
+                </div>
+            </div>
 
-  /* 진행 바에서 실제로 채워지는 흰색 부분 */
-  .progress-bar-fill {
-    width: 0%;                /* 처음엔 0%로 시작해서 채워짐 */
-    height: 100%;             /* 부모 요소(progress-bar-bg) 높이에 꽉 차게 */
-    background: rgba(255, 255, 255, 0.7); /* 흰색(RGB 255,255,255)에 70% 투명도 */
-    transition: width 0.9s linear; /* 너비가 바뀔 때 0.9초 동안 부드럽게 변하도록 */
-  }
+        </div>
 
-  /* 현재 시간과 총 시간 정보가 들어가는 부분 */
-  .time-info {
-    display: flex;            /* 플렉스 박스로 만들어서 */
-    justify-content: space-between; /* 양 끝으로 벌려서 배치 */
-    font-size: 13px;          /* 글자 크기 */
-    margin-bottom: 15px;      /* 아래쪽 요소(버튼)와 간격 */
-  }
+        <div class="bottom_bar"></div>
 
-  /* 재생/정지/초기화 버튼들을 감싸는 부분 */
-  .controls {
-    display: flex;            /* 플렉스 박스로 만들어서 */
-    justify-content: center;  /* 버튼들을 가로 중앙에 정렬 */
-    gap: 15px;                /* 버튼들 사이 간격 */
-  }
+        <svg style="display: none">
+            <filter
+                id="glass-distortion"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                filterunits="objectBoundingBox">
+                <feturbulence
+                    type="fractalnoise"
+                    basefrequency="0.01 0.01"
+                    numoctaves="1"
+                    seed="5"
+                    result="turbulence"/>
+                <fecomponenttransfer in="turbulence" result="mapped">
+                    <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+                    <fefuncg type="gamma" amplitude="0" exponent="1" offset="0"/>
+                    <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+                </fecomponenttransfer>
+                <fegaussianblur in="turbulence" stddeviation="3" result="softMap"/>
+                <fespecularlighting
+                    in="softMap"
+                    surfacescale="5"
+                    specularconstant="1"
+                    specularexponent="100"
+                    lighting-color="white"
+                    result="specLight">
+                    <fepointlight x="-200" y="-200" z="300"/>
+                </fespecularlighting>
+                <fecomposite
+                    in="specLight"
+                    operator="arithmetic"
+                    k1="0"
+                    k2="1"
+                    k3="1"
+                    k4="0"
+                    result="litImage"/>
+                <fedisplacementmap
+                    in="SourceGraphic"
+                    in2="softMap"
+                    scale="150"
+                    xchannelselector="R"
+                    ychannelselector="G"/>
+            </filter>
+        </svg>
 
-  /* 각 컨트롤 버튼 스타일 */
-  .control-button {
-    background: #4a6ee1;      /* 버튼 배경색 */
-    color: white;             /* 버튼 글자색 */
-    border: none;             /* 테두리 없앰 */
-    padding: 8px 15px;        /* 버튼 안쪽 여백 */
-    border-radius: 6px;       /* 둥근 모서리 */
-    cursor: pointer;          /* 마우스 커서를 손가락 모양으로 */
-    font-size: 14px;          /* 버튼 글자 크기 */
-    transition: background 0.2s ease; /* 호버 시 배경색이 0.2초 동안 부드럽게 변하도록 */
-  }
-
-  /* 버튼에 마우스 올렸을 때 스타일 */
-  .control-button:hover {
-    background: #6a8ce1;      /* 배경색을 더 밝은 색으로 */
-  }
-  .view_btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff; /* 실제 버튼 배경색 */
-    border-radius: inherit; /* 버튼의 둥근 모서리 상속 */
-    z-index: -1; /* 이 배경은 버튼 컨텐츠 뒤로 가게 */
-    transition: all 0.2s ease-in-out;
-}
-
-/* 그림자 (::after 사용) */
-.view_btn::after {
-    content: '';
-    position: absolute;
-    z-index: -2; /* ::before보다도 더 뒤로! */
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 15px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-    opacity: 0; /* 기본엔 투명 */
-    pointer-events: none; /* 마우스 이벤트 무시 */
-    transition: opacity 0.2s ease-in-out, bottom 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-/* 호버 효과 */
-.view_btn:hover {
-    transform: translateY(-2px);
-}
-
-.view_btn:hover::after {
-    opacity: 1; /* 호버 시 그림자 보임 */
-    bottom: -10px; /* 살짝 위로 */
-    background-color: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-</style>
-</head>
-<body>
-
-<!-- HTML 구조: 플레이어의 시각적인 요소들을 만듦 -->
-<div class="player-container"> <!-- 플레이어 전체 컨테이너. 여기 class명이 자바스크립트랑 연결된 건 없으니 상관없음 -->
-  <div class="progress-bar-bg"> <!-- 진행 바의 배경 (회색 부분) -->
-    <div class="progress-bar-fill"></div> <!-- 실제로 채워지는 흰색 부분 -->
-  </div>
-  <div class="time-info"> <!-- 시간 정보를 보여주는 영역 -->
-    <span id="current-time">0:00</span> <!-- 현재 시간 (ID가 'current-time'!) -->
-    <span id="total-time">-2:54</span> <!-- 총 시간 (ID가 'total-time'!) -->
-  </div>
-  <div class="controls"> <!-- 플레이어 조작 버튼 영역 -->
-    <!-- 자동 재생이라 '재생' 버튼은 필요 없을 수도 있지만, 일시 정지 후 다시 재생하려면 있어야 좋음 -->
-    <button id="play-button" class="control-button">재생</button> <!-- 재생 버튼 (ID가 'play-button'!) -->
-    <button id="pause-button" class="control-button">정지</button> <!-- 정지 버튼 (ID가 'pause-button'!) -->
-    <button id="reset-button" class="control-button">초기화</button> <!-- 초기화 버튼 (ID가 'reset-button'!) -->
-  </div>
-</div>
-<button class="my-awesome-button">클릭해보시지?</button>
-
-<button class="view_btn">
-  MORE <span class="shadow"></span>
-</button>
-<!-- JavaScript 코드: 플레이어의 동작(기능)을 담당 -->
-<script>
-  // 이 스크립트는 body 태그가 끝나기 직전에 위치해서 HTML 요소들이 모두 로드된 후에 실행됨.
-
-  // 설정값: 총 재생 시간 (초 단위)
-  const totalSeconds = 174; // 예: 2분 54초 (120초 + 54초 = 174초). 이 값을 원하는 길이로 바꾸면 됨.
-  let currentSeconds = 0;   // 현재 재생 시간을 저장하는 변수 (0에서 시작)
-  let timer = null;         // setInterval 함수의 ID를 저장하는 변수. 이걸로 타이머를 멈추거나 재시작함.
-
-  // 1. DOM 요소 가져오기: 자바스크립트가 HTML의 특정 요소들을 찾아서 조작하기 위해 필요함.
-  const fill = document.querySelector('.progress-bar-fill'); // 흰색 진행 바를 선택
-  const currentTimeEl = document.getElementById('current-time'); // 현재 시간 표시 <span>을 선택
-  const totalTimeEl = document.getElementById('total-time');     // 총 시간 표시 <span>을 선택
-  // ★ 자동 재생이어도, '정지' 후 '재생'하거나, '정지' 후 다시 '시작'할 때 버튼은 필요할 수 있음
-  const playButton = document.getElementById('play-button');     // '재생' 버튼을 선택
-  const pauseButton = document.getElementById('pause-button');   // '정지' 버튼을 선택
-  const resetButton = document.getElementById('reset-button');   // '초기화' 버튼을 선택
-
-  // 2. 시간 포맷팅 함수: 숫자로 된 초(seconds)를 "분:초" 형식의 문자열로 바꿔줌 (예: 65초 -> "1:05")
-  function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60); // 총 초에서 분을 계산 (소수점 버림)
-    const remainingSeconds = seconds % 60; // 분을 빼고 남은 초를 계산
-    // 초가 한 자리 숫자일 경우 앞에 '0'을 붙여 두 자리로 만듦 (예: 5 -> "05")
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-  }
-
-  // 3. 플레이어 초기 상태 설정 함수: 재생 바와 시간을 초기 상태(0:00)로 되돌림.
-  function initializePlayer() {
-    currentSeconds = 0;           // 현재 재생 시간을 0으로 설정
-    fill.style.width = '0%';      // 진행 바의 너비를 0%로 만들어서 비워버림
-    currentTimeEl.textContent = '0:00'; // 현재 시간 표시를 "0:00"으로 설정
-    totalTimeEl.textContent = '-' + formatTime(totalSeconds); // 총 시간을 "-(총분:총초)" 형식으로 표시
-    clearInterval(timer);         // 혹시라도 실행 중인 타이머가 있으면 멈춤
-    timer = null;                 // 타이머 변수를 null로 설정하여 '정지' 상태로 만듦
-    console.log('✨ 플레이어가 초기화되었습니다. 자동 재생 준비 완료!'); // 개발자 도구 콘솔에 메시지 출력
-  }
-
-  // 4. 진행 상태 업데이트 함수: 1초마다 실행되면서 진행 바와 시간을 업데이트함. (핵심 기능!)
-  function updateProgress() {
-    if (currentSeconds >= totalSeconds) { // 현재 재생 시간이 총 시간을 넘었거나 같아지면 (재생이 끝나면)
-      clearInterval(timer);         // 타이머를 멈춤
-      timer = null;                 // 타이머 변수 초기화
-      currentSeconds = totalSeconds; // 현재 시간을 총 시간의 마지막 값으로 고정
-      fill.style.width = '100%';    // 진행 바를 완전히 채움 (100%)
-      currentTimeEl.textContent = formatTime(totalSeconds); // 현재 시간을 총 시간으로 표시
-      totalTimeEl.textContent = '-0:00'; // 남은 시간 표시를 "-0:00"으로 변경
-      console.log('✅ 재생이 완료되었습니다!'); // 콘솔에 완료 메시지 출력
-      return; // 더 이상 업데이트할 필요 없으므로 함수 종료
-    }
-
-    // 진행 바의 채워지는 비율을 계산 (현재 시간 / 총 시간 * 100)
-    const percent = (currentSeconds / totalSeconds) * 100;
-    fill.style.width = percent + '%'; // 계산된 비율만큼 진행 바의 너비를 설정
-
-    // 현재 시간 표시를 업데이트 (formatTime 함수 사용)
-    currentTimeEl.textContent = formatTime(currentSeconds);
-
-    // 남은 시간을 계산하고 표시를 업데이트 (총 시간 - 현재 시간)
-    const remainSeconds = totalSeconds - currentSeconds;
-    totalTimeEl.textContent = '-' + formatTime(remainSeconds);
-
-    currentSeconds++; // 다음 업데이트를 위해 현재 시간을 1초 증가시킴
-    // console.log(`[디버그] 현재 시간: ${currentSeconds-1}초, 진행률: ${percent.toFixed(2)}%`); // 개발 중 확인용
-  }
-
-  // 5. 이벤트 리스너 설정: 버튼들이 클릭되었을 때 어떤 함수를 실행할지 연결함.
-  //    (null 체크: 만약 버튼 HTML이 없다면 오류 방지)
-
-  // ★★★★ 자동 재생이므로 'playButton' 이벤트 리스너는 직접적인 자동 재생 시작에 관여 안 함 ★★★★
-  // 하지만 수동으로 '정지' 후 '재생' 버튼을 눌러 다시 시작할 수는 있도록 유지
-  if (playButton) {
-    playButton.addEventListener('click', () => {
-      if (timer === null && currentSeconds < totalSeconds) {
-        timer = setInterval(updateProgress, 1000); // 1초(1000ms)마다 updateProgress 함수 실행 시작
-        console.log('▶ 수동 재생 시작!');
-      }
-    });
-  }
-
-
-  if (pauseButton) {
-    pauseButton.addEventListener('click', () => {
-      clearInterval(timer); // 실행 중인 타이머를 멈춤
-      timer = null;         // 타이머 변수 초기화하여 '정지' 상태로 만듦
-      console.log('⏸ 재생 정지!');
-    });
-  }
-
-  if (resetButton) {
-    resetButton.addEventListener('click', () => {
-      initializePlayer();   // 플레이어를 초기 상태로 되돌림
-      console.log('⏪ 플레이어 초기화!');
-      // 초기화 후 바로 자동 재생 시작!
-      if (timer === null) { // 타이머가 정지 상태일 때만 시작
-          timer = setInterval(updateProgress, 1000);
-          console.log('🔁 초기화 후 자동 재생 재시작!');
-      }
-    });
-  }
-
-  // 6. 페이지 로드 시 플레이어를 한 번 초기화한 후, 바로 자동 재생 시작!
-  initializePlayer();
-  // ★★★ 여기가 자동 재생의 핵심! ★★★
-  timer = setInterval(updateProgress, 1000); // 페이지 로드되자마자 1초마다 업데이트 함수 실행
-  console.log('🚀 페이지 로드, 자동 재생 시작!');
-</script>
-
-</body>
+        <script src="js/script.js"></script>
+    </body>
 </html>

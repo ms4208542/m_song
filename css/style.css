@@ -17,9 +17,43 @@ html {
     margin: 0;
     padding: 0;
 }
+#fullpage-container-background {
+    position: absolute; /* <<<< 핵심! #poFull이 relative/absolute 이면 얘가 absolute로 따라붙음 */
+                        /* #poFull은 fullpage.js에 의해 absolute로 변경되므로 얘가 따라붙는 방식 */
+    top: 0; /* #poFull의 top에 맞춰 시작 (fullpage.js가 #poFull을 움직이는 offset과 동기화) */
+    left: 0;
+    width: 100%; /* #poFull과 동일한 너비 */
+    height: 2049px; /* <<< 핵!심! 네 배경 이미지의 실제 세로 길이!!! */
+    z-index: -1; /* 모든 콘텐츠 뒤로 보냄 */
+    
+    background-image: url('../img/02_bg_2.svg'); /* <<< Gist에 있던 이미지 경로!!! (수정 필요할 시 수정) */
+    background-size: 100% auto; /* <<< 중요! 너비를 컨테이너에 맞추고, 높이는 비율대로 유지해서 잘리지 않게! */
+                               /* 이렇게 해야 2049px 통짜 이미지가 다 들어가서 안 잘림. */
+    background-position: center top; /* 초기 배경 위치 (중앙 상단) */
+    background-repeat: no-repeat; /* <<< 중요! 이미지가 반복되지 않게 설정 */
+    
+    /* JavaScript로 transform: translateY()를 적용할 때 부드럽게 움직이도록 트랜지션 추가 */
+    transition: transform 0.5s ease-in-out; 
+}
+
+.work_section {
+    /* 기존 스타일 유지하면서, */
+    background-color:red !important; /* 원하는 배경색으로 지정 (예: 흰색) */
+    /* !important를 붙여서 기존 transparent 설정을 덮어씌우는 게 안전해 */
+}
+
+ /* fullpage.js가 섹션에 자동으로 부여하는 클래스 */
+.content_wrap.section,
+.me_wrap.section,
+.skill.section {
+    background-color: transparent !important; /* #scrolling-background가 비치도록 투명화 */
+}
 button {
     background-color: transparent;
     border: none;
+}
+.fp-section {
+  background-color: transparent !important;
 }
 .main_wrap {
     display: block;
@@ -312,9 +346,18 @@ button {
 }
 .me_wrap {
     padding-inline: 45px;
-    margin-top: 200px;
+    margin-top: 320px;
     padding-bottom: 70px;
+     height: 100vh; 
+    overflow: hidden;
 }
+.me_wrap > * {
+    height: 100%;
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+.fp-table{    justify-content: flex-start!important;}
+
 .me {
     display: flex;
     justify-content: flex-start;
@@ -346,7 +389,7 @@ button {
 }
 .skill{margin-top: 100px;}
 .skill_list {
-    display: flex;justify-content: space-between;padding-inline:40px 210px;margin-top: 30px;
+    display: flex;justify-content: space-between;padding-inline:40px 10%;margin-top: 30px;
 }
 .skill_list > ul {
     display: flex;
