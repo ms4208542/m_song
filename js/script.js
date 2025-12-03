@@ -15,34 +15,33 @@ document.addEventListener('DOMContentLoaded', function() {
   
     if (poFullElement) { 
         new fullpage('#poFull', {
-            autoScrolling: true,
-            scrollHorizontally: false, 
-            scrollingSpeed: 700, 
+           autoScrolling: true,
+        scrollHorizontally: false, 
+        scrollingSpeed: 700, 
 
-            afterLoad: function(origin, destination, direction) {
-                if (!fullpageBgContainer || !poFullElement) {
-                    console.error("Fullpage.js 배경 동기화에 필요한 요소(fullpageBgContainer 또는 poFullElement)를 찾을 수 없습니다.");
-                    return;
-                }
+         afterLoad: function(origin, destination, direction) {
 
-                const sectionIndex = destination.index; 
-                
-                if (sectionIndex < numberOfSharedSections) { 
-                    
-                    const poFullTransform = poFullElement.style.transform;
-                    fullpageBgContainer.style.transform = poFullTransform;
-                    fullpageBgContainer.style.opacity = '1'; 
-                } else { 
-                    fullpageBgContainer.style.opacity = '0';
-              
-                }
-            },
-            
-        
-            onLeave: function(origin, destination, direction) {
-                return true; 
+            if (!fullpageBgContainer) {
+                console.error("Fullpage.js 배경 동기화에 필요한 요소(fullpageBgContainer)를 찾을 수 없습니다.");
+                return;
             }
-        });
+            const sectionIndex = destination.index;
+            if (sectionIndex < numberOfSharedSections) {
+                const poFullTransform = poFullElement.style.transform;
+                fullpageBgContainer.style.transform = poFullTransform;
+                fullpageBgContainer.style.opacity = '1';
+            } else {
+                fullpageBgContainer.style.opacity = '0';
+            }
+        }, 
+
+        onLeave: function(origin, destination, direction) {
+            if (origin.index === 3) { 
+                $('.work_section .fade-up-item').removeClass('is-visible');
+            }
+        } 
+   
+    });
     } else {
         console.error("Fullpage.js 초기화에 필요한 #poFull 요소를 찾을 수 없습니다. Fullpage.js가 작동하지 않습니다.");
     }
@@ -239,4 +238,42 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.warn("경고: '.liquidGlass-wrapper.menu' 요소를 찾을 수 없습니다. highlight 기능이 올바르게 작동하지 않을 수 있습니다.");
     }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const workContent = document.querySelector('.work_content');
+    const fadeUpElements = workContent ? workContent.querySelectorAll('.fade-up-item') : [];
+
+    if (!workContent) {
+        console.warn(".work_content 요소를 찾을 수 없습니다. Fade-up 애니메이션이 동작하지 않습니다.");
+        return;
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let delay = 0;
+                fadeUpElements.forEach(item => {
+                    item.classList.remove('is-visible');
+                    void item.offsetWidth;
+                    
+                    setTimeout(() => {
+                        item.classList.add('is-visible');
+                    }, delay);
+                    delay += 250;
+                });
+            } else {
+                fadeUpElements.forEach(item => {
+                    item.classList.remove('is-visible');
+                });
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(workContent);
 });

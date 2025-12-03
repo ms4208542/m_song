@@ -11,6 +11,9 @@
 *::before {
     box-sizing: border-box;
 }
+.fp-watermark {
+    display: none;
+}
 body,
 html {
     height: 100%;
@@ -18,42 +21,32 @@ html {
     padding: 0;
 }
 #fullpage-container-background {
-    position: absolute; /* <<<< 핵심! #poFull이 relative/absolute 이면 얘가 absolute로 따라붙음 */
-                        /* #poFull은 fullpage.js에 의해 absolute로 변경되므로 얘가 따라붙는 방식 */
-    top: 0; /* #poFull의 top에 맞춰 시작 (fullpage.js가 #poFull을 움직이는 offset과 동기화) */
+    position: absolute;
+    top: 0;
     left: 0;
-    width: 100%; /* #poFull과 동일한 너비 */
-    height: 2049px; /* <<< 핵!심! 네 배경 이미지의 실제 세로 길이!!! */
-    z-index: -1; /* 모든 콘텐츠 뒤로 보냄 */
-    
-    background-image: url('../img/02_bg_2.svg'); /* <<< Gist에 있던 이미지 경로!!! (수정 필요할 시 수정) */
-    background-size: 100% auto; /* <<< 중요! 너비를 컨테이너에 맞추고, 높이는 비율대로 유지해서 잘리지 않게! */
-                               /* 이렇게 해야 2049px 통짜 이미지가 다 들어가서 안 잘림. */
-    background-position: center top; /* 초기 배경 위치 (중앙 상단) */
-    background-repeat: no-repeat; /* <<< 중요! 이미지가 반복되지 않게 설정 */
-    
-    /* JavaScript로 transform: translateY()를 적용할 때 부드럽게 움직이도록 트랜지션 추가 */
-    transition: transform 0.5s ease-in-out; 
+    width: 100%;
+    height: 2049px;
+    z-index: -1;
+    background-image: url("../img/02_bg_2.svg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease-in-out;
 }
-
-.work_section {
-    /* 기존 스타일 유지하면서, */
-    background-color:red !important; /* 원하는 배경색으로 지정 (예: 흰색) */
-    /* !important를 붙여서 기존 transparent 설정을 덮어씌우는 게 안전해 */
+.me_margin {
+    margin-top: 220px;
 }
-
- /* fullpage.js가 섹션에 자동으로 부여하는 클래스 */
 .content_wrap.section,
 .me_wrap.section,
 .skill.section {
-    background-color: transparent !important; /* #scrolling-background가 비치도록 투명화 */
+    background-color: transparent !important;
 }
 button {
     background-color: transparent;
     border: none;
 }
 .fp-section {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 .main_wrap {
     display: block;
@@ -67,9 +60,13 @@ button {
 
 }
 
-.header_wrap {   
-
+.header_wrap {
     height: 119px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 .header {
     padding: 30px 45px;
@@ -84,8 +81,7 @@ button {
     box-sizing: border-box;
     background-color: transparent;
 }
-.header > a > img {
-}
+.header > a > img {}
 .header_ul {
     display: flex;
     padding: 20px 8px;
@@ -171,6 +167,9 @@ button {
 .content_wrap {
     width: 100%;
     display: block;
+}
+.play_content {
+    margin-top: 130px;
 }
 .play {
     width: 426px;
@@ -346,22 +345,24 @@ button {
 }
 .me_wrap {
     padding-inline: 45px;
-    margin-top: 320px;
     padding-bottom: 70px;
-     height: 100vh; 
+    height: 100vh;
     overflow: hidden;
 }
 .me_wrap > * {
     height: 100%;
-    overflow-y: auto; 
-    -webkit-overflow-scrolling: touch; 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
-.fp-table{    justify-content: flex-start!important;}
+.fp-table {
+    justify-content: flex-start!important;
+}
 
 .me {
     display: flex;
     justify-content: flex-start;
     column-gap: 180px;
+    margin-top: 100px;
 }
 .li_title {
     display: flex;
@@ -387,9 +388,14 @@ button {
     margin-bottom: 20px;
     padding-left: 34px;
 }
-.skill{margin-top: 100px;}
+.skill {
+    margin-top: 100px;
+}
 .skill_list {
-    display: flex;justify-content: space-between;padding-inline:40px 10%;margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 40px 10%;
+    margin-top: 30px;
 }
 .skill_list > ul {
     display: flex;
@@ -409,7 +415,7 @@ button {
     position: relative;
     z-index: 2;
     transition: transform 0.2s ease-in-out;
-    padding-inline:10px;
+    padding-inline: 10px;
 }
 
 .view_btn::before {
@@ -457,3 +463,99 @@ button {
 .view_btn:hover::before {
     background: linear-gradient(135deg, #fff 0%, #ededed 100%);
 }
+.work_section {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.work_content {
+    position: relative; /* 자식 요소들의 absolute 기준이 됨 */
+    width: 1480px; /* 네가 요청한 고정 너비 */
+    margin: 0 auto; /* 중앙 정렬 */
+    overflow: hidden; /* 영역을 벗어나는 내용 숨김 */
+    height: 1000px; /* 임시 높이. 이 높이가 0이 되면 요소들이 안 보이니 꼭 디자인에 맞춰 조절해야 해! */
+    /* background-color: rgba(0, 255, 0, 0.1); */ /* <-- 이 임시 배경색으로 work_content 영역을 확인해봐! */
+}
+
+.work_section::before {
+    content: '';
+    position: absolute;
+    background-color: #004CE1;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /;
+}
+
+.work_content h2.fade-up-item {
+    position: absolute; /* z-index를 적용하려면 필수 */
+    top: 50%; /* work_content 중앙에 위치시키기 위한 시작점 */
+    left: 50%; /* work_content 중앙에 위치시키기 위한 시작점 */
+    transform: translate(-50%, -50%); /* 정확히 중앙 정렬 (글자의 중앙을 기준으로) */
+
+    font-size: 8vw; /* 이전 요청대로 뷰포트 너비에 맞춤. (work_content의 1480px에 따라 스케일되는 게 아니라, 브라우저 창 너비에 스케일됨을 기억해줘!) */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 100%; /* work_content 너비의 100%를 차지 */
+
+    z-index: 1; /* 가장 낮은 z-index로 제일 뒤에 배치 */
+    /* 폰트 색은 네 디자인 그대로 두는 걸로 할게! */
+}
+
+/* --- 모든 이미지 공통 스타일 --- */
+.work_content img.fade-up-item {
+    position: absolute; /* z-index와 겹침을 위해 필수 */
+    width: 400px; /* 이미지의 기본 너비. 1480px 너비 컨테이너에서 적절하게 조절해줘 */
+    height: auto; /* 비율 유지 */
+}
+
+/* --- 각 이미지별 위치 및 z-index 설정 (1480px 너비 컨테이너에 맞춰 조정) --- */
+
+/* 첫 번째 이미지 (.desk) - z-index 제일 높게 */
+.work_content img.desk.fade-up-item {
+    top: 50px;   /* work_content 상단에서 50px 아래 */
+    left: 150px; /* work_content 왼쪽에서 150px 떨어뜨려 (1480px 안에 잘 보이게) */
+    z-index: 5;  /* 제일 앞에 오도록 높은 z-index */
+}
+
+/* 두 번째 이미지 (img:nth-of-type(2)) */
+.work_content img.fade-up-item:nth-of-type(2) {
+    top: 100px;  /* work_content 상단에서 100px 아래 */
+    left: 450px; /* work_content 왼쪽에서 450px 떨어뜨려 */
+    z-index: 4;  /* 그 다음 z-index */
+}
+
+/* 세 번째 이미지 (img:nth-of-type(3)) */
+.work_content img.fade-up-item:nth-of-type(3) {
+    top: 200px;  /* work_content 상단에서 200px 아래 */
+    left: 750px; /* work_content 왼쪽에서 750px 떨어뜨려 */
+    z-index: 3;  /* 세 번째 z-index */
+}
+
+/* 네 번째 이미지 (img:nth-of-type(4) - 그림자 이미지라고 가정) */
+.work_content img.fade-up-item:nth-of-type(4) {
+    top: 150px;  /* work_content 상단에서 150px 아래 */
+    left: 300px; /* work_content 왼쪽에서 300px 떨어뜨려 */
+    z-index: 2;  /* h2보다는 높지만 다른 이미지들보다는 낮게 */
+    width: 500px; /* 그림자 이미지는 살짝 크게 시작. 조절 가능 */
+}
+.fade-up-item {
+    opacity: 0;
+    transform: translateY(550px); 
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; 
+}
+
+.fade-up-item.is-visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.desk{width: 500px;}
