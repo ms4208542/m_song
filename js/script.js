@@ -1,53 +1,53 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-   
-    const fullpageBgContainer = document.getElementById('fullpage-container-background'); 
-    const poFullElement = document.getElementById('poFull'); 
+    const fullpageBgContainer = document.getElementById(
+        'fullpage-container-background'
+    );
+    const poFullElement = document.getElementById('poFull');
     const headerElement = document.querySelector('.header_wrap');
-    const headerHeight = headerElement ? headerElement.offsetHeight : 0; 
-    
-    const totalBackgroundImageHeight = 2049; 
+    const headerHeight = headerElement
+        ? headerElement.offsetHeight
+        : 0;
 
-    const numberOfSharedSections = 5; 
+    const totalBackgroundImageHeight = 2049;
 
+    const numberOfSharedSections = 2;
 
-  
-    if (poFullElement) { 
+    if (poFullElement) {
         new fullpage('#poFull', {
-           autoScrolling: true,
-        scrollHorizontally: false, 
-        scrollingSpeed: 700, 
+            autoScrolling: true,
+            scrollHorizontally: false,
+            scrollingSpeed: 700,
 
-         afterLoad: function(origin, destination, direction) {
+            afterLoad: function (origin, destination, direction) {
 
-            if (!fullpageBgContainer) {
-                console.error("Fullpage.js 배경 동기화에 필요한 요소(fullpageBgContainer)를 찾을 수 없습니다.");
-                return;
-            }
-            const sectionIndex = destination.index;
-            if (sectionIndex < numberOfSharedSections) {
-                const poFullTransform = poFullElement.style.transform;
-                fullpageBgContainer.style.transform = poFullTransform;
-                fullpageBgContainer.style.opacity = '1';
-            } else {
-                fullpageBgContainer.style.opacity = '0';
-            }
-        }, 
+                if (!fullpageBgContainer) {
+                    console.error("Fullpage.js 배경 동기화에 필요한 요소(fullpageBgContainer)를 찾을 수 없습니다.");
+                    return;
+                }
+                const sectionIndex = destination.index;
+                if (sectionIndex < numberOfSharedSections) {
+                    const poFullTransform = poFullElement.style.transform;
+                    fullpageBgContainer.style.transform = poFullTransform;
+                    fullpageBgContainer.style.opacity = '1';
+                } else {
+                    fullpageBgContainer.style.opacity = '0';
+                }
+            },
 
-        onLeave: function(origin, destination, direction) {
-            if (origin.index === 3) { 
-                $('.work_section .fade-up-item').removeClass('is-visible');
+            onLeave: function (origin, destination, direction) {
+                if (origin.index === 3) {
+                    $('.work_section .fade-up-item').removeClass('is-visible');
+                }
             }
-        } 
-   
-    });
+
+        });
     } else {
-        console.error("Fullpage.js 초기화에 필요한 #poFull 요소를 찾을 수 없습니다. Fullpage.js가 작동하지 않습니다.");
+        console.error(
+            "Fullpage.js 초기화에 필요한 #poFull 요소를 찾을 수 없습니다. Fullpage.js가 작동하지 않습니다."
+        );
     }
 
-
-  
     const totalSeconds = 174;
     let currentSeconds = 0;
     let timer = null;
@@ -62,14 +62,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const playPauseIcon = document.getElementById('play-pause-icon');
 
     if (!playPauseIcon) {
-        console.warn("경고: 'play-pause-icon' ID를 가진 이미지 요소를 찾을 수 없습니다. 버튼 텍스트 모드로 작동합니다.");
-        if (togglePlayButton) togglePlayButton.textContent = '정지';
-    }
-
+        console.warn(
+            "경고: 'play-pause-icon' ID를 가진 이미지 요소를 찾을 수 없습니다. 버튼 텍스트 모드로 작동합니다."
+        );
+        if (togglePlayButton) 
+            togglePlayButton.textContent = '정지';
+        }
+    
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const secs = seconds % 60;
-        return `${minutes}:${secs.toString().padStart(2, '0')}`;
+        return `${minutes}:${secs
+            .toString()
+            .padStart(2, '0')}`;
     }
 
     function startPlaying() {
@@ -101,59 +106,64 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentSeconds >= totalSeconds) {
             stopPlaying();
             currentSeconds = totalSeconds;
-            if (fill) fill.style.width = '100%';
-            if (currentTimeEl) currentTimeEl.textContent = formatTime(totalSeconds);
-            if (totalTimeEl) totalTimeEl.textContent = '-0:00';
+            if (fill) 
+                fill.style.width = '100%';
+            if (currentTimeEl) 
+                currentTimeEl.textContent = formatTime(totalSeconds);
+            if (totalTimeEl) 
+                totalTimeEl.textContent = '-0:00';
             return;
         }
 
         const percent = (currentSeconds / totalSeconds) * 100;
-        if (fill) fill.style.width = percent + '%';
-        if (currentTimeEl) currentTimeEl.textContent = formatTime(currentSeconds);
-        if (totalTimeEl) totalTimeEl.textContent = '-' + formatTime(totalSeconds - currentSeconds);
+        if (fill) 
+            fill.style.width = percent + '%';
+        if (currentTimeEl) 
+            currentTimeEl.textContent = formatTime(currentSeconds);
+        if (totalTimeEl) 
+            totalTimeEl.textContent = '-' + formatTime(totalSeconds - currentSeconds);
         currentSeconds++;
     }
 
     function initializePlayer() {
         currentSeconds = 0;
-        if (fill) fill.style.width = '0%';
-        if (currentTimeEl) currentTimeEl.textContent = '0:00';
-        if (totalTimeEl) totalTimeEl.textContent = '-' + formatTime(totalSeconds);
-        stopPlaying(); 
+        if (fill) 
+            fill.style.width = '0%';
+        if (currentTimeEl) 
+            currentTimeEl.textContent = '0:00';
+        if (totalTimeEl) 
+            totalTimeEl.textContent = '-' + formatTime(totalSeconds);
+        stopPlaying();
         if (playPauseIcon) {
-             playPauseIcon.src = PLAY_ICON_PATH;
-             playPauseIcon.alt = '재생';
+            playPauseIcon.src = PLAY_ICON_PATH;
+            playPauseIcon.alt = '재생';
         } else if (togglePlayButton) {
-             togglePlayButton.textContent = '재생';
+            togglePlayButton.textContent = '재생';
         }
     }
-
 
     if (togglePlayButton) {
-      togglePlayButton.addEventListener('click', () => {
-        if (timer) {
-          stopPlaying();
-        } else {
-          startPlaying();
-        }
-      });
+        togglePlayButton.addEventListener('click', () => {
+            if (timer) {
+                stopPlaying();
+            } else {
+                startPlaying();
+            }
+        });
     }
 
- 
-    initializePlayer(); 
-    startPlaying();     
-
-
+    initializePlayer();
+    startPlaying();
 
     const diamondPath = document.querySelector('.diamond-path');
 
-    if (diamondPath) { 
+    if (diamondPath) {
         const diamondPathLength = diamondPath.getTotalLength();
         console.log('Path 총 길이:', diamondPathLength);
 
         if (diamondPathLength === 0) {
             console.error("다이아몬드 Path 길이가 0입니다. 브라우저 콘솔을 확인해주세요.");
-        } else { 
+        } else {
             diamondPath.style.strokeDasharray = diamondPathLength;
             diamondPath.style.strokeDashoffset = diamondPathLength;
 
@@ -169,56 +179,72 @@ document.addEventListener('DOMContentLoaded', function() {
     const listItems = document.querySelectorAll('.list-item');
     const highlight = document.querySelector('.highlight');
     let activeItem = null;
-   
+
     const menuWrapper = document.querySelector('.liquidGlass-wrapper.menu');
 
     function updateHighlight(item, isVisible = false) {
         if (!item || !highlight) {
-            if (highlight) highlight.style.opacity = '0';
+            if (highlight) 
+                highlight.style.opacity = '0';
             return;
         }
         const rect = item.getBoundingClientRect();
-        const containerRect = item.parentElement.getBoundingClientRect(); 
-        
+        const containerRect = item
+            .parentElement
+            .getBoundingClientRect();
+
         highlight.style.width = `${rect.width}px`;
         highlight.style.left = `${rect.left - containerRect.left}px`;
-        highlight.style.opacity = isVisible ? '1' : '0';
+        highlight.style.opacity = isVisible
+            ? '1'
+            : '0';
     }
 
     function handleItemClick(e) {
-        const clickedItem = e.target.closest('.list-item'); 
-        if (!clickedItem) return;
-
+        const clickedItem = e
+            .target
+            .closest('.list-item');
+        if (!clickedItem) 
+            return;
+        
         if (activeItem) {
-            activeItem.classList.remove('active');
+            activeItem
+                .classList
+                .remove('active');
         }
-        
-        clickedItem.classList.add('active');
+
+        clickedItem
+            .classList
+            .add('active');
         activeItem = clickedItem;
-        
+
         updateHighlight(clickedItem, true);
     }
 
     function handleItemHover(e) {
-        const hoveredItem = e.target.closest('.list-item');
-        if (!hoveredItem) return;
-
+        const hoveredItem = e
+            .target
+            .closest('.list-item');
+        if (!hoveredItem) 
+            return;
+        
         if (activeItem !== hoveredItem) {
             updateHighlight(hoveredItem, true);
         }
     }
 
     function handleItemLeave(e) {
-        const leftItem = e.target.closest('.list-item');
-        if (!leftItem) return;
+        const leftItem = e
+            .target
+            .closest('.list-item');
+        if (!leftItem) 
+            return;
+        
+        if (activeItem === leftItem) {} else {
 
-        if (activeItem === leftItem) {
-        } else {
-       
             updateHighlight(null, false);
         }
     }
-    
 
     listItems.forEach(item => {
         item.addEventListener('click', handleItemClick);
@@ -227,21 +253,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     if (menuWrapper) {
-      menuWrapper.addEventListener('mouseleave', () => {
-          if (activeItem) {
-              
-              activeItem.classList.remove('active');
-              activeItem = null;
-          }
-          if (highlight) highlight.style.opacity = '0';
-      });
+        menuWrapper.addEventListener('mouseleave', () => {
+            if (activeItem) {
+
+                activeItem
+                    .classList
+                    .remove('active');
+                activeItem = null;
+            }
+            if (highlight) 
+                highlight.style.opacity = '0';
+            }
+        );
     } else {
-        console.warn("경고: '.liquidGlass-wrapper.menu' 요소를 찾을 수 없습니다. highlight 기능이 올바르게 작동하지 않을 수 있습니다.");
+        console.warn(
+            "경고: '.liquidGlass-wrapper.menu' 요소를 찾을 수 없습니다. highlight 기능이 올바르게 작동하지 않을 수 있습" +
+            "니다."
+        );
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const workContent = document.querySelector('.work_content');
-    const fadeUpElements = workContent ? workContent.querySelectorAll('.fade-up-item') : [];
+    const fadeUpElements = workContent
+        ? workContent.querySelectorAll('.fade-up-item')
+        : [];
 
     if (!workContent) {
         console.warn(".work_content 요소를 찾을 수 없습니다. Fade-up 애니메이션이 동작하지 않습니다.");
@@ -259,17 +294,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 let delay = 0;
                 fadeUpElements.forEach(item => {
-                    item.classList.remove('is-visible');
+                    item
+                        .classList
+                        .remove('is-visible');
                     void item.offsetWidth;
-                    
+
                     setTimeout(() => {
-                        item.classList.add('is-visible');
+                        item
+                            .classList
+                            .add('is-visible');
                     }, delay);
                     delay += 250;
                 });
             } else {
                 fadeUpElements.forEach(item => {
-                    item.classList.remove('is-visible');
+                    item
+                        .classList
+                        .remove('is-visible');
                 });
             }
         });
