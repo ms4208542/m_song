@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const totalBackgroundImageHeight = 2049;
 
-    const numberOfSharedSections = 2;
+    const numberOfSharedSections = 4;
 
     if (poFullElement) {
         new fullpage('#poFull', {

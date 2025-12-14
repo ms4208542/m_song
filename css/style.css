@@ -470,24 +470,25 @@ button {
 }
 .work_section {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    min-height: 100vh !important;
 }
 .work_content {
-    position: relative;
-    /* 자식 요소들의 absolute 기준이 됨 */
+    position: absolute;
     width: 1500px;
-    /* 네가 요청한 고정 너비 */
-    margin: 0 auto;
-    /* 중앙 정렬 */
-    overflow: hidden;
-    /* 영역을 벗어나는 내용 숨김 */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
     height: 1000px;
-    /* 임시 높이. 이 높이가 0이 되면 요소들이 안 보이니 꼭 디자인에 맞춰 조절해야 해! */
-    /* background-color: rgba(0, 255, 0, 0.1); */
-    /* <-- 이 임시 배경색으로 work_content 영역을 확인해봐! */
-}
 
+}
+.work_content > * {
+    position: absolute;
+}
 .work_section::before {
     content: '';
     position: absolute;
@@ -506,65 +507,45 @@ button {
 
 .work_content h2.fade-up-item {
     position: absolute;
-    /* z-index를 적용하려면 필수 */
     top: 20%;
-    /* work_content 중앙에 위치시키기 위한 시작점 */
     left: 50%;
-    /* work_content 중앙에 위치시키기 위한 시작점 */
     transform: translate(-50%, -50%);
-    /* 정확히 중앙 정렬 (글자의 중앙을 기준으로) */
-
     font-size: calc(13rem + 2vw);
     white-space: nowrap;
     overflow: hidden;
     text-align: center;
     width: 100%;
-    /* work_content 너비의 100%를 차지 */
-
     z-index: 1;
-    /* 가장 낮은 z-index로 제일 뒤에 배치 */
-    /* 폰트 색은 네 디자인 그대로 두는 걸로 할게! */
 }
 
-/* --- 모든 이미지 공통 스타일 --- */
 .work_content img.fade-up-item {
     position: absolute;
-    /* z-index와 겹침을 위해 필수 */
-    height: auto; /* 비율 유지 */
+    height: auto;
     max-width: 100%;
 }
 
-/* --- 각 이미지별 위치 및 z-index 설정 (1480px 너비 컨테이너에 맞춰 조정) --- */
 
 /* 첫 번째 이미지 (.desk) - z-index 제일 높게 */
 .work_content img.desk.fade-up-item {
     top: 28%;
-    /* work_content 상단에서 50px 아래 */
     left: 20%;
-    /* work_content 왼쪽에서 150px 떨어뜨려 (1480px 안에 잘 보이게) */
     z-index: 5;
-    /* 제일 앞에 오도록 높은 z-index */
     width: 685px;
 }
 
 /* 두 번째 이미지 (img:nth-of-type(2)) */
 .work_content img.fade-up-item:nth-of-type(2) {
     top: 20%;
-    /* work_content 상단에서 100px 아래 */
     right: 26.4%;
     z-index: 4;
-    /* 그 다음 z-index */
     width: 390px;
 }
 
 /* 세 번째 이미지 (img:nth-of-type(3)) */
 .work_content img.fade-up-item:nth-of-type(3) {
     top: 45%;
-    /* work_content 상단에서 200px 아래 */
     right: 21%;
-    /* work_content 왼쪽에서 750px 떨어뜨려 */
     z-index: 3;
-    /* 세 번째 z-index */
     width: 394px;
 }
 
@@ -573,9 +554,7 @@ button {
     bottom: 22%;
     left: 36%;
     z-index: 2;
-    /* h2보다는 높지만 다른 이미지들보다는 낮게 */
     width: 500px;
-    /* 그림자 이미지는 살짝 크게 시작. 조절 가능 */
 }
 .fade-up-item {
     opacity: 0;
@@ -623,6 +602,67 @@ button {
 .work_sub_wrap {
     display: flex;
     justify-content: space-between;
-    bottom: 15%;
-    position: absolute;left: 0 ;right: 0;
+    bottom: 16%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.ed_design {
+    display: block;
+    width: 100%;
+    background-image: url("../img/ed_bg.png");
+background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh !important;
+    height: auto !important;
+}
+
+.ed_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.ed_img {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.ed_img img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.ed_design .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.fp-section {
+    position: relative;
+}
+
+.ed_design.fp-section,
+.work_section.fp-section {
+    overflow: visible !important;
+}
+
+.work_section .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+}
+
+.ed_design .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    height: 100% !important;
 }
