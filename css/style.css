@@ -21,8 +21,33 @@ html {
     margin: 0;
     padding: 0;
 }
+
+/* 네 CSS 파일에 있는 아래 부분을 찾아서 수정해줘 */
+#fullpage-container-background,
+#ed-background-container {
+  /* opacity와 visibility 속성이 변할 때 0.5초 동안 부드럽게 변화 */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
+  
+  /* ⭐⭐ 이 두 줄을 CSS에서 제거해주세요! (JavaScript가 제어하도록 할 거예요) ⭐⭐ */
+  /* opacity: 0; */
+  /* visibility: hidden; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  pointer-events: none; 
+
+  /* 여기에 배경 이미지나 색상 등 네 디자인 속성을 그대로 넣어줘! */
+  /* 예시: */
+  /* background-image: url('images/main-background.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
 #fullpage-container-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -33,8 +58,24 @@ html {
     background-position: center top;
     background-repeat: no-repeat;
     transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
-    opacity: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none;
 }
+
+#ed-background-container{  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-image: url("../img/ed_bg.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    opacity: 0;
+  pointer-events: none;  visibility: hidden; }
 .me_margin {
     margin-top: 206px;
 }
@@ -567,9 +608,9 @@ button {
     transform: translateY(0);
 }
 
-.fp-overflow {
+/* .fp-overflow {
     overflow-y: hidden!important;
-}
+} */
 
 .title-with-icon {
     position: relative;
@@ -607,16 +648,18 @@ button {
     left: 0;
     right: 0;
 }
+#ed-background-container{}
 
 .ed_design {
     display: block;
     width: 100%;
-    background-image: url("../img/ed_bg.png");
+  
 background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh !important;
     height: auto !important;
+    background-color: transparent;
 }
 
 .ed_wrap {
@@ -648,7 +691,7 @@ background-size: 100%;
 }
 
 .ed_design.fp-section,
-.work_section.fp-section {
+.work_section.fp-section{
     overflow: visible !important;
 }
 
@@ -659,10 +702,38 @@ background-size: 100%;
     vertical-align: middle !important;
 }
 
-.ed_design .fp-tableCell {
+.ed_design .fp-tableCell,
+.work_section .fp-tableCell,
+.second_ed .fp-tableCell {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     vertical-align: middle !important;
     height: 100% !important;
+}
+.second_ed.fp-section { /* <- !important 없이 우선순위 높임 */
+    overflow: visible; /* ⭐⭐ 여기가 핵심! 다른 섹션과 동일하게 처리 ⭐⭐ */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    box-sizing: border-box;
+    height: 100%; /* fullpage.js가 섹션 높이를 100%로 설정하니 굳이 100vh 쓸 필요 없어 */
+}
+.second_ed .second_wrap {
+    width: 100%;
+    max-width: 1000px; /* 너비 제한 (너무 넓게 퍼지지 않도록) */
+    text-align: center;
+    font-size: 1.8em; /* 기본 폰트 사이즈 좀 키워서 잘 보이게 */
+    color: #333; /* 글자색 (배경에 따라 조절) */
+    background-color: rgba(255, 255, 255, 0.9); /* 임시 배경색 (디버깅용) */
+    border-radius: 10px;
+    padding: 30px; /* 내부 패딩 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+.second_ed .second_wrap p {
+    margin: 0; /* p 태그 기본 마진 제거 */
+    line-height: 1.6;
+    font-size: 1em; /* 부모인 second_wrap의 폰트 사이즈 기준 */
+    color: #000;
 }
