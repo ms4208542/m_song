@@ -1,45 +1,65 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const fullpageBgContainer = document.getElementById(
-        'fullpage-container-background'
-    );
-    const edBackgroundContainer = document.getElementById(
-        'ed-background-container'
-    );
+    // --- 변수 선언 부분 ---
+    const fullpageBgContainer = document.getElementById('fullpage-container-background');
+    const edBackgroundContainer = document.getElementById('ed-background-container');
     const poFullElement = document.getElementById('poFull');
     const headerElement = document.querySelector('.header_wrap');
-    const targetSectionsForEdBackground = ['ed_design', 'second_ed']; // 'ed_design'과 'second_ed' 섹션들
+    // ed_design과 second_ed 섹션의 클래스 이름들. (네 HTML에 이 클래스들이 <section>에 붙어있어야 해!)
+    const targetSectionsForEdBackground = ['ed_design', 'second_ed']; 
 
-    const headerHeight = headerElement
-        ? headerElement.offsetHeight
-        : 0;
+    const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+    // const totalBackgroundImageHeight = 2049; // 이 변수는 현재 코드에서 직접 사용되지 않음
+    // const numberOfSharedSections = 5; // 이 변수는 현재 코드에서 직접 사용되지 않음
 
-    const totalBackgroundImageHeight = 2049;
+    // --- syncEdBackgroundPosition 함수 정의 ---
+    // ed_design과 second_ed 섹션에 걸쳐 배경 이미지를 부드럽게 이어주는 역할을 해.
+    // fullpage.js가 섹션 이동할 때마다 이 함수를 불러줄 거야!
+    function syncEdBackgroundPosition(destinationIndex) {
+        if (!edBackgroundContainer) return; // edBackgroundContainer 없으면 그냥 종료
 
-    const numberOfSharedSections = 5;
+        // ⭐⭐ 중요: 아래 [2, 3]은 ed_design이 fullpage의 3번째 섹션 (index 2),
+        //           second_ed가 fullpage의 4번째 섹션 (index 3)일 때를 가정한 거야.
+        //           네 프로젝트에서 ed_design과 second_ed가 몇 번째 섹션인지 꼭 확인하고
+        //           이 숫자들을 실제 섹션 인덱스 (0부터 시작)로 변경해줘야 해!
+        const edSectionsIndices = [3, 4]; 
+        const edFirstSectionIndex = edSectionsIndices[0]; 
+        const edLastSectionIndex = edSectionsIndices[edSectionsIndices.length - 1]; 
 
-    // ⭐⭐ 중요: syncEdBackgroundPosition 함수는 네 Gist 파일에는 정의되어 있지 않지만,
-    // 이 코드에서는 호출됩니다. 네 프로젝트에 이 함수가 제대로 정의되어 있는지 확인해주세요!
-    // 이 함수는 edBackgroundContainer의 위치만 동기화하고, opacity나 visibility를 직접 건드리면 안 됩니다.
-    // 만약 이 함수가 없다면 아래와 같이 최소한의 더미 함수를 넣어두지만,
-    // 실제로는 edBackgroundContainer가 잘 움직이도록 네 프로젝트에 맞게 구현되어야 합니다.
-    function syncEdBackgroundPosition() {
-        // 네 프로젝트의 실제 syncEdBackgroundPosition 함수 로직을 여기에 넣어주세요.
-        // 예: edBackgroundContainer.style.transform = `translateY(${계산된_값}px)`;
-        // 이 함수가 edBackgroundContainer의 opacity나 visibility를 변경하면 안 됩니다!
-        // console.log("syncEdBackgroundPosition 함수 호출됨 (Placeholder - 실제 구현 필요)");
+        // 현재 섹션이 ed_design 또는 second_ed 중 하나인지 확인
+        if (edSectionsIndices.includes(destinationIndex)) {
+            // ⭐⭐ 핵심 로직: background-position-y를 0%에서 100%까지 부드럽게 조절 ⭐⭐
+            let backgroundPositionY = 'center 0%'; // 기본값: ed_design 섹션일 때 (배경 이미지 상단)
+
+            if (destinationIndex === edFirstSectionIndex) {
+                 backgroundPositionY = 'center 0%'; // ed_design에서는 이미지 상단 (0%)
+            } else if (destinationIndex === edLastSectionIndex) {
+                 backgroundPositionY = 'center 100%'; // second_ed에서는 이미지 하단 (100%)
+            }
+            // 만약 중간 섹션이 더 있다면, 그에 따라 퍼센티지를 0% ~ 100% 사이로 계산할 수 있어.
+
+            edBackgroundContainer.style.backgroundPosition = backgroundPositionY; // 배경 위치 적용
+            edBackgroundContainer.style.opacity = '1';      
+            edBackgroundContainer.style.visibility = 'visible'; 
+            // edBackgroundContainer.style.transform = 'translateY(0%)'; // transform은 이제 사용하지 않아
+        } else {
+            // 이 섹션들이 아니면 edBackgroundContainer를 숨김
+            edBackgroundContainer.style.opacity = '0';
+            edBackgroundContainer.style.visibility = 'hidden';
+            // edBackgroundContainer.style.transform = 'translateY(0%)'; // transform은 이제 사용하지 않아
+        }
     }
 
 
+    // --- fullpage.js 초기화 ---
     if (poFullElement) {
         new fullpage('#poFull', {
-            licenseKey: 'YOUR_LICENSE_KEY_HERE', // 발급받은 키 (없으면 주석 처리)
+            licenseKey: 'YOUR_LICENSE_KEY_HERE', // 발급받은 키가 없다면 이 줄을 주석 처리 (없어도 작동은 하지만 경고 뜸)
             autoScrolling: true,
             scrollHorizontally: false,
             scrollingSpeed: 700,
 
-            // 👇👇👇 afterRender 함수 수정 부분 👇👇👇
-            // 페이지가 처음 로드될 때 배경 요소들의 초기 상태를 설정합니다.
+            // 페이지가 처음 로드될 때 실행되는 부분
             afterRender: function() {
                 const firstSectionElement = poFullElement.querySelector('.fp-section.active');
                 if (!firstSectionElement) {
@@ -47,107 +67,96 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
                 const firstSectionClasses = firstSectionElement.classList;
-                // fullpage.js의 데이터 속성에서 0부터 시작하는 인덱스를 가져옵니다.
-                const currentSectionIndex = parseInt(firstSectionElement.dataset.fpIndex); 
-
+                const currentSectionIndex = parseInt(firstSectionElement.dataset.fpIndex); // 현재 섹션의 인덱스 (0부터 시작)
 
                 // --- 1. edBackgroundContainer 처리 ---
                 if (edBackgroundContainer) {
-                    // 현재 섹션이 'ed_design' 또는 'second_ed'에 해당하면
                     if (targetSectionsForEdBackground.some(cls => firstSectionClasses.contains(cls))) {
                         edBackgroundContainer.style.opacity = '1';
-                        edBackgroundContainer.style.visibility = 'visible'; // ⭐ display 대신 visibility 사용
+                        edBackgroundContainer.style.visibility = 'visible';
                     } else {
-                        // 해당 섹션이 아니면 edBackgroundContainer를 숨김
                         edBackgroundContainer.style.opacity = '0';
-                        edBackgroundContainer.style.visibility = 'hidden';  // ⭐ display 대신 visibility 사용
+                        edBackgroundContainer.style.visibility = 'hidden';
                     }
-                    syncEdBackgroundPosition(); // edBackgroundContainer의 위치 동기화
+                    // 첫 로드 시에도 배경 위치를 정확히 맞추기 위해 호출
+                    syncEdBackgroundPosition(currentSectionIndex); 
                 } else {
                     console.warn("경고: 'ed-background-container' 요소를 찾을 수 없습니다. (afterRender)");
                 }
 
-                // --- 2. fullpageBgContainer 처리 ---
+                // --- 2. fullpageBgContainer 처리 (처음 두 섹션(index 0, 1)에서만 보이게) ---
                 if (fullpageBgContainer) {
-                    // 첫 번째 섹션 (index 0) 또는 두 번째 섹션 (index 1) 일 때만 fullpageBgContainer를 보이게 합니다.
+                    // 현재 섹션이 첫 번째 (index 0) 또는 두 번째 (index 1)일 때만 fullpageBgContainer를 보임
                     if (currentSectionIndex === 0 || currentSectionIndex === 1) {
-                        // ⭐ 여기에 transform 초기값 설정!
-                        fullpageBgContainer.style.transform = poFullElement.style.transform; 
+                        // poFullElement의 현재 transform 값을 배경에도 적용하여 움직임 동기화
+                        fullpageBgContainer.style.transform = poFullElement.style.transform || 'none'; 
                         fullpageBgContainer.style.opacity = '1';
-                        fullpageBgContainer.style.visibility = 'visible'; // ⭐ display 대신 visibility 사용
+                        fullpageBgContainer.style.visibility = 'visible';
                     } else {
                         fullpageBgContainer.style.opacity = '0';
-                        fullpageBgContainer.style.visibility = 'hidden';  // ⭐ display 대신 visibility 사용
+                        fullpageBgContainer.style.visibility = 'hidden';
                     }
                 } else {
                     console.warn("경고: 'fullpage-container-background' 요소를 찾을 수 없습니다. (afterRender)");
                 }
             },
-            // 👆👆👆 afterRender 함수 수정 끝 👆👆👆
 
-            // 👇👇👇 afterLoad 함수 수정 부분 👇👇👇
-            // 섹션이 완전히 로드된 후에 배경 요소들의 상태를 업데이트합니다.
+            // 섹션이 완전히 로드된 후에 실행되는 부분 (스크롤할 때)
             afterLoad: function (origin, destination, direction) {
                 const currentSectionClasses = destination.item.classList;
-                const currentSectionIndex = destination.index; // 현재 섹션의 0부터 시작하는 인덱스
+                const currentSectionIndex = destination.index; // 현재 목적지 섹션의 인덱스 (0부터 시작)
 
                 // --- 1. edBackgroundContainer 처리 ---
                 if (edBackgroundContainer) {
-                    // 현재 섹션이 'ed_design' 또는 'second_ed'에 해당하면
                     if (targetSectionsForEdBackground.some(cls => currentSectionClasses.contains(cls))) {
                         edBackgroundContainer.style.opacity = '1';
-                        edBackgroundContainer.style.visibility = 'visible'; // ⭐ display 대신 visibility 사용
+                        edBackgroundContainer.style.visibility = 'visible';
                     } else {
-                        // 해당 섹션이 아니면 edBackgroundContainer를 숨김
                         edBackgroundContainer.style.opacity = '0';
-                        edBackgroundContainer.style.visibility = 'hidden';  // ⭐ display 대신 visibility 사용
+                        edBackgroundContainer.style.visibility = 'hidden';
                     }
-                    syncEdBackgroundPosition(); // edBackgroundContainer의 위치 동기화
+                    syncEdBackgroundPosition(currentSectionIndex); // 섹션 이동 시 배경 위치 동기화
                 } else {
                     console.warn("경고: 'ed-background-container' 요소를 찾을 수 없습니다. (afterLoad)");
                 }
 
-                // --- 2. fullpageBgContainer 처리 ---
+                // --- 2. fullpageBgContainer 처리 (처음 두 섹션(index 0, 1)에서만 보이게) ---
                 if (fullpageBgContainer) {
-                    // 첫 번째 섹션 (index 0) 또는 두 번째 섹션 (index 1) 일 때만 fullpageBgContainer를 보이게 합니다.
                     if (currentSectionIndex === 0 || currentSectionIndex === 1) {
-                        const poFullTransform = poFullElement.style.transform; // poFullElement의 transform 값 가져오기
-                        fullpageBgContainer.style.transform = poFullTransform; // 배경에 동일하게 transform 적용 (움직임 동기화)
+                        fullpageBgContainer.style.transform = poFullElement.style.transform || 'none';
                         fullpageBgContainer.style.opacity = '1';
-                        fullpageBgContainer.style.visibility = 'visible'; // ⭐ display 대신 visibility 사용
+                        fullpageBgContainer.style.visibility = 'visible';
                     } else {
                         fullpageBgContainer.style.opacity = '0';
-                        fullpageBgContainer.style.visibility = 'hidden';  // ⭐ display 대신 visibility 사용
+                        fullpageBgContainer.style.visibility = 'hidden';
                     }
                 } else {
                     console.warn("경고: 'fullpage-container-background' 요소를 찾을 수 없습니다. (afterLoad)");
                 }
             },
-            // 👆👆👆 afterLoad 함수 수정 끝 👆👆👆
+            
+            // ⭐ 핵심: 섹션을 떠날 때 onLeave에서 배경을 움직여 부드러움을 극대화! ⭐
+            onLeave: function (origin, destination, direction) {
+                if (origin.index === 3) { // 만약 work_section이 3번 인덱스라면
+                    const workItems = document.querySelectorAll('.work_section .fade-up-item');
+                    workItems.forEach((el) => el.classList.remove('is-visible'));
+                }
+                // ⭐ onLeave 시 목적지 섹션 인덱스에 따라 배경 위치를 업데이트! ⭐
+                syncEdBackgroundPosition(destination.index);
+            },
 
             onResize: function() {
-                // onResize에서는 edBackgroundContainer만 동기화하는 기존 로직 유지
                 if (!edBackgroundContainer) return;
                 const currentActiveSection = poFullElement.querySelector('.fp-section.active');
                 if (currentActiveSection && targetSectionsForEdBackground.some(cls => currentActiveSection.classList.contains(cls))) {
-                    syncEdBackgroundPosition();
-                }
-                // fullpageBgContainer는 리사이즈 시 별도의 위치 조정이 필요 없다고 가정합니다.
-                // 만약 fullpageBgContainer도 리사이즈 시 특별한 처리가 필요하면 여기에 추가해주세요.
-            },
-
-            onLeave: function (origin, destination, direction) {
-                if (origin.index === 3) {
-                    const workItems = document.querySelectorAll('.work_section .fade-up-item');
-                    workItems.forEach((el) => el.classList.remove('is-visible'));
+                    syncEdBackgroundPosition(parseInt(currentActiveSection.dataset.fpIndex)); 
                 }
             }
         }); // fullpage.js 초기화 끝
     }
 
-    // ⭐⭐ 주의: 위 fullpage.js 초기화 코드 외에 다른 모든 JavaScript 로직은
-    // 네 Gist 파일에서 가져온 원래 코드입니다. 이 부분은 수정하지 않았습니다.
-    // Gist의 나머지 코드를 아래에 그대로 붙여넣습니다.
+    // --- 아래는 네 Gist에 있던 다른 JavaScript 로직들이야! ---
+    // (여기부터는 기존 코드와 동일하며, 배경 제어 로직과는 관계 없어.)
 
     const totalSeconds = 174;
     let currentSeconds = 0;
