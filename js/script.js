@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 변수 선언 부분 ---
     const fullpageBgContainer = document.getElementById('fullpage-container-background');
     const edBackgroundContainer = document.getElementById('ed-background-container');
+       const edMovableBackground = document.querySelector('.ed-movable-background');
     const poFullElement = document.getElementById('poFull');
     const headerElement = document.querySelector('.header_wrap');
     // ed_design과 second_ed 섹션의 클래스 이름들. (네 HTML에 이 클래스들이 <section>에 붙어있어야 해!)
-    const targetSectionsForEdBackground = ['ed_design', 'second_ed']; 
+    const targetSectionsForEdBackground = ['work_section', 'ed_design']; 
 
     const headerHeight = headerElement ? headerElement.offsetHeight : 0;
     // const totalBackgroundImageHeight = 2049; // 이 변수는 현재 코드에서 직접 사용되지 않음
@@ -15,40 +16,44 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- syncEdBackgroundPosition 함수 정의 ---
     // ed_design과 second_ed 섹션에 걸쳐 배경 이미지를 부드럽게 이어주는 역할을 해.
     // fullpage.js가 섹션 이동할 때마다 이 함수를 불러줄 거야!
+    // --- syncEdBackgroundPosition 함수 정의 ---
     function syncEdBackgroundPosition(destinationIndex) {
-        if (!edBackgroundContainer) return; // edBackgroundContainer 없으면 그냥 종료
+        if (!edBackgroundContainer || !edMovableBackground) return;
 
-        // ⭐⭐ 중요: 아래 [2, 3]은 ed_design이 fullpage의 3번째 섹션 (index 2),
-        //           second_ed가 fullpage의 4번째 섹션 (index 3)일 때를 가정한 거야.
-        //           네 프로젝트에서 ed_design과 second_ed가 몇 번째 섹션인지 꼭 확인하고
-        //           이 숫자들을 실제 섹션 인덱스 (0부터 시작)로 변경해줘야 해!
-        const edSectionsIndices = [3, 4]; 
-        const edFirstSectionIndex = edSectionsIndices[0]; 
-        const edLastSectionIndex = edSectionsIndices[edSectionsIndices.length - 1]; 
+        // ⭐⭐⭐ 중요: work_section과 ed_design의 실제 섹션 인덱스를 여기에 넣어줘야 해! ⭐⭐⭐
+        // 네 HTML에서 work_section이 0부터 시작했을 때 몇 번째 섹션이고,
+        // ed_design이 몇 번째 섹션인지 꼭 확인해서 숫자를 넣어줘!
+        // 예를 들어 work_section이 4번째 섹션(index 3)이고, ed_design이 5번째 섹션(index 4)일 경우
+        const edSectionsIndices = [3, 4]; // <<< 이 배열의 숫자를 네 HTML에 맞게 정확히 수정해줘!
 
-        // 현재 섹션이 ed_design 또는 second_ed 중 하나인지 확인
+        const edFirstSectionIndex = edSectionsIndices[0]; // work_section의 인덱스
+        const edLastSectionIndex = edSectionsIndices[edSectionsIndices.length - 1]; // ed_design의 인덱스
+
+        // 현재 섹션이 work_section 또는 ed_design 중 하나인지 확인
         if (edSectionsIndices.includes(destinationIndex)) {
-            // ⭐⭐ 핵심 로직: background-position-y를 0%에서 100%까지 부드럽게 조절 ⭐⭐
-            let backgroundPositionY = 'center 0%'; // 기본값: ed_design 섹션일 때 (배경 이미지 상단)
+            // edBackgroundContainer 보이게 처리
+            edBackgroundContainer.style.opacity = '1';
+            edBackgroundContainer.style.visibility = 'visible';
 
             if (destinationIndex === edFirstSectionIndex) {
-                 backgroundPositionY = 'center 0%'; // ed_design에서는 이미지 상단 (0%)
+                // work_section일 때는 배경 이미지가 들어있는 div를 최상단 (0px)으로 위치
+                edMovableBackground.style.transform = 'translateY(0)'; 
             } else if (destinationIndex === edLastSectionIndex) {
-                 backgroundPositionY = 'center 100%'; // second_ed에서는 이미지 하단 (100%)
+                // ed_design일 때는 배경 이미지가 들어있는 div를 위로 100vh만큼 올려서 아래쪽 절반이 보이게
+                edMovableBackground.style.transform = 'translateY(-100vh)'; 
+            } else {
+                // 혹시 모를 상황 대비 (사실 여기까지 오면 안 됨)
+                edMovableBackground.style.transform = 'translateY(0)'; 
             }
-            // 만약 중간 섹션이 더 있다면, 그에 따라 퍼센티지를 0% ~ 100% 사이로 계산할 수 있어.
-
-            edBackgroundContainer.style.backgroundPosition = backgroundPositionY; // 배경 위치 적용
-            edBackgroundContainer.style.opacity = '1';      
-            edBackgroundContainer.style.visibility = 'visible'; 
-            // edBackgroundContainer.style.transform = 'translateY(0%)'; // transform은 이제 사용하지 않아
         } else {
-            // 이 섹션들이 아니면 edBackgroundContainer를 숨김
+            // 이 섹션들이 아니면 edBackgroundContainer를 완전히 숨김
             edBackgroundContainer.style.opacity = '0';
             edBackgroundContainer.style.visibility = 'hidden';
-            // edBackgroundContainer.style.transform = 'translateY(0%)'; // transform은 이제 사용하지 않아
+            // 배경 div의 위치도 초기화하거나 숨겨두는 게 좋을 수 있음 (옵션)
+            // edMovableBackground.style.transform = 'translateY(0)';
         }
     }
+
 
 
     // --- fullpage.js 초기화 ---
@@ -141,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const workItems = document.querySelectorAll('.work_section .fade-up-item');
                     workItems.forEach((el) => el.classList.remove('is-visible'));
                 }
+                
                 // ⭐ onLeave 시 목적지 섹션 인덱스에 따라 배경 위치를 업데이트! ⭐
                 syncEdBackgroundPosition(destination.index);
             },
