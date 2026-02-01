@@ -711,38 +711,27 @@ button {
     height: 100% !important;
 }
 .second_ed.fp-section {
-    /* <- !important 없이 우선순위 높임 */
     display: flex;
     align-items: center;
-    /* 세로 중앙 정렬 */
     justify-content: center;
-    /* 가로 중앙 정렬 */
     box-sizing: border-box;
     height: 100%;
-    /* fullpage.js가 섹션 높이를 100%로 설정하니 굳이 100vh 쓸 필요 없어 */
 }
 .second_ed .second_wrap {
     width: 100%;
     max-width: 1000px;
-    /* 너비 제한 (너무 넓게 퍼지지 않도록) */
     text-align: center;
     font-size: 1.8em;
-    /* 기본 폰트 사이즈 좀 키워서 잘 보이게 */
     color: #333;
-    /* 글자색 (배경에 따라 조절) */
     background-color: rgba(255, 255, 255, 0.9);
-    /* 임시 배경색 (디버깅용) */
     border-radius: 10px;
     padding: 30px;
-    /* 내부 패딩 */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     box-sizing: border-box;
 }
 .second_ed .second_wrap p {
     margin: 0;
-    /* p 태그 기본 마진 제거 */
     line-height: 1.6;
     font-size: 1em;
-    /* 부모인 second_wrap의 폰트 사이즈 기준 */
     color: #000;
 }

@@ -10,13 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetSectionsForEdBackground = ['work_section', 'ed_design']; 
 
     const headerHeight = headerElement ? headerElement.offsetHeight : 0;
-    // const totalBackgroundImageHeight = 2049; // 이 변수는 현재 코드에서 직접 사용되지 않음
-    // const numberOfSharedSections = 5; // 이 변수는 현재 코드에서 직접 사용되지 않음
 
-    // --- syncEdBackgroundPosition 함수 정의 ---
-    // ed_design과 second_ed 섹션에 걸쳐 배경 이미지를 부드럽게 이어주는 역할을 해.
-    // fullpage.js가 섹션 이동할 때마다 이 함수를 불러줄 거야!
-    // --- syncEdBackgroundPosition 함수 정의 ---
     function syncEdBackgroundPosition(destinationIndex) {
         if (!edBackgroundContainer || !edMovableBackground) return;
 
