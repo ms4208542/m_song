@@ -20,6 +20,8 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #ed-background-container,
@@ -648,7 +650,14 @@ button {
     left: 0;
     right: 0;
 }
-
+.section.ed_design,
+.section.ed_design .fp-tableCell {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    display: block !important;
+    /* flex 대신 block으로 바꿔 안전하게 높이 고정 */
+}
 .ed_design {
     display: block;
     width: 100%;
@@ -657,8 +666,12 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh !important;
-    height: auto !important;
+    height: 100vh;
     background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+
 }
 .ed_design.fp-table {
     display: block!important;
@@ -666,78 +679,103 @@ button {
 .ed_wrap {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+/* .ed_wrap > .ed_img,
+.ed_wrap > h1 {
+    flex: 1;
+    margin: 0;
+} */
+.ed_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 100%;
+}
+.ed_img > img {
+    all: unset;
+    transform: translateY(-19%);
+    object-fit: cover;
+    display: block;
+    width: 45%;
+    position: static;
+    user-select: none;
+    pointer-events: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.ed_img,
+.ed_wrap {
+    max-height: 100% !important;
+    overflow: hidden !important;
+    position: relative;
     box-sizing: border-box;
 }
-.ed_wrap > .ed_img,
-.ed_wrap > h1 {
-  flex: 1; /* 각 자식 요소에 flex:1을 줘 공간을 균등 분배 */
-  margin: 0; /* 여백 제거 */
+.ed_title{text-align: right;display: flex;align-items:flex-start ;}
+.ed_title>h1{font-size: 100px;}
+.ed_icon{width: 30%;}
+
+.ed_design .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
-.ed_img {
-    overflow: hidden;
-    height: 100%;
-position: relative;
-overflow: hidden;}
+.ed_design > .fp-overflow {
+    overflow: hidden!important;
+}
+.fp-section {
+    position: relative;
+}
 
-    .ed_img img {
-        width: 50%;
-        height: auto;
-        display: block;
-    }
-
-    .ed_design .fp-tableCell {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    .fp-section {
-        position: relative;
-    }
-
-    /* .ed_design.fp-section,
+/* .ed_design.fp-section,
 .work_section.fp-section{
     overflow: visible !important;
 } */
 
-    .work_section .fp-tableCell {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        vertical-align: middle !important;
-    }
+.work_section .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+}
 
-    .ed_design .fp-tableCell,
-    .second_ed .fp-tableCell,
-    .work_section .fp-tableCell {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        vertical-align: middle !important;
-        height: 100% !important;
-    }
-    .second_ed.fp-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        height: 100%;
-    }
-    .second_ed .second_wrap {
-        width: 100%;
-        max-width: 1000px;
-        text-align: center;
-        font-size: 1.8em;
-        color: #333;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        box-sizing: border-box;
-    }
-    .second_ed .second_wrap p {
-        margin: 0;
-        line-height: 1.6;
-        font-size: 1em;
-        color: #000;
-    }
+.ed_design .fp-tableCell,
+.second_ed .fp-tableCell,
+.work_section .fp-tableCell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    height: 100% !important;
+}
+.second_ed.fp-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+.second_ed .second_wrap {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+.second_ed .second_wrap p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #000;
+}
