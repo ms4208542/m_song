@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // --- 변수 선언 부분 ---
-    const fullpageBgContainer = document.getElementById('fullpage-container-background');
-    const edBackgroundContainer = document.getElementById('ed-background-container');
-       const edMovableBackground = document.querySelector('.ed-movable-background');
+    const fullpageBgContainer = document.getElementById(
+        'fullpage-container-background'
+    );
+    const edBackgroundContainer = document.getElementById(
+        'ed-background-container'
+    );
+    const edMovableBackground = document.querySelector('.ed-movable-background');
     const poFullElement = document.getElementById('poFull');
     const headerElement = document.querySelector('.header_wrap');
     // ed_design과 second_ed 섹션의 클래스 이름들. (네 HTML에 이 클래스들이 <section>에 붙어있어야 해!)
-    const targetSectionsForEdBackground = ['work_section', 'ed_design']; 
+    const targetSectionsForEdBackground = ['work_section', 'ed_design'];
 
-    const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+    const headerHeight = headerElement
+        ? headerElement.offsetHeight
+        : 0;
 
     function syncEdBackgroundPosition(destinationIndex) {
-        if (!edBackgroundContainer || !edMovableBackground) return;
-
-        // ⭐⭐⭐ 중요: work_section과 ed_design의 실제 섹션 인덱스를 여기에 넣어줘야 해! ⭐⭐⭐
-        // 네 HTML에서 work_section이 0부터 시작했을 때 몇 번째 섹션이고,
-        // ed_design이 몇 번째 섹션인지 꼭 확인해서 숫자를 넣어줘!
-        // 예를 들어 work_section이 4번째 섹션(index 3)이고, ed_design이 5번째 섹션(index 4)일 경우
+        if (!edBackgroundContainer || !edMovableBackground) 
+            return;
         const edSectionsIndices = [3, 4]; // <<< 이 배열의 숫자를 네 HTML에 맞게 정확히 수정해줘!
 
         const edFirstSectionIndex = edSectionsIndices[0]; // work_section의 인덱스
@@ -31,24 +33,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (destinationIndex === edFirstSectionIndex) {
                 // work_section일 때는 배경 이미지가 들어있는 div를 최상단 (0px)으로 위치
-                edMovableBackground.style.transform = 'translateY(0)'; 
+                edMovableBackground.style.transform = 'translateY(0)';
             } else if (destinationIndex === edLastSectionIndex) {
                 // ed_design일 때는 배경 이미지가 들어있는 div를 위로 100vh만큼 올려서 아래쪽 절반이 보이게
-                edMovableBackground.style.transform = 'translateY(-100vh)'; 
+                edMovableBackground.style.transform = 'translateY(-100vh)';
             } else {
                 // 혹시 모를 상황 대비 (사실 여기까지 오면 안 됨)
-                edMovableBackground.style.transform = 'translateY(0)'; 
+                edMovableBackground.style.transform = 'translateY(0)';
             }
         } else {
             // 이 섹션들이 아니면 edBackgroundContainer를 완전히 숨김
             edBackgroundContainer.style.opacity = '0';
             edBackgroundContainer.style.visibility = 'hidden';
-            // 배경 div의 위치도 초기화하거나 숨겨두는 게 좋을 수 있음 (옵션)
-            // edMovableBackground.style.transform = 'translateY(0)';
+            // 배경 div의 위치도 초기화하거나 숨겨두는 게 좋을 수 있음 (옵션) edMovableBackground.style.transform =
+            // 'translateY(0)';
         }
     }
-
-
 
     // --- fullpage.js 초기화 ---
     if (poFullElement) {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollingSpeed: 700,
 
             // 페이지가 처음 로드될 때 실행되는 부분
-            afterRender: function() {
+            afterRender: function () {
                 const firstSectionElement = poFullElement.querySelector('.fp-section.active');
                 if (!firstSectionElement) {
                     console.warn("경고: 첫 번째 활성화된 fullpage 섹션을 찾을 수 없습니다.");
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         edBackgroundContainer.style.visibility = 'hidden';
                     }
                     // 첫 로드 시에도 배경 위치를 정확히 맞추기 위해 호출
-                    syncEdBackgroundPosition(currentSectionIndex); 
+                    syncEdBackgroundPosition(currentSectionIndex);
                 } else {
                     console.warn("경고: 'ed-background-container' 요소를 찾을 수 없습니다. (afterRender)");
                 }
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // 현재 섹션이 첫 번째 (index 0) 또는 두 번째 (index 1)일 때만 fullpageBgContainer를 보임
                     if (currentSectionIndex === 0 || currentSectionIndex === 1) {
                         // poFullElement의 현재 transform 값을 배경에도 적용하여 움직임 동기화
-                        fullpageBgContainer.style.transform = poFullElement.style.transform || 'none'; 
+                        fullpageBgContainer.style.transform = poFullElement.style.transform || 'none';
                         fullpageBgContainer.style.opacity = '1';
                         fullpageBgContainer.style.visibility = 'visible';
                     } else {
@@ -96,7 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         fullpageBgContainer.style.visibility = 'hidden';
                     }
                 } else {
-                    console.warn("경고: 'fullpage-container-background' 요소를 찾을 수 없습니다. (afterRender)");
+                    console.warn(
+                        "경고: 'fullpage-container-background' 요소를 찾을 수 없습니다. (afterRender)"
+                    );
                 }
             },
 
@@ -133,30 +135,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.warn("경고: 'fullpage-container-background' 요소를 찾을 수 없습니다. (afterLoad)");
                 }
             },
-            
+
             // ⭐ 핵심: 섹션을 떠날 때 onLeave에서 배경을 움직여 부드러움을 극대화! ⭐
             onLeave: function (origin, destination, direction) {
                 if (origin.index === 3) { // 만약 work_section이 3번 인덱스라면
                     const workItems = document.querySelectorAll('.work_section .fade-up-item');
                     workItems.forEach((el) => el.classList.remove('is-visible'));
                 }
-                
+
                 // ⭐ onLeave 시 목적지 섹션 인덱스에 따라 배경 위치를 업데이트! ⭐
                 syncEdBackgroundPosition(destination.index);
             },
 
-            onResize: function() {
-                if (!edBackgroundContainer) return;
+            onResize: function () {
+                if (!edBackgroundContainer) 
+                    return;
                 const currentActiveSection = poFullElement.querySelector('.fp-section.active');
                 if (currentActiveSection && targetSectionsForEdBackground.some(cls => currentActiveSection.classList.contains(cls))) {
-                    syncEdBackgroundPosition(parseInt(currentActiveSection.dataset.fpIndex)); 
+                    syncEdBackgroundPosition(parseInt(currentActiveSection.dataset.fpIndex));
                 }
             }
         }); // fullpage.js 초기화 끝
     }
 
-    // --- 아래는 네 Gist에 있던 다른 JavaScript 로직들이야! ---
-    // (여기부터는 기존 코드와 동일하며, 배경 제어 로직과는 관계 없어.)
+    // --- 아래는 네 Gist에 있던 다른 JavaScript 로직들이야! --- (여기부터는 기존 코드와 동일하며, 배경 제어 로직과는 관계
+    // 없어.)
 
     const totalSeconds = 174;
     let currentSeconds = 0;
@@ -175,10 +178,10 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn(
             "경고: 'play-pause-icon' ID를 가진 이미지 요소를 찾을 수 없습니다. 버튼 텍스트 모드로 작동합니다."
         );
-        if (togglePlayButton)
+        if (togglePlayButton) 
             togglePlayButton.textContent = '정지';
-    }
-
+        }
+    
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const secs = seconds % 60;
@@ -216,32 +219,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSeconds >= totalSeconds) {
             stopPlaying();
             currentSeconds = totalSeconds;
-            if (fill)
+            if (fill) 
                 fill.style.width = '100%';
-            if (currentTimeEl)
+            if (currentTimeEl) 
                 currentTimeEl.textContent = formatTime(totalSeconds);
-            if (totalTimeEl)
+            if (totalTimeEl) 
                 totalTimeEl.textContent = '-0:00';
             return;
         }
 
         const percent = (currentSeconds / totalSeconds) * 100;
-        if (fill)
+        if (fill) 
             fill.style.width = percent + '%';
-        if (currentTimeEl)
+        if (currentTimeEl) 
             currentTimeEl.textContent = formatTime(currentSeconds);
-        if (totalTimeEl)
+        if (totalTimeEl) 
             totalTimeEl.textContent = '-' + formatTime(totalSeconds - currentSeconds);
         currentSeconds++;
     }
 
     function initializePlayer() {
         currentSeconds = 0;
-        if (fill)
+        if (fill) 
             fill.style.width = '0%';
-        if (currentTimeEl)
+        if (currentTimeEl) 
             currentTimeEl.textContent = '0:00';
-        if (totalTimeEl)
+        if (totalTimeEl) 
             totalTimeEl.textContent = '-' + formatTime(totalSeconds);
         stopPlaying();
         if (playPauseIcon) {
@@ -294,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateHighlight(item, isVisible = false) {
         if (!item || !highlight) {
-            if (highlight)
+            if (highlight) 
                 highlight.style.opacity = '0';
             return;
         }
@@ -314,9 +317,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const clickedItem = e
             .target
             .closest('.list-item');
-        if (!clickedItem)
+        if (!clickedItem) 
             return;
-
+        
         if (activeItem) {
             activeItem
                 .classList
@@ -335,9 +338,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const hoveredItem = e
             .target
             .closest('.list-item');
-        if (!hoveredItem)
+        if (!hoveredItem) 
             return;
-
+        
         if (activeItem !== hoveredItem) {
             updateHighlight(hoveredItem, true);
         }
@@ -347,9 +350,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const leftItem = e
             .target
             .closest('.list-item');
-        if (!leftItem)
+        if (!leftItem) 
             return;
-
+        
         if (activeItem === leftItem) {} else {
 
             updateHighlight(null, false);
@@ -371,9 +374,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     .remove('active');
                 activeItem = null;
             }
-            if (highlight)
+            if (highlight) 
                 highlight.style.opacity = '0';
-        });
+            }
+        );
     } else {
         console.warn(
             "경고: '.liquidGlass-wrapper.menu' 요소를 찾을 수 없습니다. highlight 기능이 올바르게 작동하지 않을 수 있습" +
