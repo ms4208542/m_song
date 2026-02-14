@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const edMovableBackground = document.querySelector('.ed-movable-background');
     const poFullElement = document.getElementById('poFull');
     const headerElement = document.querySelector('.header_wrap');
-    // ed_design과 second_ed 섹션의 클래스 이름들. (네 HTML에 이 클래스들이 <section>에 붙어있어야 해!)
+
     const targetSectionsForEdBackground = ['work_section', 'ed_design'];
 
     const headerHeight = headerElement

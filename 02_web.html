@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>web design</title>
+        <link rel="stylesheet" href="css/scroll.css"/>
+        <link rel="stylesheet" href="lib/fullpage.min.css"/>
+        <script src="lib/jquery-latest.min.js"></script>
+        <script src="https://kit.fontawesome.com/0c69fdf2c0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div class="header_wrap">
+            <div class="header">
+                <a href="01_index.html"><img src="img/logo_black.svg" alt=""/></a>
+                <div class="liquidGlass-wrapper menu">
+                    <div class="liquidGlass-effect"></div>
+                    <div class="liquidGlass-tint"></div>
+                    <div class="liquidGlass-shine"></div>
+                    <div class="liquidGlass-text">
+                        <ul class="header_ul">
+                            <li class="list-item">
+                                <a href="#">ABOUT<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="02_web.html">WEB<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">E-DESIGN<span class="bg-hover-effect"></span></a>
+                            </li>
+                            <li class="list-item">
+                                <a href="#">CONTECT<span class="bg-hover-effect"></span></a>
+                            </li>
+                        </ul>
+                        <div class="highlight"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section work_section">
+            <div class="work_content">
+                <h2 class="fade-up-item title-with-icon">WEB
+                    <span>D<img class="h_icon" src="img/t_deco.svg" alt=""></span>ESIGN
+                </h2>
+                <img src="/img/01_1_web_mock.png" alt="" class="desk fade-up-item">
+                <img src="/img/01_2_web_mock.png" alt="" class="fade-up-item">
+                <img src="/img/01_3_web_mock.png" alt="" class="fade-up-item">
+                <img src="/img/01_1_web_shadow.png" alt="" class="fade-up-item">
+            </div>
+        </div>
+        <svg style="display: none">
+            <filter
+                id="glass-distortion"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                filterunits="objectBoundingBox">
+                <feturbulence
+                    type="fractalnoise"
+                    basefrequency="0.01 0.01"
+                    numoctaves="1"
+                    seed="5"
+                    result="turbulence"/>
+                <fecomponenttransfer in="turbulence" result="mapped">
+                    <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+                    <fefuncg type="gamma" amplitude="0" exponent="1" offset="0"/>
+                    <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+                </fecomponenttransfer>
+                <fegaussianblur in="turbulence" stddeviation="3" result="softMap"/>
+                <fespecularlighting
+                    in="softMap"
+                    surfacescale="5"
+                    specularconstant="1"
+                    specularexponent="100"
+                    lighting-color="white"
+                    result="specLight">
+                    <fepointlight x="-200" y="-200" z="300"/>
+                </fespecularlighting>
+                <fecomposite
+                    in="specLight"
+                    operator="arithmetic"
+                    k1="0"
+                    k2="1"
+                    k3="1"
+                    k4="0"
+                    result="litImage"/>
+                <fedisplacementmap
+                    in="SourceGraphic"
+                    in2="softMap"
+                    scale="150"
+                    xchannelselector="R"
+                    ychannelselector="G"/>
+            </filter>
+        </svg>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

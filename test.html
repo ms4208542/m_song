@@ -6,26 +6,6 @@
         <title>home</title>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="lib/fullpage.min.css"/>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const fullpageBgContainer = document.getElementById(
-                    'fullpage-container-background'
-                );
-                const poFullElement = document.getElementById('poFull'); // poFullElement가 필요할 경우
-
-                // 만약 fullpage.js 섹션 중 첫 번째 섹션(index 0) 또는 두 번째 섹션(index 1)일 때
-                // fullpageBgContainer가 보여야 한다면, 초기 상태를 강제로 'visible'로 설정 (fullpage.js 초기화 이전에
-                // 실행되어야 함)
-                if (fullpageBgContainer && poFullElement) {
-                    // fullpage.js가 DOM 조작하기 전에 초기 상태를 잡기 위해 약간의 꼼수 poFullElement가 초기에
-                    // translateX(0,0,0)으로 시작한다고 가정하고 transform 설정
-                    fullpageBgContainer.style.transform = 'translate3d(0px, 0px, 0px)';
-                    fullpageBgContainer.style.opacity = '1';
-                    fullpageBgContainer.style.visibility = 'visible';
-                }
-                // 나머지 모든 fullpage.js 로직은 원래대로 외부 JS 파일에 두세요.
-            });
-        </script>
         <script src="lib/jquery-latest.min.js"></script>
         <script src="lib/fullpage.min.js"></script>
         <script src="https://kit.fontawesome.com/0c69fdf2c0.js" crossorigin="anonymous"></script>
@@ -50,7 +30,7 @@
                                 <a href="#">ABOUT<span class="bg-hover-effect"></span></a>
                             </li>
                             <li class="list-item">
-                                <a href="#">WEB<span class="bg-hover-effect"></span></a>
+                                <a href="02_web.html">WEB<span class="bg-hover-effect"></span></a>
                             </li>
                             <li class="list-item">
                                 <a href="#">E-DESIGN<span class="bg-hover-effect"></span></a>
@@ -195,7 +175,7 @@
                     <img src="/img/01_3_web_mock.png" alt="" class="fade-up-item">
                     <img src="/img/01_1_web_shadow.png" alt="" class="fade-up-item">
                     <div class="fade-up-item work_sub_wrap">
-                        <p class="web_intro">8년간 웹 디자이너로 일하며, 사용자들이 웹을 더 편안하고 즐겁게 이용할 수 있도록 시각적인 부분과 기능적인 부분을 늘 함께 고민해왔습니다.<br>목표 달성에 기여하며 마주했던 문제와 저의 고민, 그리고 해결 과정이 담긴 프로젝트들을 소개합니다.</p>
+                        <p class="web_intro">8년간 웹 디자이너로 일하며, 사용자들이 웹을 더 편안하고 즐겁게 이용할 수 있도록 시각적인 부분과 기능적인 부분을 늘 함께 고민해왔습니다.<br>목표 달성에 기여하며 마주했던 문제와 저의 고민, 그리고 해결 과정이 담긴 웹 프로젝트들을 소개합니다.</p>
                         <button class="view_btn">MORE<i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
@@ -207,10 +187,12 @@
                     <div class="ed_title"><img class="ed_icon" src="img/t_deco.svg" alt="">
                         <h1>EDITORIAL
                             <br>DESIGN</h1>
-                        <p>사내 직원들을 위한 데이터 입력 등의 단순 반복 업무 프로세스의 자동화 프로그램에 대한 소개 페이지입니다.<br>
-                            디지털적인 느낌을 주고싶었기 때문에 메인컬러를 퍼플, 서브컬러를 시안으로 설정 하였으며,<br>
-                            삽입 된 아이콘에 그라데이션을 적용하여 사이버틱한 느낌을 줄 수 있도록 제작하였습니다. 워드프레스로 제작 된 페이지나,<br>
-                            사내직원들만 볼 수 있는 링크이기 때문에 이미지로 대체 합니다.</p>
+                        <p>인쇄물 디자인, 로고디자인 등을 중심으로 한 작업물을 소개합니다.<br>
+                            복잡하지 않고 심플한 디자인을 지향하며, 본질에 집중해 메세지를 명확하게 전달하는데 중점을 두고 있습니다.<br>
+                            과하지 않은 구성과 깔끔한 레이아웃으로 사용자에게 편안한 경험을 제공하는 것을 목표로 하고 있습니다.<br>
+                            이 공간을 통해 제 작업의 느낌을 전달 드리고자 합니다. </p>
+                            <button class="view_btn">MORE<i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -218,6 +200,11 @@
             <div class="section second_ed">
                 <div class="second_wrap">
                     <p>안녕하세요 어쩌구저쩌구블라블라블라</p>
+                </div>
+            </div>
+               <div class="section second_ed">
+                <div class="second_wrap">
+                    <p>fnfnfnnff 어쩌구저쩌구블라블라블라</p>
                 </div>
             </div>
         </div>
