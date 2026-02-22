@@ -23,7 +23,10 @@ html {
     overflow-x: hidden;
 
 }
-
+button {
+    background-color: transparent;
+    border: none;
+}
 .header_wrap {
     height: 119px;
     position: absolute;
@@ -227,7 +230,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+z-index: -1;
 }
 
 .work_content h2.fade-up-item {
@@ -379,17 +382,17 @@ html {
 .web_design_wrap {
     width: 100%;
     display: block;
+    background-color: #f2f2f2;
 
 }
 .web_wrap {
     width: 1280px;
-    margin: 0 auto;
-    margin-top: 165px;
+    margin: 165px auto 0;
 }
 .down_arrow {
     animation: scroll-down 3s infinite;
     bottom: 40px;
-    left: 50%;
+    left: 47.9%;
     position: fixed;
 }
 @keyframes scroll-down {
@@ -421,15 +424,15 @@ html {
     display: flex;
     align-items: center;
 }
-.title_row > h1 {
+.number {
     font-size: 65px;
 }
-.title_row > h2 {
+.one_title {
     font-size: 30px;
     font-weight: 300;
     margin-left: 30px;
 }
-.title_row > img {
+.web_deco {
     width: 40px;
     position: relative;
     bottom: 33px;
@@ -441,15 +444,16 @@ html {
     border-radius: 30px;
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 .one_content_img img {
     width: 100%;
     height: auto;
     display: block;
 }
-.one_title_wrap > p{
+.web_text {
     line-height: 28px;
-    padding-left: 44px;
+    padding-inline: 44px;
     margin-top: 10px;
 
 }
@@ -461,38 +465,121 @@ html {
     background: #F6F7FB;
     border-radius: 20px;
 }
-.one_content_img::-webkit-scrollbar-thumb{
+.one_content_img::-webkit-scrollbar-thumb {
     background: #ECEEF6;
     border-radius: 20px;
     width: 5px;
 }
 .work_details {
-    margin-top: 30px;
+    margin-block: 30px;
     padding-left: 44px;
 }
 .work_details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .work_details ul li {
-  display: flex;
-  align-items: center;             
-  margin-bottom: 8px;  
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
 }
 .work_details ul li span:first-of-type {
     width: 100px;
 }
 .work_details ul li span {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
-.work_details ul li .work_icon {
-  height: 2em;    
-  width: auto;   
-  display: block;
+.work_icon {
+    height: 2em;
+    width: auto;
+    margin-right: 6px;
 }
-.c_blue{
-    color: #3b4fd8;  letter-spacing: 0.15em;
+.c_blue {
+    color: #3b4fd8;
+    letter-spacing: 0.15em;
+}
+
+/* 테스트btn */
+.more_btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #d2d2d2;
+    fill: rgb(155, 153, 153);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 14px;
+    width: 80px;
+    justify-content: space-around;
+    position: relative;
+    margin-left: auto;
+}
+
+.btn_txt {
+    display: block;
+    margin-left: 0;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.more_btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: all 0.3s ease-in-out;
+}
+
+.more_btn:hover {
+    background-color: rgba(0, 166, 255, 0.08);
+}
+
+.more_btn:hover .icon_ctn {
+    transform: scale(1.25);
+    transition: 0.5s linear;
+}
+
+.more_btn:hover svg {
+    transform: translateX(1.4em) scale(1.3);
+    fill: #fff;
+}
+
+.more_btn:hover span {
+    opacity: 0;
+    transition: 0.5s linear;
+}
+.more_btn:active {
+    transform: scale(0.95);
+}
+
+/* 두번째 */
+.web_two {
+    margin-block: 200px 50px;
+}
+.two_content_img {
+    width: 100%;
+    background-color: red;
+    height: 550px;
+    border-radius: 30px;
+    background-image: url("../img/faq.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.two_title_wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.two_details {
+    display: flex;
+    padding-inline: 44px;
+        align-items: center;
+
+}
+.two_work:last-child {
+    display: flex;
+    align-items: center;
 }

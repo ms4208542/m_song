@@ -447,7 +447,10 @@ button {
 }
 .skill_list > ul {
     display: flex;
-    column-gap: 35px;
+    column-gap: 40px;
+}
+.skill_list > ul > li >img{
+height: 42px;
 }
 .fa-chevron-right {}
 
