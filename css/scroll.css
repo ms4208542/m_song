@@ -230,7 +230,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-z-index: -1;
+    z-index: -1;
 }
 
 .work_content h2.fade-up-item {
@@ -382,7 +382,6 @@ z-index: -1;
 .web_design_wrap {
     width: 100%;
     display: block;
-    background-color: #f2f2f2;
 
 }
 .web_wrap {
@@ -562,9 +561,9 @@ z-index: -1;
 .two_content_img {
     width: 100%;
     background-color: red;
-    height: 550px;
+    height: 750px;
     border-radius: 30px;
-    background-image: url("../img/faq.jpg");
+    background-image: url("../po_1/main_img.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -576,10 +575,25 @@ z-index: -1;
 .two_details {
     display: flex;
     padding-inline: 44px;
-        align-items: center;
+    align-items: center;
+    margin-top: 30px;
 
 }
-.two_work:last-child {
+.two_work:nth-child(4) {
     display: flex;
     align-items: center;
 }
+.two_work:last-child {
+    margin-left: auto;
+}
+.two_work > span:first-of-type {
+    margin-right: 30px;
+}
+.two_work > span:last-of-type {
+    margin-right: 80px;
+}
+.three_details {
+    display: flex;
+    justify-content: space-between;
+}
+.three_details>img{width: 710px;border-radius: 30px;}

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>請求一覧</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/uniform.min.js"></script>
+    <script src="js/plugins/select2.min.js"></script>
+    <script src="js/plugins/jquery.mCustomScrollbar.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/plugins/timepicker-addon.js"></script>
+    <script src="js/plugins/jquery.blockUI.js"></script>
+    <script src="js/plugins/jquery.fixedheadertable.min.js"></script>
+    <script src="js/plugins/MonthPicker.min.js"></script>
+    <script src="js/plugins/slider_pips.min.js"></script>
+    <script src="js/plugins/jquery.nicescroll.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- leftMenu -->
+    <div class="pageScroller">
+
+        <!-- topMenu -->
+        <div class="mainContainer">
+
+            <div class="mainWrapper">
+                <div class="callDetail">
+                    <nav class="callDetailMenu">
+                        <div class="header_wrap" style="">
+                            <div id="header" style="">
+                                <div class="logo">
+                                    <a class="logo_a" href = "02.html"><h1 style="font-weight: bold;text-align: left">VISION<br>電気管理システム</h1></a>
+                                </div>
+
+                                <nav id="gnb" style="">
+									<ul>
+										<li>
+											<a href="#">タスク依頼</a>
+										</li>
+										<li>
+										<li>
+											<a href="#">APO管情報</a>
+										</li>
+										<li>
+											<a href="09.html">申込詳細</a>
+										</li>
+										<li>
+											<a href="05.html">顧客管理</a>
+										</li>
+										<li>
+											<a href="#">契約情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="03.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;契約詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="04.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;契約一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">請求情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="06.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;請求詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="08.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;請求一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">マスター管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<li class="pdf_check">料金マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">割引マスター</li>
+											</ul>
+										</li>
+										<li>
+										<a href="#">システム管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+											<a href="07.html"><li class="pdf_check">社員マスター</li></a>
+												<li class="pdf_check">汎用マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">組織図マスター</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+                            </div>
+                            <nav id="gnb2" style="display: inline-block ; float: right;position: relative;top:-40px" class="">
+                                <ul>
+                                    <li>
+                                        <img src="img/user.png" alt=""><a style="position: relative;top: -8px;left: -14px" href="#">新垣　結衣<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+                                        <ul class="gnb_depth2" data-gnb="depth2">
+                                            <li style="margin-left: 5px" class="pdf_check">Password Reset</li>
+                                            <a href="01.html"><li style="margin-left: 5px;margin-bottom: 5px;margin-right: 0" class="pdf_check">Logout</li></a>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </nav>
+                    <main class="main">
+                        <div class="callDetailContent">
+                            <section class="callDetailSlider" style="">
+                                <div class="" style="">
+                                    <div class="data_clear_btn" spellcheck="" >
+                                        <button style="width: 150px;" class="data_btn" type="button">全件表示</button>
+                                        <button style="width: 150px;margin-right: 5px;" class="clear_btn" type="button">検索モード</button>
+                                        <button style="width: 150px;margin-right: 5px;" class="clear_btn" type="button">データ取り込み</button>
+                                        <button style="width: 150px;margin-right: 255px;" class="data_btn" type="button">データエクスポート</button>
+                                    </div> 
+                                    <div><p style="text-align: right">123 / 123,456件</p></div>
+                                    <!--field-->
+                                </div>
+                                <!--par-->
+                            </section>
+                            <!-- callDetailSlider -->
+                            <section class="callDetailMain clearfix">
+                                
+                                <div style="width: 100%" class="callDetailLeft">
+                                    <div style="border: 1px solid transparent" class="block block-1">
+                                        
+                                        <!-- block-header -->
+                                        <div class="clearfix" style="overflow-x: scroll;overflow-y: scroll;border-top: 1px solid transparent">
+                                            <table class="table table-bordered" style="">
+                                                <tr>
+                                                    <td class="td-bg-4">No</td>
+                                                    <td class="td-bg-4">顧客番号</td>
+                                                    <td class="td-bg-4">申込番号</td>
+                                                    <td class="td-bg-4">請求番号</td>
+                                                    <td class="td-bg-4">請求年月</td>
+                                                    <td class="td-bg-4">供給地点特定番号</td>
+                                                    <td class="td-bg-4">法人名（ご連絡先氏名）</td>
+                                                    <td class="td-bg-4">需要者氏名</td>
+                                                    <td class="td-bg-4">電力種別</td>
+                                                    <td class="td-bg-4">契約料金メニュー</td>
+                                                    <td class="td-bg-4">支払方法</td>
+													<td class="td-bg-4">回収状況</td>
+													<td class="td-bg-4">請求金額(円)</td>
+													<td class="td-bg-4">消費税(円)</td>
+													<td class="td-bg-4">使用量(kWh)</td>
+													<td class="td-bg-4">請求確認</td>
+													<td class="td-bg-4">最終修正者</td>
+													<td class="td-bg-4">最終修正日</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>1</td>
+                                                    <td>009100751</td>
+                                                    <td>0000001</td>
+                                                    <td>S-0000000495</td>
+                                                    <td>2021年3月</td>
+                                                    <td>0900001643835100000000</td>
+                                                    <td>株式会社ビジョン</td>
+                                                    <td>株式会社ビジョン　KDX5F</td>
+                                                    <td>低圧</td>
+                                                    <td>従量電灯Ｂ</td>
+                                                    <td>クレジットカード</td>
+													<td>未回収</td>
+													<td>13,686</td>
+													<td>1,368</td>
+													<td>492</td>
+													<td>確認済</td>
+													<td>張 民湜</td>
+													<td>2021/03/25 18:35:21</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>2</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>3</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>4</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>5</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>6</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>7</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>8</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>9</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>10</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>11</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="text-align: center">
+                                                    <td>12</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>13</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>14</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>15</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>16</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>17</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>18</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>19</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr><tr style="text-align: center">
+                                                    <td>20</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+													<td>&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="page_num_wrap">
+        <div class="page_num">
+            <ul class="page">
+                <li class="num_color" style="padding-right: 70px"><a href="#">《</a></li>
+                <li class="num_color" style="padding-right: 70px"><a href="#">〈</a></li>
+                <li class="page_number_one" style=""><a href="#">1</a></li>
+                <li class="page_number" style=""><a href="#">2</a></li>
+                <li class="page_number" style=""><a href="#">3</a></li>
+                <li class="" style="margin-right: 50px;"><span>…</span></li>
+                <li class="page_number" style=""><a href="#">10</a></li>
+                <li class="page_number" style=""><a href="#">11</a></li>
+                <li class="page_number" style=""><a href="#">12</a></li>
+                <li class="num_color" style="padding-right: 70px"><a href="#">〉</a></li>
+                <li class="num_color" style="padding-right: 70px"><a href="#">》</a></li>            </ul>
+        </div>
+    </div>
+
+                            </section>
+                            <!-- callDetailMain -->
+                        </div>
+                        <!-- callDetailContent -->
+                    </main>
+                </div>
+                <!-- listMain -->
+            </div>
+            <!-- mainWrapper -->
+        </div>
+        <!-- mainContainer -->
+    </div>
+    <!--pageScroller-->
+    <div id="callDetailNSSub2010" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">リスト運用履歴</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="callDetailNSSub2010-inner">
+                            <label>リスト名更新</label>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>更新日</th>
+                                            <th>更新時間</th>
+                                            <th>更新事業部</th>
+                                            <th>更新所属部</th>
+                                            <th>更新者</th>
+                                            <th>リスト名</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <label>りストメモ更新</label>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>更新日</th>
+                                            <th>更新時間</th>
+                                            <th>更新事業部</th>
+                                            <th>更新所属部</th>
+                                            <th>更新者</th>
+                                            <th>メモ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>input</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                            <td>data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-button">
+                                <button type="button" class="hvr-rectangle-in">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- callDetailNSSub2030 -->
+</body>
+
+</html>

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>契約詳細</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/uniform.min.js"></script>
+    <script src="js/plugins/select2.min.js"></script>
+    <script src="js/plugins/jquery.mCustomScrollbar.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/plugins/timepicker-addon.js"></script>
+    <script src="js/plugins/jquery.blockUI.js"></script>
+    <script src="js/plugins/jquery.fixedheadertable.min.js"></script>
+    <script src="js/plugins/MonthPicker.min.js"></script>
+    <script src="js/plugins/slider_pips.min.js"></script>
+    <script src="js/plugins/jquery.nicescroll.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- leftMenu -->
+    <div class="pageScroller">
+
+        <!-- topMenu -->
+        <div class="mainContainer">
+
+            <div class="mainWrapper">
+                <div class="callDetail">
+                    <nav class="callDetailMenu">
+                        <div class="header_wrap" style="">
+                            <div id="header" style="">
+                                <div class="logo">
+                                    <a class="logo_a" href = "02.html"><h1 style="font-weight: bold;text-align: left">VISION<br>電気管理システム</h1></a>
+                                </div>
+
+                                <nav id="gnb" style="">
+									<ul>
+										<li>
+											<a href="#">タスク依頼</a>
+										</li>
+										<li>
+										<li>
+											<a href="#">APO管情報</a>
+										</li>
+										<li>
+											<a href="09.html">申込詳細</a>
+										</li>
+										<li>
+											<a href="05.html">顧客管理</a>
+										</li>
+										<li>
+											<a href="#">契約情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="03.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;契約詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="04.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;契約一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">請求情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="06.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;請求詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="08.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;請求一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">マスター管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<li class="pdf_check">料金マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">割引マスター</li>
+											</ul>
+										</li>
+										<li>
+										<a href="#">システム管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+											<a href="07.html"><li class="pdf_check">社員マスター</li></a>
+												<li class="pdf_check">汎用マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">組織図マスター</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+                            </div>
+                            <nav id="gnb2" style="display: inline-block ; float: right;position: relative;top:-40px" class="">
+                                <ul>
+                                    <li>
+                                        <img src="img/user.png" alt=""><a style="position: relative;top: -8px;left: -14px" href="#">新垣　結衣<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+                                        <ul class="gnb_depth2" data-gnb="depth2">
+                                            <li style="margin-left: 5px" class="pdf_check">Password Reset</li>
+                                            <a href="01.html"><li style="margin-left: 5px;margin-bottom: 5px;margin-right: 0" class="pdf_check">Logout</li></a>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </nav>
+                    <main class="main">
+                        <div class="callDetailContent">
+                            <section class="callDetailSlider">
+                                <div class="par clearfix" style="padding-bottom: 10px">
+                                    <div class="data_clear_btn">
+                                        <button class="data_btn" type="button">取下</button>
+                                        <button style="margin-right: 5px;" class="clear_btn" type="button">修正</button>
+                                        <button style="margin-right: 55px;" class="clear_btn" type="button">検索</button>
+                                    </div>
+
+                                    <div class="par-btn">
+                                        <button type="button" class="par-btn-prev hvr-rectangle-in"><i class="fas fa-angle-left" aria-hidden="true"></i></button>
+                                        <button type="button" class="par-btn-next hvr-rectangle-in"><i class="fas fa-angle-right" aria-hidden="true"></i></button>
+                                    </div>
+                                    <div style="" class="field">
+                                        <div style="position: relative; left: 20px" id="slider"></div>
+                                        <span><strong><span id="amount"></span></strong>123 / 123,456件</span>
+                                    </div>
+                                    <!--field-->
+                                </div>
+                                <!--par-->
+                            </section>
+                            <!-- callDetailSlider -->
+                            <section class="callDetailMain clearfix">
+                                <div class="block-header" style="border: 1px solid #dee6ea;border-radius: 7px;margin-bottom: 5px;">
+                                    <div style="float: right;padding-left: 80px">
+                                        <h3 style="text-align: right;color: #333; font-weight: bold" class="header-title">
+                                            管理番号
+                                        </h3><span style="text-align: right;padding: 2px 70px;" class="title_box">123456789</span>
+                                    </div>
+                                    <div style="float: right">
+                                        <h3 style="text-align: right;color: #333; font-weight: bold" class="header-title">
+                                            契約状況 </h3><span style="text-align: right;padding: 2px 70px" class="title_box">新規申込</span>
+                                    </div>
+                                </div>
+                                <div class="callDetailLeft">
+                                    <div class="block block-1">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">供給地点情報</span>
+                                            </h3><span class="title_box">0300111060743213103021</span>
+                                            <div class="header-elements">
+                                                <!--<div>
+                                                        <a href="#" class="btnToggle"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">施設名</td>
+                                                        <td colspan="16" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:50%;">
+                                                            <input placeholder="株式会社ビジョン　名古屋営業所" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">電力会社エリア</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:25%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">03 東京エリア</option>
+																	<option value="2">04 中部エリア</option>
+																	<option value="3">05 北陸エリア</option>
+																	<option value="4">06 関西エリア</option>
+																</select>
+															</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">供給地点住所</td>
+                                                        <td colspan="1" class="none_bd" style="border: 1px solid transparent;width:3.125%;">〒</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="3510001" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">東京都</option>
+																	<option value="2">神奈川県</option>
+																	<option value="3">新潟県</option>
+																	<option value="4">富山県</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="渋谷区" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="6" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:18.75%;">
+                                                            <input placeholder="5-3-21" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="10" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:31.25%;">
+                                                            <input placeholder="KDXビール" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+													<tr>
+													<tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">需要者氏名</td>
+                                                        <td colspan="12" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:37.5%;">
+															<input placeholder="株式会社ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">需要者氏名ｶﾅ</td>
+                                                        <td colspan="12" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:37.5%;">
+															<input placeholder="カブシキカイシャビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+													<tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">需要者電話番号1</td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">自宅</option>
+																	<option value="2">携帯</option>
+																	<option value="3">家族・親族</option>
+																	<option value="4">配偶者</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="390" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="1234" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+														
+														
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">需要者電話番号2</td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">自宅</option>
+																	<option value="2">携帯</option>
+																	<option value="3">家族・親族</option>
+																	<option value="4">配偶者</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="123" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;;">
+                                                            <input placeholder="9999" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- block-body -->
+                                    </div>
+                                    <!-- block-1 -->
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="font-weight: bold; color: #333">契約情報</span>
+                                            </h3><span class="title_box">020000410</span>
+                                            <div class="header-elements">
+                                                <div style="padding-top: 10px;padding-right: 10px">
+                                                    <h3 class="header-title">
+                                                        <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="font-weight: bold;color: #333">顧客情報</span>
+                                                    </h3><span class="title_box">株式会社ビジョン</span><span style="margin-left: 5px;" class="title_box">020000320</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-elements">
+                                                <!--  <div>
+                                                        <a href="#" class="btnToggle"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                                                    </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">契約名(拠点名)</td>
+                                                        <td colspan="9" style="width:28.125%; border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; padding-left:5px;border: 1px solid transparent;">契約者名</td>
+                                                        <td colspan="9" style="width:28.125%; padding: 0;border:1px solid transparent;text-align: center">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; padding-left:5px;border: 1px solid transparent;">顧客区分</td>
+                                                        <td colspan="2" style="width:6.25%; padding: 0;border:1px solid transparent;text-align: center">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">法人</option>
+																	<option value="2">個人</option>
+																	<option value="3">屋号</option>
+																</select>
+															</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">法人番号</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="0123456789" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">担当者氏名</td>
+                                                        <td colspan="7" style="width:21.875%; padding: 0;border:1px solid transparent;text-align: center">
+															<input placeholder="株式会社ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">担当者氏名カナ</td>
+                                                        <td colspan="7" style="width:21.875%; padding: 0;border:1px solid transparent;text-align: center">
+															<input placeholder="ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">担当者部署役職</td>
+                                                        <td colspan="12" style="width:37.5%; border:1px solid transparent;background-color: transparent;padding: 0px" >
+                                                            <input placeholder="ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width:12.5%; border: 1px solid transparent;">メールアドレス</td>
+                                                        <td colspan="12" style="width:37.5%; padding: 0;border:1px solid transparent">
+                                                            <input placeholder="ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">連絡先住所</td>
+                                                        <td colspan="1" class="none_bd" style="border: 1px solid transparent;width:3.125%;">〒</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="3510007" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">東京都</option>
+																	<option value="2">神奈川県</option>
+																	<option value="3">新潟県</option>
+																	<option value="4">富山県</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+															<input placeholder="渋谷区" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:25%;">
+															<input placeholder="5-3-21" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:25%;">
+															<input placeholder="KDXビール" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+													<tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">電話番号1</td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">自宅</option>
+																	<option value="2">携帯</option>
+																	<option value="3">家族・親族</option>
+																	<option value="4">配偶者</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="390" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="1234" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        
+                                                        
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">電話番号2</td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">自宅</option>
+																	<option value="2">携帯</option>
+																	<option value="3">家族・親族</option>
+																	<option value="4">配偶者</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <input placeholder="123" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;;">
+                                                            <input placeholder="9999" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約日</td>
+                                                        <td colspan="5" style="width:15.625%; border:1px solid transparent;background-color: transparent;padding: 0px;">
+															<input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約期間</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 12.5%">
+															<input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="1" class="none_bd" style="border: 1px solid transparent;width:3.125%;">~</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 12.5%">
+															<input placeholder="9999/12/31" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">電力種別</td>
+                                                        <td colspan="6" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 18.75%">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">低圧</option>
+																	<option value="5">高圧（契約電力500kW未満）</option>
+																	<option value="6">高圧（契約電力500kW以上）</option>
+																	<option value="7">特別高圧</option>
+																</select>
+															</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約種別</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">スイッチング</option>
+																	<option value="5">再点</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約電力</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%">
+                                                            <input placeholder="50" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 6.25%">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">A</option>
+																	<option value="2">kVA</option>
+																	<option value="3">kW</option>
+																	<option value="4">V</option>
+																	<option value="5">W</option>
+																	<option value="6">VA</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">検針表</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%">
+                                                            <div class="block_input" style="padding: 5px;width: 100%;text-align:center"><a href="#">検針表_20210315.jpge</a></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">供給開始日</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">供給終了日</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px" >
+                                                            <input placeholder="9999/12/31" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="6" class="none_bd" style="width:18.75%; border: 1px solid transparent;">供給開始案内送付日</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約書発送日</td>
+                                                        <td colspan="6" style="width:18.75%; border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">契約書返送</td>
+                                                        <td colspan="6" class="none_bd" style="width:18.75%;border: 1px solid transparent;font-weight: 100">
+                                                            <input type="radio" name="contract_return" checked="checked">&nbsp;&nbsp;未&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <input type="radio" name="contract_return">&nbsp;&nbsp;返送済&nbsp;
+                                                        </td>
+                                                        <td colspan="6" class="none_bd" style="border: 1px solid transparent;width:18.75%;">実量制(ｽﾏｰﾄ契約)</td>
+                                                        <td colspan="6" class="none_bd" style="width:18.75%; border: 1px solid transparent;font-weight: 100">
+                                                            <input type="radio" name="contract_smart" checked="checked">&nbsp;&nbsp;はい&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <input type="radio" name="contract_smart">&nbsp;&nbsp;いいえ
+                                                        </td>
+                                                    </tr>
+                                                    
+													<tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">供給電圧</td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:6.25%">
+															<input placeholder="300" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+														<td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 6.25%">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:left">KV</i></div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">力率</td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:6.25%">
+                                                            <input placeholder="20" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+														<td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 6.25%">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:left">%</i></div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">低圧電力種別</td>									
+                                                        <td colspan="12" class="none_bd" style="width:37.5%;border: 1px solid transparent;padding-left: 20px;font-weight: 100">
+                                                            <input type="radio" name="pressure_type" checked="checked">&nbsp;&nbsp;低圧電灯kVA&nbsp;&nbsp;&nbsp;
+                                                            <input type="radio" name="pressure_type">&nbsp;&nbsp;低圧動力&nbsp;&nbsp;&nbsp;
+                                                            <input type="radio" name="pressure_type">&nbsp;&nbsp;低圧電灯A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        </td>								
+                                                    </tr>
+													
+													
+													<tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">基準検針日</td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:6.25%">
+                                                            <input placeholder="25" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+														<td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 6.25%">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:left">日</i></div>
+                                                        </td>
+														
+                                                        <!-- <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">業態</td>
+                                                        <td colspan="8" style="width: 25%;border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">01 老健施設</option>
+																	<option value="2">02 ホテル（旅館・民宿）</option>
+																	<option value="3">03 ホテル（シティーホテル）</option>
+																</select>
+															</div>
+                                                        </td> -->
+														<td colspan="6" class="none_bd" style="border: 1px solid transparent;width:18.75%;">接続送電ｻｰﾋﾞｽ料金計算</td>
+                                                        <td colspan="6" style="width: 18.75%;border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">電灯定額接続送電サービス</option>
+																	<option value="2">電灯標準接続送電サービス</option>
+																	<option value="3">電灯時間帯別接続送電サービス</option>
+																</select>
+															</div>
+                                                        </td>
+														<td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">現小売事業番号</td>
+                                                        <td colspan="4" style="width:12.5%;border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="300" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+														<td colspan="4" style="width: 12.5%;border:1px solid transparent;background-color: transparent;padding: 0px"></td>
+                                                    </tr>
+													<tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">現電力会社名</td>
+														<td colspan="7" style="width: 21.875%;border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">ABC電力会社</option>
+																	<option value="2">BCD電力会社</option>
+																	<option value="3">AAA電力会社</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">現利用プラン</td>
+														<td colspan="7" style="width: 21.875%;border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">123plan</option>
+																	<option value="2">234plan</option>
+																	<option value="3">345plan</option>
+																</select>
+															</div>
+                                                        </td>
+														<td colspan="10" style="width: 31.25%;border:1px solid transparent;background-color: transparent;padding: 0px"></td>														
+                                                    </tr>
+													
+													
+													<tr>
+														<td colspan="32" style="width: 100%;border:1px solid transparent;background-color: transparent;padding: 0px;height: 100px;">
+															<textarea class="block_input" id="text" style="padding: 5px;width: 100%;text-align:left;overflow-y: scroll;height: 100px;"></textarea>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- block-body -->
+                                    </div>
+                                    <div class="block block-1">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="font-weight: bold;color: #333">請求書郵送先情報</span>
+                                            </h3>
+                                            <div class="header-elements">
+                                                <!--<div>
+                                                        <a href="#" class="btnToggle"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">名義</td>
+                                                        <td colspan="20" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:62.5%;">
+															<input placeholder="株式会社ビジョン　名古屋営業所" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:6.25%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">様</option>
+																	<option value="2">御中</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="6" class="none_bd" style="border: 1px solid transparent;height: 30px;padding-top: 0;padding-bottom: 0;padding-right: 0;text-align: center;width:18.75%;">
+                                                            <button class="table_btn" type="button" style="margin: 0 auto;float: right">供給地点住所参照</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">請求書郵送先</td>
+                                                        <td colspan="1" class="none_bd" style="border: 1px solid transparent;width:3.125%;">〒</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="3510007" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:9.375%;">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">東京都</option>
+																	<option value="2">神奈川県</option>
+																	<option value="3">新潟県</option>
+																	<option value="4">富山県</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+															<input placeholder="渋谷区" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:25%;">
+															<input placeholder="5-3-21" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:25%;">
+															<input placeholder="KDXビール" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+													<tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">請求先電話番号</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="390" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="1234" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        
+                                                        
+                                                        <td colspan="4" class="none_bd" style="border: 1px solid transparent;width:12.5%;">請求先電話番号2</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="031" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;">
+                                                            <input placeholder="123" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width:12.5%;;">
+                                                            <input placeholder="9999" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" rowspan="2" class="none_bd" style="border: 1px solid transparent;width:12.5%;position: relative;top: 15px;">郵送先備考</td>
+                                                        <td colspan="28" rowspan="2" style="width: 87.5%;border:1px solid transparent;background-color: transparent;padding: 0px">
+															<textarea class="block_input" id="text" style="padding: 5px;width: 100%;height: 60px;text-align:left"></textarea>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                        <!-- block-body -->
+                                    </div>
+                                </div>
+                                <!-- callDetailLeft -->
+                                <div class="callDetailRight">
+                                    <div class="block block-3">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="font-weight: bold;color: #333;">支払情報</span>
+                                            </h3>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td colspan="4"class="none_bd" style="width: 12.5%; border: 1px solid transparent;padding-left: 0">支払方法</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">口座振替</option>
+																	<option value="2">クレジットカード</option>
+																	<option value="3">振込</option>
+																	<option value="4">コンビニ払い</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%;border: 1px solid transparent;">委託者コード</td>
+                                                        <td colspan="8"style="width: 25%; border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <input placeholder="0123456 ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8"class="none_bd" style="width: 25%; border: 1px solid transparent;padding-left: 0">&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;padding-left: 0">銀行名</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%;text-align: center">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">0001 みずほ</option>
+																	<option value="2">0009 三井住友	</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;">支店名</td>
+                                                        <td colspan="8" style="width: 25%; border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="8" class="none_bd" style="width: 25%;border: 1px solid transparent;padding: 0">
+                                                            <button class="table_btn" type="button" style="margin: 0 auto;float: center;padding: 0 20px;">銀行を選択</button>
+                                                        </td>
+                                                    </tr>
+                                                                                   
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;padding-left: 0">振込種別</td>
+                                                        <td colspan="4" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 12.5%; text-align: center">
+                                                            <div class="sin_slt">
+																<select name="sinjungi">
+																	<option value="1">普通</option>
+																	<option value="2">当座</option>
+																</select>
+															</div>
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;">口座番号</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%;text-align: center">
+                                                            <input placeholder="01234567" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;">口座名義</td>
+                                                        <td colspan="8" style="width: 25%; border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%;text-align: center">
+															<input placeholder="株式会社　ビジョン" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;padding-left: 0">口振作成回数</td>
+                                                        <td colspan="3" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 9.375%; text-align: center">
+                                                            <input placeholder="2" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="1" class="none_bd" style="width: 3.125%; border: 1px solid transparent;padding-left: 0">回</td>
+                                                        <td colspan="4" class="none_bd" style="width: 12.5%; border: 1px solid transparent;padding-left: 0">口座振替日</td>
+                                                        <td colspan="8" style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 25%;text-align: center">
+															<input placeholder="2021/02/22" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td colspan="12"class="none_bd" style="width: 37.5%; border: 1px solid transparent;padding-left: 0">&nbsp;</td>
+                                                    </tr>    
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <!-- block-body -->
+
+                                    </div>
+                                    <!-- block-1 -->
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="font-weight: bold;color: #333;">料金メニュー情報</span>
+                                            </h3>
+
+
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="width:8%;text-align:center;border: 1px solid transparent;padding-top: 7px;">ID</td>
+                                                        <td class="none_bd" style="width:%;text-align:center;border: 1px solid transparent;padding-top: 7px;">料金メニュー名</td>
+                                                        <td class="none_bd" style="width:%;text-align:center;border: 1px solid transparent;padding-top: 7px;">契約種別名</td>
+                                                        <td class="none_bd" style="width:%;text-align:center;border: 1px solid transparent;padding-top: 7px;">計算適用期間</td>
+                                                        <td class="none_bd" style="width:%;text-align:center;border: 1px solid transparent;padding-top: 7px;">料金メニュー種別</td>
+                                                        <td class="none_bd" style="width:%;text-align:center;border: 1px solid transparent;padding-top: 7px;">操作</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="01234" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="【東京電力】業務用電力" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="社員向け電灯" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/26 (金) ～ 9999/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="従量型" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center"><button class="table_btn">変更</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- block-body -->
+                                    </div>
+
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">契約割引割増情報</span>
+                                            </h3>
+
+
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="width:5%;text-align:center;border: 1px solid transparent;padding-top: 7px;vertical-align: middle">NO</td>
+                                                        <td class="none_bd" style="width:30%;text-align:center;border: 1px solid transparent;padding-top: 7px;vertical-align: middle">割引割増名</td>
+                                                        <td class="none_bd" style="width:15%;text-align:center;border: 1px solid transparent;padding-top: 7px;">割引割増率<br>割引割増金額</td>
+                                                        <td class="none_bd" style="width:30%;text-align:center;border: 1px solid transparent;padding-top: 7px;vertical-align: middle">割引割増期間</td>
+                                                        <td class="none_bd" style="width:10%;text-align:center;border: 1px solid transparent;padding-top: 7px;">&nbsp;</td>
+                                                        <td class="none_bd" style="width:10%;text-align:center;border: 1px solid transparent;padding-top: 7px;">&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:center">1</div>
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="電力データ見える化【1契約】" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="20%" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/01 (月) ～ 2021/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;"><button class="table_btn">修正</button>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;position: relative;left: 10px">
+                                                            <button style="padding: 0px 10px" class="add_btn">+</button><button style="margin-left: 5px;padding: 0px 12px" class="add_btn">-</button>
+                                                        </td>
+                                                    </tr>
+													<tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:center">2</div>
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="【RV特別割引】定率５％割引（R)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2,000円" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/01 (月) ～ 2021/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;"><button class="table_btn">修正</button>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;position: relative;left: 10px">
+                                                            <button style="padding: 0px 10px" class="add_btn">+</button><button style="margin-left: 5px;padding: 0px 12px" class="add_btn">-</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:center">3</div>
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="【RV特別割引】定率５％割引（R)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2,000円" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/01 (月) ～ 2021/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;"><button class="table_btn">修正</button>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;position: relative;left: 10px">
+                                                            <button style="padding: 0px 10px" class="add_btn">+</button><button style="margin-left: 5px;padding: 0px 12px" class="add_btn">-</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:center">4</div>
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="【RV特別割引】定率５％割引（R)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2,000円" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/01 (月) ～ 2021/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;"><button class="table_btn">修正</button>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;position: relative;left: 10px">
+                                                            <button style="padding: 0px 10px" class="add_btn">+</button><button style="margin-left: 5px;padding: 0px 12px" class="add_btn">-</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+                                                            <div class="none_bd" style="padding: 5px;width: 100%;text-align:center">5</div>
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="【RV特別割引】定率５％割引（R)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2,000円" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px">
+															<input placeholder="2021/02/01 (月) ～ 2021/12/31 (金)" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;"><button class="table_btn">修正</button>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding: 0;text-align: center;position: relative;left: 10px">
+                                                            <button style="padding: 0px 10px" class="add_btn">+</button><button style="margin-left: 5px;padding: 0px 12px" class="add_btn">-</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- block-body -->
+                                    </div>
+                                    <!-- 
+									<div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">FIT納付金減免設定</span>
+                                            </h3>
+                                        </div>
+                                        
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="width: 14%; border: 1px solid transparent;padding-top: 7px;">減免区分</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <div class="block_input" style="padding: 5px;width: 20%;text-align:center">通常<i style="float: right" class="fas fa-sort-down"></i></div>
+                                                        </td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+									-->
+									
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">FIT納付金減免設定</span>
+                                            </h3>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;width: 10%">減免区分</td>
+                                                        <td style="width: 10%;border:1px solid transparent;background-color: transparent;padding: 0px;">
+															<div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="1">通常</option>
+                                                                    <option value="2">減額</option>
+                                                                    <option value="3">免除</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="none_bd" style="width: 10%;border: 1px solid transparent;padding-top: 7px;padding-left: 7px">減免率</td>
+                                                        <td style="width: 10%;border:1px solid transparent;background-color: transparent;padding: 0px;">
+															<input placeholder="40" style="text-align: center;" type="text">
+                                                        </td>
+														<td style="width: 10%;border:1px solid transparent;background-color: transparent;padding: 0px;">
+															<div class="none_bd" style="padding: 5px;text-align:left">%</div>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;padding-left: 7px;">減免期間</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 3px;"><input type="month">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="month"></td>
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- block-body -->
+                                    </div>
+
+									<!-- 
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">FIT納付金減免設定</span>
+                                            </h3>
+                                        </div>
+
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;width: 14%">減免区分</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 8%">
+                                                            <div class="block_input" style="padding: 5px;width: 100%;text-align:center">免除<i style="float: right" class="fas fa-sort-down"></i></div>
+                                                        </td>
+
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;">減免期間</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 3px;padding-left: 0;text-align: left"><input type="month">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="month"></td>
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    </div>
+									-->						
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">需要家同意事項</span>
+                                            </h3>
+                                        </div>
+                                        <!-- block-header -->
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;margin-bottom: 10px">
+                                                    <tr>
+                                                        <td class="none_bd" style="width: 18%; border: 1px solid transparent;padding-top: 7px;">電気需給契約書バージョン</td>
+                                                        <td colspan="10" style="border:1px solid transparent;background-color: transparent;padding: 0px;">
+															<input placeholder="text" style="text-align: left;" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+														<td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;text-align: right;padding-right: 0px;font-weight: 100">プライバシーポリシー同意</td>
+                                                        <td class="none_bd" style="width: 5%; border: 1px solid transparent;padding-top: 7px;"><input type="checkbox"></td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;font-weight: 100;text-align: right;padding-right: 0px;">契約申込同意</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;font-weight: 100"><input type="checkbox"></td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;text-align: right;padding-right: 0px;font-weight: 100">個人情報取扱同意</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;"><input type="checkbox"></td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;text-align: right;padding-right: 0px;font-weight: 100">契約更新規約同意</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;"><input type="checkbox"></td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;padding-right: 0px; text-align: right;font-weight: 100">契約廃止規約同意</td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;padding-top: 7px;"><input type="checkbox"></td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- block-body -->
+                                    </div>
+                                </div>
+
+
+                                <!-- callDetailRight -->
+                            </section>
+                            <!-- callDetailMain -->
+                        </div>
+                        <!-- callDetailContent -->
+                    </main>
+                </div>
+                <!-- listMain -->
+            </div>
+            <!-- mainWrapper -->
+        </div>
+        <!-- mainContainer -->
+    </div>
+
+       
+</body>
+
+</html>

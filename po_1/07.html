@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sheet_5</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/uniform.min.js"></script>
+    <script src="js/plugins/select2.min.js"></script>
+    <script src="js/plugins/jquery.mCustomScrollbar.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/plugins/timepicker-addon.js"></script>
+    <script src="js/plugins/jquery.blockUI.js"></script>
+    <script src="js/plugins/jquery.fixedheadertable.min.js"></script>
+    <script src="js/plugins/MonthPicker.min.js"></script>
+    <script src="js/plugins/slider_pips.min.js"></script>
+    <script src="js/plugins/jquery.nicescroll.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="pageScroller">
+        <div class="mainContainer">
+            <div class="mainWrapper">
+                <div class="callDetail">
+                    <nav class="callDetailMenu">
+                        <div class="header_wrap" style="">
+                            <div id="header" style="">
+                                <div class="logo">
+                                    <a class="logo_a" href = "02.html"><h1 style="font-weight: bold;text-align: left">VISION<br>電気管理システム</h1></a>
+                                </div>
+                                <nav id="gnb" style="">
+									<ul>
+										<li>
+											<a href="#">タスク依頼</a>
+										</li>
+										<li>
+										<li>
+											<a href="#">APO管情報</a>
+										</li>
+										<li>
+											<a href="09.html">申込詳細</a>
+										</li>
+										<li>
+											<a href="05.html">顧客管理</a>
+										</li>
+										<li>
+											<a href="#">契約情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="03.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;契約詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="04.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;契約一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">請求情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<a href="06.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;請求詳細&nbsp;&nbsp;&nbsp;</li></a>
+												<a href="08.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;請求一覧&nbsp;&nbsp;&nbsp;</li></a>
+											</ul>
+										</li>
+										<li>
+											<a href="#">マスター管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+												<li class="pdf_check">料金マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">割引マスター</li>
+											</ul>
+										</li>
+										<li>
+										<a href="#">システム管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+											<ul class="gnb_depth2" data-gnb="depth2">
+											<a href="07.html"><li class="pdf_check">社員マスター</li></a>
+												<li class="pdf_check">汎用マスター</li>
+												<li style="margin-bottom: 5px" class="pdf_check">組織図マスター</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+                            </div>
+                            <nav id="gnb2" style="display: inline-block ; float: right;position: relative;top:-40px" class="">
+                                <ul>
+                                    <li>
+                                        <img src="img/user.png" alt=""><a style="position: relative;top: -8px;left: -14px" href="#">新垣　結衣<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+                                        <ul class="gnb_depth2" data-gnb="depth2">
+                                            <li style="margin-left: 5px" class="pdf_check">Password Reset</li>
+                                            <a href="01.html"><li style="margin-left: 5px;margin-bottom: 5px;margin-right: 0" class="pdf_check">Logout</li></a>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </nav>
+                    <main class="main">
+                        <div style="width: " class="callDetailContent">
+                            <section class="callDetailSlider" style="">
+                                <div class="" style="">
+                                </div>
+                            </section>
+                            <section class="callDetailMain clearfix">
+                                <div style="margin-top: 47px;width: 70%" class="callDetailLeft">
+                                    <div class="block block-1">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">社員一覧</span>
+                                            </h3>
+                                            <div class="header-elements">
+                                            </div>
+                                        </div>
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;width: 11%">社員ID</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 11%">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;width:11%">社員名</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width:11%">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;width:11%">所属事業部</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width:11%">
+                                                            <div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="">&nbsp;</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td colspan="2" class="none_bd" style="border: 1px solid transparent;">Email</td>
+                                                        <td colspan="2" style="border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td rowspan="2" class="none_bd" style="border: 1px solid transparent;padding: 0;width: 10.4%;text-align: right;padding-left: 4px;"><button class="table_btn" style="height: 61px;">検索</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;">ログインID</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;">権限</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 11%">
+                                                            <div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="">&nbsp;</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;">所属部門</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 11%">
+                                                            <div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="">&nbsp;</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;width: 8%">Active</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 10%">
+                                                            <div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="">0</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;width: 8%">del_flg</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;width: 10%">
+                                                            <div class="sin_slt">
+                                                                <select name="sinjungi">
+                                                                    <option value="">0</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div class="clearfix" style="overflow-y: scroll;border-top: 1px solid transparent;width: 100%;height: 500px">
+                                                    <table class="table table-bordered" style="">
+                                                        <tr>
+                                                            <td style="width: 2%" class="td-bg-4">NO</td>
+                                                            <td class="td-bg-4">社員ID</td>
+                                                            <td class="td-bg-4">ログインID</td>
+                                                            <td class="td-bg-4">社員名</td>
+                                                            <td class="td-bg-4">所属事業部</td>
+                                                            <td class="td-bg-4">所属部門</td>
+                                                            <td class="td-bg-4">権限</td>
+                                                            <td class="td-bg-4">Email</td>
+                                                            <td class="td-bg-4">Active</td>
+                                                            <td class="td-bg-4">del_flg</td>
+                                                            <td class="td-bg-4">&nbsp;</td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>1</td>
+                                                            <td>101729</td>
+                                                            <td>101730</td>
+                                                            <td>張 民湜</td>
+                                                            <td>情報ｼｽﾃﾑ</td>
+                                                            <td>情報ｼｽﾃﾑ</td>
+                                                            <td>システム管理者</td>
+                                                            <td>m_jang@vision-net.co.jp</td>
+                                                            <td>0</td>
+                                                            <td>0</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>2</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>3</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>4</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>5</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>6</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>7</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>8</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>9</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>10</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>11</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>12</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>13</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>14</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>15</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>16</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>17</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>18</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>19</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>20</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>21</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>22</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>23</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>24</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>25</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>26</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>27</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>28</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>29</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>30</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>31</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>32</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>33</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>34</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>35</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>36</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>37</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>38</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>39</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                        <tr style="color: #a6a8ab;text-align: center">
+                                                            <td>40</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><i class="fas fa-search"></i></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="width: 29.7%" class="callDetailRight">
+                                    <div class="block block-2">
+                                        <div class="block-header">
+                                            <h3 class="header-title">
+                                                <span style="color: #b7d9a8;padding-right: 10px;font-size: 10px;">▶</span><span style="color: #333; font-weight: bold">支払情報</span>
+                                            </h3><button style="float: right;position: relative;top:-7px" class="table_btn">修正</button><button style="float: right;position: relative;top:-7px;margin-right: 4px;" class="table_btn">新規登録
+                                            </button>
+                                        </div>
+                                        <div class="block-body clearfix">
+                                            <div class="clearfix" style="width: 100%">
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle">社員ID</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;">
+                                                            <input placeholder="101729" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">ログインID</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">パスワード</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">所属事業部</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">所属部門</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">Email</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">権限</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">Active</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;position: relative;top: 4px">del_flg</td>
+                                                        <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                            <input placeholder="" style="width: 100%;text-align: center" type="text">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle">メモ欄</td>
+                                                    </tr>
+                                                    <td style="border:1px solid transparent;background-color: transparent;padding: 0px;padding-top: 5px;">
+                                                        <input placeholder="" style="height: 300px;width: 100%;text-align: center" type="text">
+                                                    </td>
+                                                </table>
+                                                <table class="table table-bordered" style="margin-top: 10px;">
+                                                    <tr>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;text-align: right"><button style="position: relative;top:-7px;margin-right: 4px;padding: 0 45px" class="table_btn">OK</button></td>
+                                                        <td class="none_bd" style="border: 1px solid transparent;vertical-align: middle;text-align: left"><button style="position: relative;top:-7px;margin-right: 4px;" class="table_btn">CANCEL</button></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

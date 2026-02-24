@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>VISION電気</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/uniform.min.js"></script>
+    <script src="js/plugins/select2.min.js"></script>
+    <script src="js/plugins/jquery.mCustomScrollbar.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/plugins/timepicker-addon.js"></script>
+    <script src="js/plugins/jquery.blockUI.js"></script>
+    <script src="js/plugins/jquery.fixedheadertable.min.js"></script>
+    <script src="js/plugins/MonthPicker.min.js"></script>
+    <script src="js/plugins/slider_pips.min.js"></script>
+    <script src="js/plugins/jquery.nicescroll.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+	<nav class="callDetailMenu">
+		<div class="header_wrap" style="">
+			<div id="header" style="">
+			<div class="logo">
+				<a class="logo_a" href = "02.html"><h1 style="font-weight: bold;text-align: left">VISION<br>電気管理システム</h1></a>
+			</div>
+				<nav id="gnb" style="">
+					<ul>
+						<li>
+							<a href="#">タスク依頼</a>
+						</li>
+						<li>
+						<li>
+							<a href="#">APO管情報</a>
+						</li>
+						<li>
+							<a href="09.html">申込詳細</a>
+						</li>
+						<li>
+							<a href="05.html">顧客管理</a>
+						</li>
+						<li>
+							<a href="#">契約情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+							<ul class="gnb_depth2" data-gnb="depth2">
+								<a href="03.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;契約詳細&nbsp;&nbsp;&nbsp;</li></a>
+								<a href="04.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;契約一覧&nbsp;&nbsp;&nbsp;</li></a>
+							</ul>
+						</li>
+						<li>
+							<a href="#">請求情報<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+							<ul class="gnb_depth2" data-gnb="depth2">
+								<a href="06.html"><li class="pdf_check">&nbsp;&nbsp;&nbsp;請求詳細&nbsp;&nbsp;&nbsp;</li></a>
+								<a href="08.html"><li style="margin-bottom: 5px" class="pdf_check">&nbsp;&nbsp;&nbsp;請求一覧&nbsp;&nbsp;&nbsp;</li></a>
+							</ul>
+						</li>
+						<li>
+							<a href="#">マスター管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+							<ul class="gnb_depth2" data-gnb="depth2">
+								<li class="pdf_check">料金マスター</li>
+								<li style="margin-bottom: 5px" class="pdf_check">割引マスター</li>
+							</ul>
+						</li>
+						<li>
+						<a href="#">システム管理<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+							<ul class="gnb_depth2" data-gnb="depth2">
+							<a href="07.html"><li class="pdf_check">社員マスター</li></a>
+								<li class="pdf_check">汎用マスター</li>
+								<li style="margin-bottom: 5px" class="pdf_check">組織図マスター</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<nav id="gnb2" style="display: inline-block ; float: right;position: relative;top:-40px" class="">
+				<ul>
+					<li>
+					<img src="img/user.png" alt=""><a style="position: relative;top: -8px;left: -14px" href="#">新垣　結衣<i class="fas fa-caret-down" style="position: relative;left: 4px"></i></a>
+						<ul class="gnb_depth2" data-gnb="depth2">
+							<li style="margin-left: 5px" class="pdf_check">Password Reset</li>
+							<a href="01.html"><li style="margin-left: 5px;margin-bottom: 5px;margin-right: 0" class="pdf_check">Logout</li></a>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</nav>
+	
+	<div class="content_wrap">
+        <div class="content">
+        </div>
+    </div>
+    <div class="number_wrap">
+        <div class="number">
+            <h2 class="number_title">申込/契約数</h2>
+            <div class="nbt_bd"></div>
+            <ul style="width: 960px; margin: 0 auto">
+                <li id="num">
+                    <h3 class="count_title">本日申込数</h3><span class="count">30</span><span>件</span>
+                </li>
+                <li id="num">
+                    <h3 class="count_title">本日契約数</h3><span class="count">35</span><span>件</span>
+                </li>
+                <li id="num">
+                    <h3 class="count_title">今月申込数</h3><span class="count">971</span><span>件</span>
+                </li>
+                <li id="num">
+                    <h3 class="count_title">今月契約数</h3><span class="count">1120</span><span>件</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $('.count').each(function() {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
