@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- 변수 선언 부분 ---
     const fullpageBgContainer = document.getElementById(
         'fullpage-container-background'
     );
@@ -38,15 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // ed_design일 때는 배경 이미지가 들어있는 div를 위로 100vh만큼 올려서 아래쪽 절반이 보이게
                 edMovableBackground.style.transform = 'translateY(-100vh)';
             } else {
-                // 혹시 모를 상황 대비 (사실 여기까지 오면 안 됨)
                 edMovableBackground.style.transform = 'translateY(0)';
             }
         } else {
-            // 이 섹션들이 아니면 edBackgroundContainer를 완전히 숨김
             edBackgroundContainer.style.opacity = '0';
             edBackgroundContainer.style.visibility = 'hidden';
-            // 배경 div의 위치도 초기화하거나 숨겨두는 게 좋을 수 있음 (옵션) edMovableBackground.style.transform =
-            // 'translateY(0)';
         }
     }
 
