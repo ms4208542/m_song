@@ -388,9 +388,9 @@ button {
 .web_wrap {
     width: 1280px;
     /* margin: 165px auto 0; */
-margin: 0 auto;
-border-top: 1px solid transparent;
-padding-block: 220px;
+    margin: 0 auto;
+    border-top: 1px solid transparent;
+    padding-block: 220px;
 }
 .down_arrow {
     animation: scroll-down 3s infinite;
@@ -602,7 +602,9 @@ padding-block: 220px;
     background: #DFE9F3;
     background: radial-gradient(circle,rgba(223, 233, 243, 0.5) 0%, rgba(255, 255, 255, 1) 50%);
 }
-.three_details {border-top: 1px solid transparent;padding-top: 25px;
+.three_details {
+    border-top: 1px solid transparent;
+    padding-top: 25px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -729,11 +731,13 @@ padding-block: 220px;
     margin-block: 2px;
 }
 .side-menu li a {
-  display: block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
-.side-menu li:nth-child(2) {margin-top: 0;}
+.side-menu li:nth-child(2) {
+    margin-top: 0;
+}
 .side-menu li:hover {
     background: #E9E9E9;
 }
@@ -748,45 +752,45 @@ padding-block: 220px;
 }
 
 .side-menu li:first-child:hover {
-  background: none;
-  color: inherit;
+    background: none;
+    color: inherit;
 }
-
-
 
 /* ed_design */
 .section.ed_design,
 .section.ed_design .fp-tableCell {
-    height: 100vh ;
-    max-height: 100vh ;
-    display: block ;
+    height: 100vh;
+    max-height: 100vh;
+    display: block;
 }
 .section.ed_design {
-    height: 100vh ;
-    max-height: 100vh ;
-    display: block ;
+    height: 100vh;
+    max-height: 100vh;
+    display: block;
     position: relative;
 }
 .ed_design {
     display: block;
     width: 100%;
-    flex-direction: row ;
+    flex-direction: row;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh ;
+    min-height: 100vh;
     height: 100vh;
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
-background-image: url(../img/ed_bg2.png)}
+    background-image: url("../img/ed_bg2.png");
+}
 .ed_design::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80px; /* 그라데이션 높이 조절 */
+    height: 80px;
+    /* 그라데이션 높이 조절 */
     pointer-events: none;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
@@ -805,7 +809,7 @@ background-image: url(../img/ed_bg2.png)}
     max-height: 100%;
 }
 .ed_img > img {
-width: 85%;
+    width: 85%;
     height: auto;
     object-fit: cover;
     position: relative;
@@ -833,9 +837,11 @@ width: 85%;
 }
 
 .ed_icon {
-    width: 5%;position: relative;
+    width: 5%;
+    position: relative;
 }
-.ed_title > h1 {     font-size: 120px;
+.ed_title > h1 {
+    font-size: 120px;
     line-height: 111px;
     max-width: 100vw;
     overflow-wrap: break-word;
@@ -845,4 +851,160 @@ width: 85%;
     margin: 0;
     padding: 0;
 }
-.ed_title>p{letter-spacing: 8px;}
+.ed_title > p {
+    letter-spacing: 8px;
+}
+
+.web_five_wrap {
+    display: block;
+    width: 100%;
+    position: relative;border-top: 1px solid transparent;padding-top: 250px;
+}
+.el_login {
+    width: 386px;
+    margin: 0 auto;
+    height: 98px;
+}
+
+.el_logo_img {
+    width: 56px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 30;
+}
+
+.el_logo {
+    margin: auto;
+    user-select: none;
+    position: relative;
+    text-align: center;
+    top: -70px;
+    z-index: -9999;
+}
+
+.el_logo b {
+    color: #B7C7F6;
+    text-shadow: 0 -40px 500px #779aff, 0 0 2px, 0 0 1em #779aff, 0 0 0.5em #779aff, 0 0 0.1em #779aff, 0 0 3px #779aff;
+}
+
+.el_logo b span {
+    font-size: 70px;
+    color: #B7C7F6;
+    font-weight: 100;
+    animation: blink linear infinite 2s;
+}
+
+.el_logo b span {
+    animation: blink linear infinite 3s;
+    color: #B7C7F6;
+}
+
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    79% {
+        color: #B7C7F6;
+    }
+    80% {
+
+        text-shadow: none;
+    }
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    82% {
+        color: #B7C7F6;
+        text-shadow: none;
+    }
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    92% {
+        color: #B7C7F6;
+        text-shadow: none;
+    }
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+.five_title_wrap {
+    margin: 0 auto;
+    display: block;
+    width: 850px;
+}
+.five_title {
+    display: flex;
+    justify-content: center;
+    padding-right: 37px;
+}
+.five_h {
+    text-align: center;margin-bottom: 30px;font-size: 30px;
+    font-weight: 300;
+}
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+.web_five_wrap>span{
+   width: 50vmin;
+    height: 50vmin;
+    border-radius: 50vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 42;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;z-index: -999;
+    }
+
+    .web_five_wrap>span:nth-child(0) {
+    color: #e0f5ff;
+    top: 88%;
+    left: 46%;
+    animation-duration: 81s;
+    animation-delay: -42s;
+    transform-origin: 17vw -14vh;
+    box-shadow: -100vmin 0 13.22867650266723vmin currentColor;
+}
+.web_five_wrap>span:nth-child(1) {
+    color: #effff8;
+    top: 53%;
+    left: 76%;
+    animation-duration: 7s;
+    animation-delay: -63s;
+    transform-origin: -21vw -1vh;
+    box-shadow: -100vmin 0 12.776022419528925vmin currentColor;
+}
+.web_five_wrap>span:nth-child(2) {
+    color: #e0f5ff;
+    top: 16%;
+    left: 32%;
+    animation-duration: 19s;
+    animation-delay: -80s;
+    transform-origin: 5vw 13vh;
+    box-shadow: -100vmin 0 13.269179452371546vmin currentColor;
+}
+.web_five_wrap>span:nth-child(3) {
+    color: #e0f5ff;
+    top: 71%;
+    left: 56%;
+    animation-duration: 67s;
+    animation-delay: -25s;
+    transform-origin: 5vw -10vh;
+    box-shadow: -100vmin 0 13.280216444997231vmin currentColor;
+}
+.web_five_wrap>span:nth-child(4) {
+    color: #efecfe;
+    top: 15%;
+    left: 55%;
+    animation-duration: 82s;
+    animation-delay: -73s;
+    transform-origin: -24vw -20vh;
+    box-shadow: -100vmin 0 13.021471090662008vmin currentColor;
+}

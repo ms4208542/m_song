@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>scl005</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+</head>
+
+<body>
+    <div class="header_wrpa">
+        <div class="header">
+            <div class="head_box">
+                <div class="header_logo">
+                    <a href="#"><img src="img/logo_txt.png" alt="logo"></a></div>
+               <div class="l_txt"><a href="02_scl_003.html"><span style="padding-right: 30px">シミュレーション管理</span></a>
+                <a href="03_scl_004.html"><span style="margin-right: 30px">見積書管理</span></a><a href="05_scl005.html"><span style="margin-right: 30px;">拠点情報</span></a>
+                    <a href="#"><span style="padding-right: 40px">ログイン履歴</span></a>
+                    <div class="popup" onclick="myFunction()">
+                        <img style="cursor: pointer" src="img/user.png" alt="">
+                        <span class="popuptext" id="myPopup"><span class="triangle"></span>
+                        <img style="display: inline-block;top: 20px;position: relative;left: 16px" src="img/user_pop.png" alt=""><span style="padding-left: 33px">こんにちは、<br><span style="font-weight: 800;padding-right: 0px;padding-left: 63px;text-align: left">李 相國</span>さん!</span>
+                        <div class="bd"></div><a href="#"><span class="logout" style="padding-right: 0px">ログアウト</span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price_wrap">
+        <div class="price">
+            <img src="img/idea.png" alt="" class="power_i">
+            <h1 class="price_title">￥1, 600, 000</h1>
+            <h2 class="price_sub_title">[シミュレーション名_株式会社ビジョン]</h2>
+            <p class="price_text">20.&nbsp;&nbsp;02.&nbsp;&nbsp;24&nbsp;&nbsp;_&nbsp;&nbsp;作成者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李&nbsp;&nbsp;相國</p>
+            <ul class="price_u">
+                <li><a href="#"><span><i class="fas fa-envelope"></i></span></a></li>
+                <li><a href="#"><span><i class="fas fa-download"></i></span></a></li>
+                <li><a href="#"><span><i class="fas fa-file-upload"></i></span></a></li>
+                <li><a href="#"><span><i class="fas fa-trash-alt"></i></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="price_content_wrap">
+        <div class="price_content">
+            <div class="price_sub">
+                <ul>
+                    <li class="price_dropdown">
+                        <input type="checkbox" />
+                        <a href="#" data-toggle="price_dropdown">
+<span style="padding-right: 63px;position: relative;top: -4px">○</span>
+<span style="font-size: 27px;font-weight: 900;padding-right: 30px">￥1, 000, 000</span>
+<span style="position: relative;top: -4px">拠点名_東京拠点_YYYYMMDD</span></a>
+                        <ul class="dropdown-menu">
+                            <li style="text-align: center;font-weight: bold;">シミュレーション結果</li>
+                            <li style="border-bottom: 2px solid #506091; width: 14px;padding-top: 18px;margin-bottom: 34px"></li>
+                            <li><img src="img/graph.png" alt=""></li>
+                            <li style="text-align: left;padding-left: 150px"><span style="font-size:27px;font-weight: 900">3,271円</span>
+                                <span>年間電気料金</span>
+                                <span style="font-size:27px;font-weight: 900;padding-left: 70px">1 kWh</span>
+                                <span>年間電力使用量</span></li>
+                            <li>
+                                <table style="border-collapse: collapse" class="scl005_table">
+                                    <tbody style="border:1px solid #d6d6d6">
+                                        <tr style="font-weight: 900;border-bottom:1px solid #d6d6d6;border-left: 1px solid #d6d6d6;">
+                                            <td style="width:205px;border-left: 1px solid #d6d6d6;padding:5px 0 ">&nbsp;</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JAN</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">FEB</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">MAR</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">ARP</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">MAY</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JUN</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JUL</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">AUG</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">SEP</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">OCT</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">NOV</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">DEC</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #d6d6d6">
+                                            <td style="text-align: left;border-left: 1px solid #d6d6d6;padding: 5px 5px">使用量 (kWh)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">10</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #d6d6d6">
+                                            <td style="text-align: left; border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (乗り換え前) (円)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">305</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #d6d6d6">
+                                            <td style="text-align: left;border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (法人割) (乗り換え後) (円)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">290</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative;top: 0" class="price_content_wrap">
+        <div class="price_content">
+            <div class="price_sub">
+                <ul>
+                    <li class="price_dropdown">
+                        <input type="checkbox" />
+                        <a href="#" data-toggle="price_dropdown">
+<span style="padding-right: 86px;position: relative;top: -4px">○</span>
+<span style="font-size: 27px;font-weight: 900;padding-right: 30px">￥600, 000</span>
+<span style="position: relative;top: -4px">拠点名_大阪拠点_YYYYMMDD</span></a>
+                        <ul class="dropdown-menu">
+                            <li style="text-align: center;font-weight: bold;">シミュレーション結果</li>
+                            <li style="border-bottom: 2px solid #506091; width: 14px;padding-top: 18px;margin-bottom: 34px"></li>
+                            <li><img src="img/graph.png" alt=""></li>
+                            <li style="text-align: left;padding-left: 150px"><span style="font-size:27px;font-weight: 900">3,271円</span>
+                                <span>年間電気料金</span>
+                                <span style="font-size:27px;font-weight: 900;padding-left: 70px">1 kWh</span>
+                                <span>年間電力使用量</span></li>
+                            <li>
+                                <table style="border-collapse: collapse" class="scl005_table">
+                                    <tbody style="border:1px solid #d6d6d6">
+                                        <tr style="font-weight: 900;border-bottom:1px solid #d6d6d6;border-left: 1px solid #d6d6d6;">
+                                            <td style="width:205px;border-left: 1px solid #d6d6d6;padding:5px 0 ">&nbsp;</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JAN</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">FEB</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">MAR</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">ARP</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">MAY</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JUN</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">JUL</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">AUG</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">SEP</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">OCT</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">NOV</td>
+                                            <td style="width:50px;border-left: 1px solid #d6d6d6">DEC</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #d6d6d6">
+                                            <td style="text-align: left;border-left: 1px solid #d6d6d6;padding: 5px 5px">使用量 (kWh)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">10</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #d6d6d6">
+                                            <td style="text-align: left; border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (乗り換え前) (円)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">305</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #d6d6d6">
+                                            <td style="text-align: left;border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (法人割) (乗り換え後) (円)</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">290</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                            <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="base_wrap">
+        <div class="base">
+            <div class="base_add">
+                <img class="base_arrow" src="img/down_arrow.png" alt="">
+                <h3 class="base_h">拠点追加</h3>
+            </div>
+            <div class="base_content">
+                <div class="base_input">
+                    <h3 style="text-align:center;padding-top: 40px;padding-bottom: 18px">拠点情報（電気料金）入力</h3>
+                    <p class="base_bd"></p>
+                    <table style="border-collapse: collapse" class="">
+                        <tbody style="">
+                            <tr>
+                                <td style="width: 110px">拠点名</td>
+                                <td class="base_td" style="width: 442px"><input class="base_td_input" type="selete"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">電力エリア</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 420px">
+    <option value="10"><p>選択してください</p></option>
+    <option value="20"><p>1</p></option>
+    <option value="30"><p>2</p></option>
+    <option value="40"><p>3</p></option>
+</select></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">契約メニュー</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 420px">
+    <option value="10"><p>現在ご契約中のメニューを選択してください</p></option>
+    <option value="20"><p>1</p></option>
+    <option value="30"><p>2</p></option>
+    <option value="40"><p>3</p></option>
+</select></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">契約電力</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <form style="padding-right: 150px">
+                                        <input style="" type="radio" name="month" value="1month"><span style="padding-left: 13px">単月</span>
+                                        <input style="margin-left: 110px;" type="radio" name="month" value="12month"><span style="padding-left: 13px">12ヶ月</span>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">&nbsp;</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 135px;margin-right: 24px">
+    <option value="10"><p>1月</p></option>
+    <option value="20"><p>2月</p></option>
+    <option value="30"><p>3月</p></option>
+    <option value="40"><p>4月</p></option>
+    <option value="40"><p>5月</p></option>
+    <option value="40"><p>6月</p></option>
+    <option value="40"><p>7月</p></option>
+    <option value="40"><p>8月</p></option>
+    <option value="40"><p>9月</p></option>
+    <option value="40"><p>10月</p></option>
+    <option value="40"><p>11月</p></option>
+    <option value="40"><p>12月</p></option>
+</select><input class="base_td_input" type="selete" style="width:228px;"><span style="padding-left: 5px">Kw</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">力率</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 420px">
+    <option value="10"><p>選択してください</p></option>
+    <option value="20"><p>1</p></option>
+    <option value="30"><p>2</p></option>
+    <option value="40"><p>3</p></option>
+</select></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">年間利用パターン</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 420px">
+    <option value="10"><p>選択してください</p></option>
+    <option value="20"><p>1</p></option>
+    <option value="30"><p>2</p></option>
+    <option value="40"><p>3</p></option>
+</select></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">電力使用量</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <form style="padding-right: 150px">
+                                        <input style="" type="radio" name="month" value="1month"><span style="padding-left: 13px">単月</span>
+                                        <input style="margin-left: 110px;" type="radio" name="month" value="12month"><span style="padding-left: 13px">12ヶ月</span>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">&nbsp;</td>
+                                <td class="base_td" style="width: 442px;padding-top: 25px">
+                                    <select class="base_td_input" name="number" style="height: 33px;width: 135px;margin-right: 24px">
+    <option value="10"><p>1月</p></option>
+    <option value="20"><p>2月</p></option>
+    <option value="30"><p>3月</p></option>
+    <option value="40"><p>4月</p></option>
+    <option value="40"><p>5月</p></option>
+    <option value="40"><p>6月</p></option>
+    <option value="40"><p>7月</p></option>
+    <option value="40"><p>8月</p></option>
+    <option value="40"><p>9月</p></option>
+    <option value="40"><p>10月</p></option>
+    <option value="40"><p>11月</p></option>
+    <option value="40"><p>12月</p></option>
+</select><input class="base_td_input" type="selete" style="width:228px;"><span style="padding-left: 5px">Kw</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 110px;padding-top: 22px">&nbsp;</td>
+                                <td class="base_btn" style="padding-top: 25px"><button class="base_btn_sum js-btn btn">計算</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='js-fade fade-in is-paused'>
+        <div class="result_wrap">
+            <div class="result">
+                <div class="result_content">
+                    <ul class="result_con">
+                        <li style="text-align: center;font-weight: bold;margin-top: 30px;padding-bottom: 17px">シミュレーション結果</li>
+                        <li style="border-top: 2px solid #506091; width: 14px;padding-top: 18px;padding-bottom: 34px; margin: 0 auto"></li>
+                        <li><img style="text-align: center" src="img/graph.png" alt=""></li>
+                        <li style="text-align: left;"><span style="font-size:27px;font-weight: 900">3,271円</span>
+                            <span>年間電気料金</span>
+                            <span style="font-size:27px;font-weight: 900;padding-left: 70px">1 kWh</span>
+                            <span>年間電力使用量</span></li>
+                        <li>
+                            <table style="border-collapse: collapse" class="scl005_table">
+                                <tbody style="border:1px solid #d6d6d6">
+                                    <tr style="font-weight: 900;border-bottom:1px solid #d6d6d6;border-left: 1px solid #d6d6d6;">
+                                        <td style="width:205px;border-left: 1px solid #d6d6d6;padding:5px 0 ">&nbsp;</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">JAN</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">FEB</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">MAR</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">ARP</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">MAY</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">JUN</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">JUL</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">AUG</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">SEP</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">OCT</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">NOV</td>
+                                        <td style="width:50px;border-left: 1px solid #d6d6d6;text-align:center">DEC</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #d6d6d6">
+                                        <td style="text-align: left;border-left: 1px solid #d6d6d6;padding: 5px 5px">使用量 (kWh)</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">10</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">0</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #d6d6d6">
+                                        <td style="text-align: left; border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (乗り換え前) (円)</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">305</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">286</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #d6d6d6">
+                                        <td style="text-align: left;border-left: 1px solid #d6d6d6; padding: 5px 5px">従量電灯B (法人割) (乗り換え後) (円)</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">290</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                        <td style="border-left:1px solid #d6d6d6;text-align:right;padding-right:5px">271</td>
+                                    </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <div class="short_cut_btn">
+                        <ul class="short_cut_ul">
+                            <a href="#">
+                                <li class="short_cut_li company bt" style="margin-right: 8px ">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">会社設立</p>
+                                    <p>手続きをまるごと任せて</p>
+                                    <p>最短日程で会社設立</p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="short_cut_li space bt" style="margin-right: 8px;">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">空間デザイン</p>
+                                    <p>高品質な空間デザインを</p>
+                                    <p>高いコストパフォーマンスで実現</p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="short_cut_li chair bt">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">オフィス家具</p>
+                                    <p>価格も品質も納得の</p>
+                                    <p>オフィス家具を選ぶなら</p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="short_cut_li new" style="margin-right: 8px">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">看板</p>
+                                    <p>訪問企画で来店率を</p>
+                                    <p>上げる看板を作成</p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="short_cut_li call" style="margin-right: 8px">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">電話回線</p>
+                                    <p>お客様のニーズにあわせて</p>
+                                    <p>最適なプランをご提案</p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="short_cut_li internet">
+                                    <p style="text-align: left;font-weight:900;padding-top: 8px">インターネット</p>
+                                    <p>安くて速いインターネット</p>
+                                    <p>回線をひくなら</p>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+    <script id="rendered-js">
+        var btn = document.querySelector('.js-btn');
+        var el = document.querySelector('.js-fade');
+
+        btn.addEventListener('click', function(e) {
+            el.classList.remove('is-paused');
+        });
+    </script>
+-->
+</body>
+
+</html>
