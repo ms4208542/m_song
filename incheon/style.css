@@ -39,6 +39,8 @@ html {
     background-color: #fff;
     width: 100vw;
     height: 95vh;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
 }
 .in_title > h2 {
     font-size: 60px;
@@ -206,7 +208,7 @@ html {
 }
 
 .ty_color_wrap {
-    display: flex;gap: 50px;
+    display: flex;gap: 66px;margin-bottom: 80px;
 }
 .color_list_wrap {
     display: flex;
@@ -214,8 +216,8 @@ html {
 }
 .data_colors {
     display: block;
-    width: 20px;
-    height: 46px;margin-right: 10px;
+       width: 12px;
+    height: 36px;margin-right: 10px;
 }
 .data_color_one > ul {
     display: flex;
@@ -325,9 +327,21 @@ html {
 .g_text{font-weight: 500;font-size: 13px;font-family: 'GMarketSans', sans-serif}
 .gmarket>ul>li{margin-bottom: 3px;}
 
-.login_main_wrap{height: 2000px;background: linear-gradient(
+.login_main_wrap{height: 900px;background: linear-gradient(
   to bottom,
-  #CCF1FF 0%,      /* 시작은 하늘색 */
-  #CCF1FF 61%,     /* 61%까지 하늘색 유지 */
-  #EDF0F6 100%     /* 61%부터 하얀색으로 부드럽게 전환 */
-);}
+  #CCF1FF 0%,     
+  #CCF1FF 61%,     
+  #EDF0F6 100%   
+);display: block;width: 100%;}
+.login_main_wrap>.login_main>img{width: 100%;}
+.login_main{width: 1280px;margin: 0 auto;}
+.sub_guide_wrap{display: block;width: 100%;}
+.sub_guide{width: 1280px ;margin: 0 auto;display: flex;align-items: flex-end;
+    justify-content: space-between;}
+.site_map{width: 49%;}
+.site_map>img{width: 100%;}
+.table_guide{width: 49%;}
+.table_guide>img:last-child{width: 100%;}
+.table_guide>p{font-size:14px;line-height: 28px;margin-bottom:66px}
+.incheon_logo{width: 40%;    margin-block: 14px;}
+.table_guide>.sub_title{padding-top: 0;}
