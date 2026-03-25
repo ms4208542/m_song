@@ -327,21 +327,31 @@ html {
 .g_text{font-weight: 500;font-size: 13px;font-family: 'GMarketSans', sans-serif}
 .gmarket>ul>li{margin-bottom: 3px;}
 
-.login_main_wrap{height: 900px;background: linear-gradient(
+
+
+.in_mock_wrap{display: block;width: 100%;background-color: #DFDFDF;padding-block:150px 100px;}
+.in_mock{width: 1920px;margin: 0 auto;}
+.in_mock>img{width: 83%;}
+.project-info{width: 1280px ;margin: 0 auto;}
+.project-info>img{width: 20%;}
+.project-info>p{font-size: 14px;line-height: 28px;margin-top: 18px}
+
+.login_wrap{display: block;width: 100%;background: linear-gradient(
   to bottom,
-  #CCF1FF 0%,     
-  #CCF1FF 61%,     
-  #EDF0F6 100%   
-);display: block;width: 100%;}
-.login_main_wrap>.login_main>img{width: 100%;}
-.login_main{width: 1280px;margin: 0 auto;}
-.sub_guide_wrap{display: block;width: 100%;}
-.sub_guide{width: 1280px ;margin: 0 auto;display: flex;align-items: flex-end;
-    justify-content: space-between;}
-.site_map{width: 49%;}
-.site_map>img{width: 100%;}
-.table_guide{width: 49%;}
-.table_guide>img:last-child{width: 100%;}
-.table_guide>p{font-size:14px;line-height: 28px;margin-bottom:66px}
-.incheon_logo{width: 40%;    margin-block: 14px;}
-.table_guide>.sub_title{padding-top: 0;}
+  #1967BD 0%,
+  #1967BD 40%,
+  #f8f8f8 40%,
+  #f8f8f8 100%
+);}
+.login{width: 1280px;margin: 0 auto;display: flex;justify-content: space-between;}
+.login>img{border-radius: 30px;width: 80%;  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);margin-block:104px
+}
+.login_h{padding-block: 82px;}
+.login_h> h1,.login_h>h3{color: #fff;}
+.login_h h3{font-weight: 400;}
+.login_h h1{font-size: 60px;margin-top: 5px;}
+
+.sub_wrap{display: flex;justify-content: space-between;width:1280px;margin:0 auto}
+.sub_flex_left, .sub_flex_right{width: 49.5%;}
+.sub_flex_left img, .sub_flex_right img{width: 100%;box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.08);margin-bottom:15px;border-radius: 10px;}
+.sub_flex_right img:first-child{margin-top: 100px;}
