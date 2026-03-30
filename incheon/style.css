@@ -344,14 +344,34 @@ html {
   #f8f8f8 100%
 );}
 .login{width: 1280px;margin: 0 auto;display: flex;justify-content: space-between;}
-.login>img{border-radius: 30px;width: 80%;  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);margin-block:104px
+.login>img{border-radius: 30px;width: 60%;  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);margin-block:104px
 }
 .login_h{padding-block: 82px;}
-.login_h> h1,.login_h>h3{color: #fff;}
+.login_h> h1, .login_h>h3{color: #fff;}
 .login_h h3{font-weight: 400;}
 .login_h h1{font-size: 60px;margin-top: 5px;}
 
-.sub_wrap{display: flex;justify-content: space-between;width:1280px;margin:0 auto}
+.sub_wrap{display: flex;justify-content: space-between;width:1280px;margin:0 auto; position: relative;}
 .sub_flex_left, .sub_flex_right{width: 49.5%;}
-.sub_flex_left img, .sub_flex_right img{width: 100%;box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.08);margin-bottom:15px;border-radius: 10px;}
+.sub_flex_left img, .sub_flex_right img{width: 100%;box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.08);margin-bottom:20px;border-radius: 10px;}
 .sub_flex_right img:first-child{margin-top: 100px;}
+
+.sub_wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 500px; 
+  pointer-events: none; 
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0), rgb(248, 248, 248) 90%);
+  z-index: 10; 
+}
+
+.login_mock_wrap{display: block; width: 100%;}
+.login_mock{width: 1280px;margin: 0 auto;}
+.login_mock>img{width: 100%;}
+.under_line {
+    background-image: linear-gradient(to bottom, transparent 50%, #dce9fe 50%);
+}
+.login_mock>p{font-size:14px; line-height: 28px;text-align: center;}
