@@ -132,7 +132,7 @@
 }
 .design_guide {
     width: 1280px;
-    margin: 0 auto;
+    margin: 0 auto;margin-bottom: 130px;
 }
 .design_guide > h3 {
     font-size: 24px;
@@ -147,7 +147,8 @@
 .side_container {
     background: linear-gradient(180deg, #f1f3fa, #fff);
     display: block;
-    width: 100%;margin-bottom: 130px;
+    width: 100%;
+    margin-bottom: 130px;
 }
 .mro_info_wrap {
     display: flex;
@@ -181,8 +182,93 @@
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
-.first_text{color: #ED1B23;}
-.key_screens_wrap{display: block;width: 100%;}
-.key_screen{align-items: center;display: flex;margin: 0 auto;width: 1280px;justify-content: space-between;}
-.left_screens, .right_screens{width: 49%;}
-.left_screens > img, .right_screens > img{width: 100%;height: auto;display: block;margin-bottom: 20px;}
+.first_text {
+    color: #ED1B23;
+}
+.key_screens_wrap {
+    display: block;
+    width: 100%;
+    margin-top: 55px;
+    /* background: linear-gradient(180deg, #f1f3fa, #fff);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px; */
+
+    position: relative;
+}
+.mock_wrap {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    background-image:    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+ url("mockup.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 700px;
+    overflow: visible;
+}
+
+.mock_wrap .mock {
+    position: absolute;
+    bottom: -175px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;width: 1280px;
+}
+.mock_wrap .mock img {
+    width: 100%;
+    height: auto;
+
+}
+
+.key_screen {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    width: 1280px;
+    justify-content: space-between;
+}
+.left_screens,
+.right_screens {
+    width: 49.5%;
+}
+.left_screens > img,
+.right_screens > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+/* .gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background:  linear-gradient(to top, rgba(40,45,51,1) 5%, transparent 80%);
+    pointer-events: none;
+    z-index: 10;margin-top: 100px;
+} */
+
+.footer {
+    width: 100%;
+    display: block;
+    background-color: #282D33;
+}
+.foot {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-block: 50px;
+}
+.foot > img {
+    width: 22px;
+}
+.foot > h1 {
+    font-size: 40px;
+    color: #f9f9f9;
+}
