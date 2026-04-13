@@ -254,16 +254,16 @@
 .footer {
     width: 100%;
     display: block;
-    background-color: #282D33;
+    background-color: #282D33;padding-block: 50px 30px;
+margin-top: 80px;
 }
 .foot {
-    width: 1280px;
+    width: 130px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+  text-align: center;
     gap: 15px;
-    padding-block: 50px;
 }
 .foot > img {
     width: 22px;
@@ -272,3 +272,5 @@
     font-size: 40px;
     color: #f9f9f9;
 }
+.foot_txt{display: block;}
+.foot_txt>p{color: #f9f9f9;text-align: center;font-size: 12px;font-weight: 300;margin-top: 10px;}
