@@ -1,62 +1,62 @@
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format('woff2');
     font-weight: 100;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2") format('woff2');
     font-weight: 200;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2") format('woff2');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format('woff2');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format('woff2');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2") format('woff2');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2") format('woff2');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format('woff2');
     font-weight: 800;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format('woff2');
     font-weight: 900;
     font-display: swap;
 }
@@ -447,7 +447,7 @@ button {
 .web_design_wrap {
     width: 100%;
     display: block;
-position: relative;
+    position: relative;
 }
 .web_wrap {
     width: 1280px;
@@ -1129,9 +1129,11 @@ position: relative;
     border-top-right-radius: 100px;
 }
 .seven_title_wrap {
-    display: flex;gap: 55px;
+    display: flex;
+    gap: 55px;
 }
-.seven_row {display: flex;
+.seven_row {
+    display: flex;
     flex-direction: column;
     width: 68%;
     justify-content: flex-end;
@@ -1147,83 +1149,145 @@ position: relative;
     margin-top: 10px;
 }
 .bottom-section {
-display: block;
-  overflow: hidden; 
+    display: block;
+    overflow: hidden;
 }
 
 .animate-item {
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  will-change: opacity, transform;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
 }
 
 .left-image {
-  max-width: 88%;
-  transform: translateX(-100px);
+    max-width: 88%;
+    transform: translateX(-100px);
 }
 
 .text-content {
-  max-width: 30%;
-  padding: 0 40px;
-  transform: translateX(-50px);
+    max-width: 30%;
+    padding: 0 40px;
+    transform: translateX(-50px);
 }
 
 .right-image {
-  max-width: 88%;
-  transform: translateX(100px);  position: absolute;  
-        
-  right: 0;       width: 200px;
+    max-width: 88%;
+    transform: translateX(100px);
+    position: absolute;
+
+    right: 0;
+    width: 200px;
 
 }
 .right-image img {
-    position: absolute;  
-  top: 100px;           
-  right: 0;      
+    position: absolute;
+    top: 100px;
+    right: 0;
 
 }
 /* Intersection observer가 붙이는 visible 클래스가 있으면 보이게 하고 위치 초기화 */
 .animate-item.visible {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* 각각의 visible에 transition-delay로 순차적 등장 */
 .left-image.visible {
-  transition-delay: 0.3s;
+    transition-delay: 0.3s;
 }
 
 .text-content.visible {
-  transition-delay: 0.6s;
+    transition-delay: 0.6s;
 }
 
 .right-image.visible {
-  transition-delay: 0.9s;
+    transition-delay: 0.9s;
 }
 
 /* 모바일 대응(필요하면) */
 @media (max-width: 768px) {
-  .bottom-section {
-    flex-direction: column;
-    padding: 40px 20px;
-  }
+    .bottom-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
 
-  .animate-item {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    max-width: 100%;
-    padding: 10px 0;
-  }
+    .animate-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        max-width: 100%;
+        padding: 10px 0;
+    }
 }
 
 .eight_work_wrap {
     border-top: 1px solid transparent;
-    display: block;width: 100%;}
-
+    display: block;
+    width: 1280px;
+    padding-top: 220px;
+}
 
 .eight_title_wrap {
     margin-top: 50px;
     display: flex;
     align-items: center;
+}
+
+.pu_img_wrap {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 60px;
+}
+.pu_img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.pu_img > img {
+    width: 100%;
+}
+/* .pu_img:first-child>img{border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+.pu_img:last-child>img{border-top-right-radius: 20px;border-bottom-right-radius: 20px;} */
+
+/* EDITORIALDESIGN */
+.ed_all_wrap {
+    display: block;
+    width: 100%;margin-top: 150px;
+}
+.ed_one {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+.ed_one::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background-image: url("../img/onu/main.jpg");
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.8s ease-in-out;
+  z-index: -1;
+}
+
+.ed_one:hover::before {
+  transform: scale(1.05);
+}
+.ed_one:hover{ background-size: 105% auto;}
+.ed_one_main {
+    padding: 30px 20px;
+}
+.ed_one_main > p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 100;
 }

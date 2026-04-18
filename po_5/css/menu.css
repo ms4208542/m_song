@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{text-decoration: none;}
+main{margin: 0 auto;}
+.header {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    z-index: 500;
+    opacity: 0.9;
+    margin: 0 auto;
+}
+
+.header.fixed {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    opacity: 0.9
+}
+
+.head_box {
+    padding: 10px 0;
+    width: 1470px;
+    margin: 0 auto;
+}
+
+h1.logo {
+    display: block;
+    width: 94px;
+    height: 48px;
+    float: left;
+    position: relative;
+    left: 10px;
+    top: 30px;
+    margin: 0 auto
+}
+
+ul.menuwrap {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 0 auto;
+    text-decoration: none;
+    top: 46px;
+    left: 360px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+ul.menuwrap:after {
+    display: block;
+    clear: both;
+    content: ''
+}
+
+ul.menuwrap li {
+    float: left;
+}
+
+ul.sns {
+    position: relative;
+    top: 38px;
+    left: 235px;
+     display: inline-block;
+    z-index: 500;
+}
+
+ul.sns li {
+    float: left;
+}
+
+.link{ transition: 0.3s ease;
+  color: #6c6b66;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 4px solid #fff;
+  padding: 20px 0px;
+  margin: 0 20px;}
+.link:hover {
+  border-bottom: 4px solid #d8ea50;
+  padding: 6px 0; 
+}
+.gnbwrap{width: 100%;margin: auto;}
+.gnb{width: 100%;height: 223px;background: url(../img/sub2.png) 0 0 no-repeat;background-position: 50% 0%;padding-top: 120px;}
+.big{display: block;text-align: center;color: #fff;font-family: 'Roboto Condensed', sans-serif;font-size: 30px;top: 128px; text-transform: uppercase;width: 80px;margin: 0 auto;width: 150px;}
+.gnbin{z-index: 100;display: block;margin: 0 auto;text-align: center;width: 85px;}
+.gnbin:after{display: block;clear: both;content: ''}
+.gnbin>.in{float: left;padding: 5px;color: #BDBDBD;font-family: 'Roboto Condensed', sans-serif;margin: 0 auto;margin-left: -2px;}
+.gnbin>.home{margin-top: 2px;}
+/*
+.gnbwrap{display: block;position: relative;width: 1902px;height:342px ;margin: 0 auto;}
+.gnb{display: block;position: relative;width:100%;height: 342px;margin: 0 auto;background:  url(../img/sub2.png) 0 0 no-repeat;margin: 0 auto;}
+.bigwrap{display: block;position: relative;width: 140px;margin: 0 auto;}
+.big{display: block;text-align: center;color: #fff;font-family: 'Roboto Condensed', sans-serif;font-size: 30px;position: relative;top: 128px; text-transform: uppercase;width: 80px;margin: 0 auto;}
+.gnbin{z-index: 100;display: block;margin: 0 auto;text-align: center;width: 140px;}
+.gnbin:after{display: block;clear: both;content: ''}
+.gnbin>.in{float: left;position: relative;width: 15px;padding: 5px;color: #BDBDBD;font-family: 'Roboto Condensed', sans-serif;top:130px;left: 24px;margin: 0 auto}
+.gnbin>.home{top:132px}
+*/
+.animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.one {
+-webkit-animation-delay: 0.4s;
+-moz-animation-delay: 0.4s;
+animation-delay: 0.4s;
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+.menuwrap{display: block;position: relative;width: 1000px;margin: 0 auto;}
+.content{display: block;width: 100%;margin: 0 auto;width: 350px;margin-top: 50px;}
+.mamenu{display: block;text-align: center;width: 120px;margin: 0 auto;font-family: 'Roboto Condensed', sans-serif;font-size: 50px;border-bottom: 5px solid #d8ea50;}
+.so{display: block;text-align: center;font-family: 'Roboto Condensed', sans-serif;color:#a8a69e;width: 244px;margin-bottom: 60px;font-family:'Noto Sans KR', Dotum, Gulim, AppleGothic, Sans-Serif;margin: 0 auto;margin-top: 16px;}
+.bd{display: block;width: 1202px;border-bottom: 1px solid #a8a69e;text-align:center;margin: 0 auto;margin-bottom: 90px;margin-top: 60px;}
+.flu:after{display: block;clear: both;content: '';}
+.flu{display: block;width:190px;margin: 0 auto;}
+
+.fl{display: block;float: left;margin: 0 auto;width: 100%;padding-left: 3px;}
+.arm{display:block;font-family: 'Roboto Condensed', sans-serif;font-size: 35px;color: #6c6b66;width: 172px;margin: 0 auto;margin-left: -460px;margin-top: -58px;margin-bottom: 34px;}
+.bder{border-left: 6px solid #d8ea50;display: block;width: 2px;height: 28px;margin: 0 auto;margin-left: -480px;margin-top: -50px;}
+.season{display: block;margin: 0 auto;}
+.flutt:after{display: block;clear: both;content: ''}
+.flutt{display: block;width: 230px;margin: 0 auto}
+.bder2{border-left: 6px solid #d8ea50;display: block;width: 2px;height: 28px;margin: 0 auto;z-index: 100;margin-left: -460px;margin-top: -50px;}
+.arm2{display: block;font-family: 'Roboto Condensed', sans-serif;font-size: 35px;color: #6c6b66;width: 210px;margin: 0 auto;z-index: 50;margin-left: -440px;margin-top: -56px;margin-bottom: 60px;}
+.visual-container {
+    margin: 0 auto;
+    height: 540px;
+    z-index: 10;
+}
+
+.visual-items {
+    width: 1260px;
+    height: 440px;
+}
+
+.visual {
+    width: 1900px;
+    height: 440px;
+}
+
+.visual {
+    background-position: center 0;background-repeat: no-repeat;overflow: hidden;
+}
+
+.visual-0 {
+    background-image: url(../img/eat0.png);
+}
+
+.visual-1 {
+    background-image: url(../img/eat1.png)
+}
+
+.visual-2 {
+    background-image: url(../img/eat2.png)
+}
+.visual-3 {background-image: url(../img/eat3.png);}
+.bx-wrapper .bx-pager{top: -60px;position: relative;color: #D4D4D4}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background-color: #d8ea50;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+    position: relative;
+  left: -5px;
+    background-color: #CBCBCB;
+}
+.bx-wrapper .bx-prev {
+    background: url(../img/left.png) 0 0 no-repeat;opacity: 0.4;z-index: 50;
+}
+
+.bx-wrapper .bx-next {
+    background: url(../img/right.png) 0 0 no-repeat;opacity: 0.4;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    width: 52px;
+    height: 62px;z-index: 50
+}
+.bx-controls bx-has-controls-direction bx-has-pager{z-index:-544}
+.cptn02 {
+    width: 289px;height: 407px;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);margin: 0 auto;top: -28px;left: -454px;
+}
+.cptn02 img {
+    width: 100%;
+    right: 0;
+    top: 0;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.cptn02 .cptn {
+    background: #000;opacity: 0.7;
+    width: 33%;
+    height: 100%;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    right: -40%;
+    overflow: auto;
+    padding: 0 10px;
+}
+.seasonwrap{display: block;width: 100%;margin: 0 auto;height: 500px;}
+.btn{display: block;position: relative;top: 62px;border: 2px solid #Fff;background-color: transparent;color: #C5C5C5;width: 74px;height: 24px;left: 24px;}
+.btn:hover{background-color: #fff;transition: 0.5s}
+.btnpp{font-family: 'Jeju Myeongjo', serif;font-weight: 600;position: relative;top: 1px}
+.cptn02 .cptn h2 {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: normal;font-family: 'Jeju Myeongjo', serif;font-size: 34px;width: 40px;top: 20px;position: relative;font-weight: 500;left: 11px;
+}
+
+.cptn02 .cptn .sing {position: relative;
+    color: #a8a69e;
+    font-size: 18px;top: 36px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 15px;font-weight: 600;
+}
+.cptn02 .cptn .bom{position: relative;
+    color: #a8a69e;
+    font-size: 18px;top:-34px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 43px;font-weight: 600;}
+.cptn02:hover img {
+    right: 0%;
+}
+.cptn02:hover .cptn {
+    right: 0;
+}
+.cptn03 {
+    width: 289px;height: 407px;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);margin: 0 auto;top:-434px;left: -154px;
+}
+.cptn03 img {
+    width: 100%;
+    right: 0;
+    top: 0;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.cptn03 .cptn {
+    background: #000;opacity: 0.7;
+    width: 33%;
+    height: 100%;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    right: -40%;
+    overflow: auto;
+    padding: 0 10px;
+}
+.cptn03 .btn{display: block;position: relative;top: -14px;border: 2px solid #Fff;background-color: transparent;color: #C5C5C5;width: 74px;height: 24px;left: 24px;}
+.cptn03 .btn:hover{background-color: #fff;transition: 0.5s}
+.cptn03 .btnpp{font-family: 'Jeju Myeongjo', serif;font-weight: 600;position: relative;top: 1px}
+.cptn03 .cptn h2 {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: normal;font-family: 'Jeju Myeongjo', serif;font-size: 34px;width: 68px;top: 20px;position: relative;font-weight: 500;left: 11px;
+}
+
+.cptn03 .cptn .mu {position: relative;
+    color: #a8a69e;
+    font-size: 18px;top: 36px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 15px;font-weight: 600;
+}
+.cptn03 .cptn .lip{position: relative;
+    color: #a8a69e;
+    font-size: 18px;top:-60px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 43px;font-weight: 600;}
+.cptn03:hover img {
+    right: 0%;
+}
+.cptn03:hover .cptn {
+    right: 0;
+}
+
+.cptn04 {
+    width: 289px;height: 407px;
+    position: relative;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);margin: 0 auto;top: -841px;left: 146px;
+}
+.cptn04 img {
+    width: 100%;
+    right: 0;
+    top: 0;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.cptn04 .cptn {
+    background: #000;opacity: 0.7;
+    width: 33%;
+    height: 100%;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    right: -40%;
+    overflow: auto;
+    padding: 0 10px;
+}
+.cptn04 .btn{display: block;position: relative;top: 11px;border: 2px solid #Fff;background-color: transparent;color: #C5C5C5;width: 74px;height: 24px;left: 24px;}
+.cptn04 .btn:hover{background-color: #fff;transition: 0.5s}
+.cptn04 .btnpp{font-family: 'Jeju Myeongjo', serif;font-weight: 600;position: relative;top: 1px}
+.cptn04 .cptn h2 {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: normal;font-family: 'Jeju Myeongjo', serif;font-size: 34px;width: 66px;top: 20px;position: relative;font-weight: 500;left: 11px;
+}
+
+.cptn04 .cptn .su {position: relative;
+    color: #a8a69e;
+    font-size: 18px;top: 36px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 15px;font-weight: 600;
+}
+.cptn04 .cptn .ga{position: relative;
+    color: #a8a69e;
+    font-size: 18px;top:-34px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 43px;font-weight: 600;}
+.cptn04:hover img {
+    right: 0%;
+}
+.cptn04:hover .cptn {
+    right: 0;
+}
+
+
+
+
+
+.cptn05 {
+    width: 289px;height: 407px;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);margin: 0 auto;top: -1249px;left: 445px;
+}
+.cptn05 img {
+    width: 100%;
+    right: 0;
+    top: 0;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.cptn05 .cptn {
+    background: #000;opacity: 0.7;
+    width: 33%;
+    height: 100%;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    right: -40%;
+    overflow: auto;
+    padding: 0 10px;
+}
+.seasonwrap{display: block;width: 100%;margin: 0 auto;height: 500px;}
+.cptn05 .btn{display: block;position: relative;top: 12px;border: 2px solid #Fff;background-color: transparent;color: #C5C5C5;width: 74px;height: 24px;left: 24px;}
+.cptn05 .btn:hover{background-color: #fff;transition: 0.5s}
+.cptn05 .btnpp{font-family: 'Jeju Myeongjo', serif;font-weight: 600;position: relative;top: 1px}
+.cptn05 .cptn h2 {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: normal;font-family: 'Jeju Myeongjo', serif;font-size: 34px;width: 64px;top: 20px;position: relative;font-weight: 500;left: 11px;
+}
+
+.cptn05 .cptn .chu {position: relative;
+    color: #a8a69e;
+    font-size: 18px;top: 36px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 15px;font-weight: 600;
+}
+.cptn05 .cptn .ha{position: relative;
+    color: #a8a69e;
+    font-size: 18px;top:-34px;font-family: 'Jeju Myeongjo', serif;padding: 0.2em; width: 16px;left: 43px;font-weight: 600;}
+.cptn05:hover img {
+    right: 0%;
+}
+.cptn05:hover .cptn {
+    right: 0;
+}
+
+.foot {
+    display: block;
+    z-index: 50;
+    width: 100%;
+    height: 100px;
+    background-color: #272727;
+    top: 2252px
+}
+
+
+.footwrap {}
+
+.footwrap>p {
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+    top: 40px;
+    font-size: 12px;
+}
+.footwrap>p:nth-of-type(1){padding-top:30px;}
