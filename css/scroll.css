@@ -640,6 +640,9 @@ button {
     align-items: center;
     margin-top: 40px;
 }
+.ed_title_wrap{display: flex;
+    align-items: center;
+    margin-top: 40px;}
 .two_details {
     display: flex;
     padding-inline: 44px;
@@ -1291,3 +1294,11 @@ button {
     font-size: 24px;
     font-weight: 100;
 }
+
+/*onu*/
+.onu_info{display: flex;
+    align-items: flex-end;
+}
+.ed_flex_title{ font-size: 30px;
+    font-weight: 300;
+   }
