@@ -640,9 +640,11 @@ button {
     align-items: center;
     margin-top: 40px;
 }
-.ed_title_wrap{display: flex;
+.ed_title_wrap {
+    display: flex;
     align-items: center;
-    margin-top: 40px;}
+    margin-top: 40px;
+}
 .two_details {
     display: flex;
     padding-inline: 44px;
@@ -1257,35 +1259,37 @@ button {
 /* EDITORIALDESIGN */
 .ed_all_wrap {
     display: block;
-    width: 100%;margin-top: 150px;
+    width: 100%;
+    margin-top: 150px;
 }
 .ed_one {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
 }
 
-
 .ed_one::before {
-  content: "";
-  position: absolute;
-  inset: 0; 
-  background-image: url("../img/onu/main.jpg");
-  background-size: cover; 
-  background-position: center center;
-  background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/onu/main.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-  transform: scale(1);
-  transform-origin: center center;
-  transition: transform 0.8s ease-in-out;
-  z-index: -1;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 0.8s ease-in-out;
+    z-index: -1;
 }
 
 .ed_one:hover::before {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
-.ed_one:hover{ background-size: 105% auto;}
+.ed_one:hover {
+    background-size: 105% auto;
+}
 .ed_one_main {
     padding: 30px 20px;
 }
@@ -1296,9 +1300,41 @@ button {
 }
 
 /*onu*/
-.onu_info{display: flex;
+.onu_info {
+    display: flex;
     align-items: flex-end;
 }
-.ed_flex_title{ font-size: 30px;
-    font-weight: 300;
-   }
+.ed_layout{display: flex;}
+.ed_flex_title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.title_flex {
+    position: relative;
+    bottom: 13px;
+}
+
+.project_wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 44px;
+}
+.ed_layout_wrap {
+    display: block;
+}
+.project_content > p {
+    line-height: 28px;
+    padding-inline: 44px;
+}
+.project_wrap {
+    margin-block: 60px 15px;
+}
+.onu_img {
+    display: block;
+}
+
+.row_one_img {width: 500px;display: block;height: 350px;
+    background-image: url("../img/onu/03_layout.jpg");
+    background-repeat: no-repeat;
+}
