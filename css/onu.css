@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+a{text-decoration: none;}
+
+*{padding: 0px; margin: 0px; font-family: 'Pretendard-Regular', sans-serif;overflow-x: hidden}
+
+.main_wrap{display: block;width: 100%;line-height: 1px}
+.main{margin: 0 auto;}
+.content_wrap{display: block;width: 100%;background-color: #456540;}
+.content{width:1260px;margin:0 auto;text-align: center;color: #ddd2c3;padding-top: 18%;padding-bottom: 10%}
+.content>p{margin-top: 7%;font-weight: lighter;line-height: 38px;}
+.card_wrap{width: 100%;display: block;}
+.card{display: flex;box-sizing: border-box}
+.flex-item{background: url(../img/onu/02_bg.jpg) 0 0 no-repeat;height: 960px;width: 960px;box-sizing: border-box;display: flex;justify-content: center;align-items: center}
+.flex-item>img{}
+.card_sc_wrap{width: 100%;display: block;}
+.card_sc{margin: 0 auto;width:73%;display: flex;}
+.card_sc>img{padding: 200px 40px 0 40px;}
+.card_sc>p{display: block!important}
+.card_txt{width: 69%;
+    margin: 0 auto;
+    text-align: right;padding: 30px 0 262px 0;
+}
+.real:last-of-type{text-align: right;padding: 30px 0 100px 0}
+.real>span{margin-left: 20px;}
+.sign_wrap{display: block;width: 100%;background:  url(../img/onu/05_bg.jpg) 0 0 no-repeat;}
+.sign_content{width:70%;margin: 0 auto;margin-top: 10%;margin-bottom: 120px;}
+.sign>img:first-child{padding: 80px 0 80px 40px;}
+.sign>img:last-child{float: right}
+.sign_txt{text-align: right}
+.ex_wrap{display: block;width: 100%;margin-top: 250px;}
+.extra{width: 1820px; margin: 0 auto;}
+.ex{display: flex;align-items: flex-end;}
+.ex_sc{display: flex;padding-top: 25px;;width: 1214px; margin: 0 auto}
+.one:not(:last-of-type){margin-right: 25px;}
+.two:not(:last-of-type){margin-right: 25px;}
+.two>p:last-child{margin-top: 10px;}
+.menu_wrap{width: 100%;display: block;background:  url(../img/onu/07_bg.jpg) center center no-repeat;margin-top: 300px}
+.menu{width: 861px; margin: 0 auto;padding-top: 59px;margin-bottom: 52px;}
+.price_wrap{display: block;width: 100%;background: url(../img/onu/08_bg.jpg) 0 0 no-repeat;}
+.price{margin:0 auto;width: 95%;display: flex;padding:194px 5px 194px 5px; align-items: flex-end}
+.price>section:first-child{margin-right: 20px;}
+.poster_wrap{display: block;width: 100%}
+.poster{width: 1320px;margin: 0 auto; display: flex;padding-bottom: 50px;}
+.poster>section:first-child{margin-right: 50px}
+.poster:nth-child(2){align-items: flex-end;}
+.po_logo{width: 635px; text-align: center}
+
+.lightbox {
+  /* Default to hidden */
+  display: none;
+
+  /* Overlay entire screen */
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* A bit of padding around image */
+  padding: 1em;
+
+  /* Translucent background */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+  display: block;
+}
+
+.lightbox span {
+  /* Full width and height */
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /* Size and position background image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*mobile*/
+@media screen and (min-width:320px) and (max-width: 430px) {
+    .main{background: url(../img/onu/main_mobile.jpg) -219px 0 no-repeat;height: 511px;}
+    .main>img{display: none;}
+    .content_wrap{height: auto}
+    .content{width: 80%}
+    .content>img{width: 87%;margin-top:16%;line-height: 30px;}
+    .content>p{padding-bottom: 100px;line-height: 30px;}
+    .card{display: block;}
+    .flex-item{height: 380px;overflow-y: hidden;width: auto}
+    .flex-item>img{width: 300px;padding: 6%;}
+    .card_sc{display: block;width: 90%}
+    .card_sc>img{padding: 0;width: 100%;margin-top: 20px}
+    .card_sc>img:first-child{margin-top: 100px}
+    .card_txt{padding: 0;width: 90%;margin-bottom: 100px;}
+    .real>img:first-child{width: 94%}
+    .real>span{text-align: right;display: block;width: 90%;margin: 0 auto}
+    .sign_content{width: 90%;margin-bottom:80px}
+    .sign>img:first-child{width: 100%;padding: 0;margin-top: 40px;}
+    .sign>img:last-child{width: 100%;padding: 0;margin-top: 20px;}
+    .ex_wrap{margin-top: 14%}
+    .extra{width: 90%}
+    .ex{display: inline-block;}
+    .one{width: auto;margin: 0!important}
+    .one>a>img{max-width: 100%;}
+    .one:nth-child(1){width: 30%;float: left;padding-right: 5px;padding-top: 19%;padding-bottom: 5px}
+    .one:nth-child(3){width: 69%;padding-right:6px;float: left}
+    .one:nth-child(4){width: 29%;float: right}
+    .ex_sc{display: inline-block;padding-top: 0px;}
+    .two{width: auto;margin: 0!important}
+    .two>a>img{max-width: 100%}
+    .two:nth-child(1){width: 12%;float: left;padding-right: 5px;}
+    .two:nth-child(2){width: 20%}
+    .two:nth-child(3){width: 32%;display: flex;padding-top: 3px;}
+    .two:nth-child(3)>p{margin-top: 21%;width: 100%;margin-left:5px;}
+    .menu_wrap{margin-top: 30px;width: 100%;display: block; background-size: auto;}
+    .menu{max-width: 100%;margin: 0 auto;padding-bottom: 78px;padding-top: 70px;}
+    .menu>img{width: 98%;padding-left: 2%;padding-right: 2%}
+    .price{display: block;padding:134px 0}
+    .price>section:first-child{margin-right: 0}
+    .price>section>img{max-width: 100%;}
+    .poster_wrap{width: 98%;margin: 0 auto;padding-top: 50px;padding-bottom: 50px;}
+    .poster{width: 100%;padding-bottom: 5px;}
+    .poster>section:first-child{margin-right: 5px;}
+    .poster>section>img{max-width: 100%}
+    .poster:last-child>section:last-child>img{width: 80%}
+}

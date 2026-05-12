@@ -1304,7 +1304,11 @@ button {
     display: flex;
     align-items: flex-end;
 }
-.ed_layout{display: flex;}
+.ed_layout {
+    display: flex;
+    width: 1280px;
+    margin: 0 auto;align-items: flex-end;
+}
 .ed_flex_title {
     font-size: 30px;
     font-weight: 400;
@@ -1312,29 +1316,76 @@ button {
 
 .title_flex {
     position: relative;
-    bottom: 13px;
+    bottom: 13px;margin-left: 14px;
 }
-
+.title_flex>p{margin-left: 2px;}
 .project_wrap {
     display: flex;
     justify-content: space-between;
-    padding-inline: 44px;
 }
 .ed_layout_wrap {
     display: block;
+    width: 100%;
+    margin-top: 80px;
 }
+.project_content{padding-inline: 44px;}
 .project_content > p {
-    line-height: 28px;
-    padding-inline: 44px;
+    line-height: 28px;margin-bottom: 30px;
+    
 }
 .project_wrap {
     margin-block: 60px 15px;
 }
-.onu_img {
-    display: block;
+.onu_img { flex-direction: column;
+    display: flex;
+    gap: 10px;
 }
-
-.row_one_img {width: 500px;display: block;height: 350px;
+.ed_con_wrap{display: flex; justify-content: space-between;}
+.row_one_img {
+    width: 368px;
+    display: block;
+    height: 206px;
     background-image: url("../img/onu/03_layout.jpg");
     background-repeat: no-repeat;
+    background-size: 104%;
+    background-position: -4px -40px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+.row_two_img {
+    width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/onu/00_logo.png");
+    background-repeat: no-repeat;
+    background-color: #456540;
+    border-radius: 30px;
+    background-size: 62%;
+    background-position: center;
+}
+.right_one_img {
+    width: 368px;
+    height: 422px;
+    display: block;
+    background-image: url("../img/onu/06_6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -34px;
+    border-radius: 30px;
+    background-size: 116%;
+}
+.content_bottom {
+  width: 746px;
+    height: 206px;
+    display: block;
+    flex-direction: column;
+    background-image: url(../img/onu/01_layout.jpg);
+    background-size: 120%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-position: -148px -200px;
+
+}
+.onu_info_wrap {
+    width: 40%;
 }
