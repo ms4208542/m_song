@@ -9,31 +9,31 @@ a{text-decoration: none;}
 *{padding: 0px; margin: 0px; font-family: 'Pretendard-Regular', sans-serif;overflow-x: hidden}
 
 .main_wrap{display: block;width: 100%;line-height: 1px}
-.main{margin: 0 auto;}
+.main{margin: 0 auto;width: 100%;}
+.main>img{display: block;width: 100%;}
 .content_wrap{display: block;width: 100%;background-color: #456540;}
-.content{width:1260px;margin:0 auto;text-align: center;color: #ddd2c3;padding-top: 18%;padding-bottom: 10%}
+.content{width:1260px;margin:0 auto;text-align: center;color: #ddd2c3;padding-top: 13%;padding-bottom: 12%}
 .content>p{margin-top: 7%;font-weight: lighter;line-height: 38px;}
 .card_wrap{width: 100%;display: block;}
-.card{display: flex;box-sizing: border-box}
+.card{display: flex;box-sizing: border-box;flex-direction: row;justify-content: center;}
 .flex-item{background: url(../img/onu/02_bg.jpg) 0 0 no-repeat;height: 960px;width: 960px;box-sizing: border-box;display: flex;justify-content: center;align-items: center}
 .flex-item>img{}
-.card_sc_wrap{width: 100%;display: block;}
-.card_sc{margin: 0 auto;width:73%;display: flex;}
-.card_sc>img{padding: 200px 40px 0 40px;}
-.card_sc>p{display: block!important}
-.card_txt{width: 69%;
-    margin: 0 auto;
-    text-align: right;padding: 30px 0 262px 0;
-}
+.card_sc_wrap{width: 100%;display: block;margin-block: 100px;}
+.card_sc{margin: 0 auto;width:1280px;display: flex;gap: 20px;}
+.card_txt{width: 1280px; text-align: right;margin: 0 auto;padding-top: 10px;}
 .real:last-of-type{text-align: right;padding: 30px 0 100px 0}
 .real>span{margin-left: 20px;}
-.sign_wrap{display: block;width: 100%;background:  url(../img/onu/05_bg.jpg) 0 0 no-repeat;}
-.sign_content{width:70%;margin: 0 auto;margin-top: 10%;margin-bottom: 120px;}
-.sign>img:first-child{padding: 80px 0 80px 40px;}
-.sign>img:last-child{float: right}
-.sign_txt{text-align: right}
+.sign_wrap{display: block;width: 100%;background:url(../img/onu/05_bg.jpg) 0 0 no-repeat;background-size: cover;}
+.sign_content{width:1280px;margin: 0 auto;margin-top: 10%;margin-bottom: 120px;}
+.sign{display: flex;justify-content: space-between;}
+.sign>img{height: auto;
+    width: 49%;
+    display: block;
+    object-fit: cover;
+}
+.sign_txt{text-align: right;margin-top: 5px;}
 .ex_wrap{display: block;width: 100%;margin-top: 250px;}
-.extra{width: 1820px; margin: 0 auto;}
+.extra{width: 1280px; margin: 0 auto;}
 .ex{display: flex;align-items: flex-end;}
 .ex_sc{display: flex;padding-top: 25px;;width: 1214px; margin: 0 auto}
 .one:not(:last-of-type){margin-right: 25px;}
