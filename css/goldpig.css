@@ -10,13 +10,13 @@
 *{padding: 0 ; margin: 0; text-decoration: none;overflow-x: hidden}
 
 .goldpig_wrap{width: 100%; display: block;}
-.main_wrap{background: url(../img/goldpig/main_bg.png) 0 0 no-repeat;}
+.main_wrap{display: block; width: 100%; background: url(../img/goldpig/main_bg.png) 0 0 no-repeat;background-size: cover;}
 .main{width: 226px; margin: 0 auto;padding: 184px 0}
 .content_wrap{margin-top: 100px; margin-bottom: 100px;}
-.content{width: 930px; margin: 0 auto;text-align: center;letter-spacing: -1px;}
+.content{width: 1080px; margin: 0 auto;text-align: center;letter-spacing: -1px;}
 .content>h1{ font-family: 'GyeonggiBatangRegular';color: #ceb18b;font-size: 2.4em;font-weight: 700}
 .content>h2{font-size: 1.8em;font-weight: 400;letter-spacing: -2px}
-.content>p{font-size: 0.9em;margin-top: 50px;line-height: 24px}
+.content>p{font-size: 0.9em;margin-top: 50px;line-height: 28px}
 .content>h2, p{color:#2f2f2f;font-family: "Noto Sans KR", sans-serif;}
 .sign{width: 1280px; margin: 0 auto;display: flex;height: auto}
 .left{height: 100%;margin-right: 10px;}

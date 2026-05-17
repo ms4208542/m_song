@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Pretendard-Regular', sans-serif;
+    overflow-x: hidden;
+}
+
+.main_wrap {
+    background: url("../img/koshika/01_ob_bg.jpg") 0 0 no-repeat;
+    width: 100%;
+    height: 801px;
+    background-size: cover;
+}
+.main {
+    display: block;
+    width: 644px;
+    margin: 0 auto;
+    padding-top: 7%;
+}
+.content_wrap {
+    display: block;
+    width: 100%;
+    margin: 14% 0;
+}
+.content {
+    width: 1350px;
+    margin: 0 auto;
+    display: flex;
+}
+.bottle {
+    width: 451px;
+}
+.con_txt {
+    width: 900px;
+    margin-top: 15%;
+}
+.con_txt > img {
+    padding-bottom: 5%;
+}
+.con_txt > p {
+    line-height: 42px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #2f2f2f;
+    font-weight: lighter;
+    width: 100%;
+    letter-spacing: -1px;
+    padding-left: 10%;
+}
+.pink {
+    box-shadow: inset 0 -8px 0 #ca9797;
+}
+.pamphlet_wrap {
+    display: block;
+    width: 100%;
+    background: url("../img/koshika/03_bg.jpg") 0 0 no-repeat;
+    background-size: cover;
+}
+.pamphlet {
+    display: flex;
+    width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 11%;
+}
+.pamphlet > img:first-child {
+    padding-top: 10px;
+}
+.pamphlet > img:last-child {
+    display: block;
+}
+.logo_wrap {
+    display: block;
+    width: 100%;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.logo > img {
+    display: block;
+}
+.pink_logo, .brown_logo {text-align: center;padding-block: 30px;
+width: 50%;}
+.pink_logo {
+    background-color: #ccb1a8;
+}
+.logo > img:first-child {}
+.pink_logo > img:last-child {}
+
+/*mobile*/
+@media screen and (min-width:320px) and (max-width: 430px) {
+    .main_wrap {
+        height: 600px;
+    }
+    .main > img {
+        width: 374px;
+        margin-top: 18%;
+    }
+    .content {
+        display: block;
+        width: 95%;
+    }
+    .bottle > img {
+        width: 67%;
+        margin: 0 auto;
+        display: block;
+        padding-top: 12%;
+    }
+    .con_txt {
+        width: 100%;
+        max-width: 100%;
+    }
+    .con_txt > img {
+        display: none;
+    }
+    .con_txt > p {
+        padding: 20px 8px;
+        max-width: 100%;
+        line-height: 33px;
+    }
+    .pamphlet_wrap {
+        /* height: 300px; */
+    }
+    .pamphlet {
+    width: 100%;          /* 화면 가로폭에 맞춤 */
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 11%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;     /* 가로 넘침 방지 */
+    height: 220px;        /* 두 이미지 높이 동일하게 맞춤 (필요에 따라 조절) */
+    position: relative;
+    left: 0;
+  }
+
+  .pamphlet > img:first-child {
+    height: 100%;         /* 부모 높이에 맞춰 높이 고정 */
+    width: auto;          /* 비율 유지 */
+    max-width: 40%;       /* 너비 다르게 설정 (왼쪽 이미지 작게) */
+    object-fit: contain;
+    display: block;
+  }
+
+  .pamphlet > img:last-child {
+    height: 100%;         /* 같은 높이 유지 */
+    width: auto;
+    max-width: 55%;       /* 오른쪽 이미지 더 크게 */
+    object-fit: contain;
+    display: block;
+  }
+    .logo > img {
+        padding: 30px 20px;
+    }
+    .pamphlet > img:first-child {
+        padding-top: 1%;
+    }
+}
