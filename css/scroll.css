@@ -1268,12 +1268,16 @@ button {
     height: 500px;
     overflow: hidden;
 }
-
+.onu_main::before {
+    background-image: url("../img/onu/main.jpg");
+}
+.koshika_main::before {
+    background-image: url("../img/koshika/00_main.jpg");
+}
 .ed_one::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../img/onu/main.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1307,7 +1311,9 @@ button {
 .ed_layout {
     display: flex;
     width: 1280px;
-    margin: 0 auto;align-items: flex-end;
+    margin: 0 auto;
+    align-items: flex-end;
+    margin-bottom: 200px;
 }
 .ed_flex_title {
     font-size: 30px;
@@ -1316,9 +1322,12 @@ button {
 
 .title_flex {
     position: relative;
-    bottom: 13px;margin-left: 14px;
+    bottom: 13px;
+    margin-left: 14px;
 }
-.title_flex>p{margin-left: 2px;}
+.title_flex > p {
+    margin-left: 2px;
+}
 .project_wrap {
     display: flex;
     justify-content: space-between;
@@ -1328,19 +1337,27 @@ button {
     width: 100%;
     margin-top: 80px;
 }
-.project_content{padding-inline: 44px;}
-.project_content > p {
-    line-height: 28px;margin-bottom: 30px;
+.project_content {
+    padding-inline: 44px;
     
+}
+.project_content > p {
+    line-height: 28px;
+    margin-bottom: 30px;
+
 }
 .project_wrap {
     margin-block: 60px 15px;
 }
-.onu_img { flex-direction: column;
+.onu_img {
+    flex-direction: column;
     display: flex;
     gap: 10px;
 }
-.ed_con_wrap{display: flex; justify-content: space-between;}
+.ed_con_wrap {
+    display: flex;
+    justify-content: space-between;
+}
 .row_one_img {
     width: 368px;
     display: block;
@@ -1349,6 +1366,18 @@ button {
     background-repeat: no-repeat;
     background-size: 104%;
     background-position: -4px -40px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.row_one_img_koshika {
+    width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/koshika/03_bottle.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 -50px;
     border-radius: 30px;
     margin-bottom: 10px;
 }
@@ -1363,6 +1392,17 @@ button {
     background-size: 62%;
     background-position: center;
 }
+
+.row_two_img_koshika{
+      width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/koshika/07_bottle.jpg");
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-size: 100%;
+    background-position: center;
+}
 .right_one_img {
     width: 368px;
     height: 422px;
@@ -1374,18 +1414,45 @@ button {
     border-radius: 30px;
     background-size: 116%;
 }
+
+.right_one_koshika {
+    width: 368px;
+    height: 422px;
+    display: block;
+    background-image: url("../img/koshika/02_leap_bottle.png");
+    background-color: #C2AFA6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 41px -73px;
+    border-radius: 30px;
+    background-size: 100%;
+}
 .content_bottom {
-  width: 746px;
+    width: 746px;
     height: 206px;
     display: block;
     flex-direction: column;
-    background-image: url(../img/onu/01_layout.jpg);
+    background-image: url("../img/onu/01_layout.jpg");
     background-size: 120%;
     background-repeat: no-repeat;
     border-radius: 30px;
     background-position: -148px -200px;
 
 }
+.content_bottom_koshika {
+    width: 746px;
+    height: 206px;
+    display: block;
+    flex-direction: column;
+    background-image: url("../img/koshika/00_logo_img.png");
+    background-size: 18%;
+    background-color: #ebe7e3;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-position: center center
+}
 .onu_info_wrap {
     width: 40%;
 }
+
+/*koshika*/
