@@ -1277,6 +1277,12 @@ button {
 .gold_pig::before{
     background-image: url("../img/goldpig/00_ed_main.jpg");
 }
+.book_main::before {
+    background-image: url("../img/book/00_1_main.jpg");
+    background-size: cover; /* 또는 contain, 혹은 원하는 크기로 지정 가능 */
+    background-position: center; /* 이미지 위치 중앙 정렬 */
+    background-repeat: no-repeat; /* 반복 방지 */
+}
 .ed_one::before {
     content: "";
     position: absolute;
