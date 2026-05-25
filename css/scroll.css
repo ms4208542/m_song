@@ -1403,7 +1403,17 @@ button {
     border-radius: 30px;
     margin-bottom: 10px;
 }
-
+.row_one_img_book{
+     width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/book/01_2_left.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 -43px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
 
 
 .row_two_img_pig{
@@ -1434,6 +1444,17 @@ button {
     display: block;
     height: 206px;
     background-image: url("../img/koshika/07_bottle.jpg");
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-size: 100%;
+    background-position: center;
+}
+
+.row_two_img_book{
+        width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/book/01_1_left.jpg");
     background-repeat: no-repeat;
     border-radius: 30px;
     background-size: 100%;
@@ -1476,6 +1497,19 @@ button {
     background-size: 128%;
 
 }
+
+.right_one_book{
+      width: 368px;
+    height: 422px;
+    display: block;
+    background-image: url("../img/book/01_right_img.jpg");
+    background-color: #C2AFA6;
+    background-repeat: no-repeat;
+    background-size: cover;
+      background-position: -102px 1px;
+    border-radius: 30px;
+    background-size: 153%;
+}
 .content_bottom {
     width: 746px;
     height: 206px;
@@ -1508,6 +1542,19 @@ button {
     flex-direction: column;
     background-image: url("../img/koshika/00_logo_img.png");
     background-size: 18%;
+    background-color: #ebe7e3;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-position: center center
+}
+
+.content_bottom_book{
+     width: 746px;
+    height: 206px;
+    display: block;
+    flex-direction: column;
+    background-image: url("../img/book/01_2_bottom.jpg");
+    background-size: 100%;
     background-color: #ebe7e3;
     background-repeat: no-repeat;
     border-radius: 30px;
