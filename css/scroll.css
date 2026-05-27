@@ -1296,7 +1296,9 @@ button {
     transition: transform 0.8s ease-in-out;
     z-index: -1;
 }
-
+.ppt_main::before {
+    background-image: url("../img/ppt/00_ppt_main.jpg");
+}
 .ed_one:hover::before {
     transform: scale(1.05);
 }
