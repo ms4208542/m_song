@@ -1512,6 +1512,20 @@ button {
     border-radius: 30px;
     background-size: 153%;
 }
+
+.right_one_ppt{
+        width: 368px;
+    height: 422px;
+    display: block;
+    background-image: url("../img/ppt/03_1_bottom.jpg");
+    background-color: #C2AFA6;
+    background-repeat: no-repeat;
+    background-size: cover;
+      background-position: -163px -9px;
+    border-radius: 30px;
+    background-size: 178%;
+}
+
 .content_bottom {
     width: 746px;
     height: 206px;
@@ -1556,6 +1570,19 @@ button {
     display: block;
     flex-direction: column;
     background-image: url("../img/book/01_2_bottom.jpg");
+    background-size: 100%;
+    background-color: #ebe7e3;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-position: center center
+}
+
+.content_bottom_ppt{
+    width: 746px;
+    height: 206px;
+    display: block;
+    flex-direction: column;
+    background-image: url("../img/ppt/03_1_bottom.jpg");
     background-size: 100%;
     background-color: #ebe7e3;
     background-repeat: no-repeat;
