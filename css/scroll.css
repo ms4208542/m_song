@@ -1274,14 +1274,17 @@ button {
 .koshika_main::before {
     background-image: url("../img/koshika/00_main.jpg");
 }
-.gold_pig::before{
+.gold_pig::before {
     background-image: url("../img/goldpig/00_ed_main.jpg");
 }
 .book_main::before {
     background-image: url("../img/book/00_1_main.jpg");
-    background-size: cover; /* 또는 contain, 혹은 원하는 크기로 지정 가능 */
-    background-position: center; /* 이미지 위치 중앙 정렬 */
-    background-repeat: no-repeat; /* 반복 방지 */
+    background-size: cover;
+    /* 또는 contain, 혹은 원하는 크기로 지정 가능 */
+    background-position: center;
+    /* 이미지 위치 중앙 정렬 */
+    background-repeat: no-repeat;
+    /* 반복 방지 */
 }
 .ed_one::before {
     content: "";
@@ -1313,9 +1316,11 @@ button {
     font-size: 24px;
     font-weight: 100;
 }
-.black_text{color: #333;
+.black_text {
+    color: #333;
     font-size: 24px;
-    font-weight: 100;}
+    font-weight: 100;
+}
 /*onu*/
 .onu_info {
     display: flex;
@@ -1352,7 +1357,7 @@ button {
 }
 .project_content {
     padding-inline: 44px;
-    
+
 }
 .project_content > p {
     line-height: 28px;
@@ -1394,7 +1399,7 @@ button {
     border-radius: 30px;
     margin-bottom: 10px;
 }
-.row_one_img_pig{
+.row_one_img_pig {
     width: 368px;
     display: block;
     height: 206px;
@@ -1405,8 +1410,8 @@ button {
     border-radius: 30px;
     margin-bottom: 10px;
 }
-.row_one_img_book{
-     width: 368px;
+.row_one_img_book {
+    width: 368px;
     display: block;
     height: 206px;
     background-image: url("../img/book/01_2_left.jpg");
@@ -1417,8 +1422,7 @@ button {
     margin-bottom: 10px;
 }
 
-
-.row_two_img_pig{
+.row_two_img_pig {
     width: 368px;
     display: block;
     height: 206px;
@@ -1441,8 +1445,8 @@ button {
     background-position: center;
 }
 
-.row_two_img_koshika{
-      width: 368px;
+.row_two_img_koshika {
+    width: 368px;
     display: block;
     height: 206px;
     background-image: url("../img/koshika/07_bottle.jpg");
@@ -1452,8 +1456,8 @@ button {
     background-position: center;
 }
 
-.row_two_img_book{
-        width: 368px;
+.row_two_img_book {
+    width: 368px;
     display: block;
     height: 206px;
     background-image: url("../img/book/01_1_left.jpg");
@@ -1486,7 +1490,7 @@ button {
     border-radius: 30px;
     background-size: 100%;
 }
-.right_one_pig{
+.right_one_pig {
     width: 368px;
     height: 422px;
     display: block;
@@ -1494,34 +1498,34 @@ button {
     background-color: #C2AFA6;
     background-repeat: no-repeat;
     background-size: cover;
-      background-position: -61px -145px;
+    background-position: -61px -145px;
     border-radius: 30px;
     background-size: 128%;
 
 }
 
-.right_one_book{
-      width: 368px;
+.right_one_book {
+    width: 368px;
     height: 422px;
     display: block;
     background-image: url("../img/book/01_right_img.jpg");
     background-color: #C2AFA6;
     background-repeat: no-repeat;
     background-size: cover;
-      background-position: -102px 1px;
+    background-position: -102px 1px;
     border-radius: 30px;
     background-size: 153%;
 }
 
-.right_one_ppt{
-        width: 368px;
+.right_one_ppt {
+    width: 368px;
     height: 422px;
     display: block;
     background-image: url("../img/ppt/03_1_bottom.jpg");
     background-color: #C2AFA6;
     background-repeat: no-repeat;
     background-size: cover;
-      background-position: -163px -9px;
+    background-position: -163px -9px;
     border-radius: 30px;
     background-size: 178%;
 }
@@ -1539,13 +1543,13 @@ button {
 
 }
 
-.content_bottom_pig{
+.content_bottom_pig {
     width: 746px;
     height: 206px;
     display: block;
     flex-direction: column;
     background-image: url("../img/goldpig/02_5.jpg");
-        background-size: 100%;
+    background-size: 100%;
     background-color: #C2AFA6;
     background-repeat: no-repeat;
     border-radius: 30px;
@@ -1561,11 +1565,11 @@ button {
     background-color: #ebe7e3;
     background-repeat: no-repeat;
     border-radius: 30px;
-    background-position: center center
+    background-position: center center;
 }
 
-.content_bottom_book{
-     width: 746px;
+.content_bottom_book {
+    width: 746px;
     height: 206px;
     display: block;
     flex-direction: column;
@@ -1574,10 +1578,10 @@ button {
     background-color: #ebe7e3;
     background-repeat: no-repeat;
     border-radius: 30px;
-    background-position: center center
+    background-position: center center;
 }
 
-.content_bottom_ppt{
+.content_bottom_ppt {
     width: 746px;
     height: 206px;
     display: block;
@@ -1587,10 +1591,123 @@ button {
     background-color: #ebe7e3;
     background-repeat: no-repeat;
     border-radius: 30px;
-    background-position: center center
+    background-position: center center;
 }
 .onu_info_wrap {
     width: 40%;
 }
 
 /*koshika*/
+
+/*about*/
+.about_main {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    filter: blur(91px);
+    z-index: -999;
+}
+.ellipse:first-child {
+    width: 100%;
+    height: 500px;
+    background: rgba(217, 222, 246, 0.8);
+    border-radius: 50% / 60%;
+    box-shadow: 0 0 30px rgba(234, 236, 247, 0.6);
+    margin-top: 340px;
+}
+.ellipse:last-child {
+    width: 100%;
+    height: 500px;
+    background: rgba(240, 228, 255, 0.8);
+    border-radius: 50% / 60%;
+    box-shadow: 0 0 30px rgba(240, 228, 255, 0.6);
+}
+.about_content_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 100vh;
+    justify-content: center;
+}
+.about_img {
+    width: 134px;
+    height: 176px;
+    background-image: url("../img/me.jpg");
+    border-radius: 18px;
+    background-size: 282px;
+    background-repeat: no-repeat;
+    background-position: -79px -9px;
+}
+.about_content_wrap > h1 {
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    cursor: default;
+}
+.about_list > ul {
+    display: flex;
+    gap: 10px;
+}
+
+.about_list > ul > li {
+    color: #666;
+    cursor: default;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.about_list > ul > li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 20px;
+    background: rgba(0, 76, 225, 0.2);
+    border-radius: 50%;
+    filter: blur(8px);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about_list > ul > li:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.progfile_intro_wrap {
+    display: block;
+    width: 100%;
+    padding-inline:100px
+}
+.profile_intro {
+    display: flex;
+    width: 900px;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+gap: 40px;
+
+}
+.profile_info {
+    line-height: 28px;
+    text-align: right;
+}
+.glitter {
+    width: 60px;
+    display: block;
+}
+.bio_wrap>ul{display: flex;width: 100%;justify-content: space-between;}
+.bio_title{display: flex;align-items: center;}
+.bio_title>h1{font-size: 24px;}

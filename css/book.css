@@ -11,9 +11,9 @@
 .content{width: 850px; margin: 0 auto;padding-top: 8%}
 .subtitle_wrap{display: block;width: 100%}
 .sub{width: 1370px;margin: 0 auto;}
-.sub_content{text-align: center;letter-spacing: -1px;padding-top: 7%;width: 1170px;margin: 0 auto}
+.sub_content{text-align: center;padding-top: 7%;width: 1170px;margin: 0 auto}
 .sub_content>p{padding: 75px 0px;font-size: 0.9em;font-family: "Noto Sans KR", sans-serif;
-  font-style: normal;color: #2f2f2f;}
+  font-style: normal;color: #2f2f2f;line-height: 1.9;}
 .sub_img{display: flex;height: auto}
 .sub_img>img:first-child{height: auto;max-height: max-content}
 .sub_img>img:last-child{margin-left: auto;max-width: 100%;padding-top: 80px;}
