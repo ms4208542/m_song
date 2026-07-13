@@ -1689,7 +1689,7 @@ button {
 .progfile_intro_wrap {
     display: block;
     width: 100%;
-    padding-inline:100px
+    padding-inline: 100px;
 }
 .profile_intro {
     display: flex;
@@ -1697,7 +1697,7 @@ button {
     align-items: flex-end;
     flex-direction: column;
     margin-left: auto;
-gap: 40px;
+    gap: 40px;
 
 }
 .profile_info {
@@ -1708,6 +1708,33 @@ gap: 40px;
     width: 60px;
     display: block;
 }
-.bio_wrap>ul{display: flex;width: 100%;justify-content: space-between;}
-.bio_title{display: flex;align-items: center;}
-.bio_title>h1{font-size: 24px;}
+.bio_wrap > ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.bio_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.bio_title > h1 {
+    font-size: 24px;
+}
+.bio_wrap {
+    margin-block: 300px 100px;
+    
+}
+.bio_wrap > ul > li > p {
+    padding-bottom: 4px;
+    position: relative;
+    left: 17px;
+}
+.bio_wrap > ul > li > p:nth-child(odd) {
+    margin-bottom: 15px;
+}
+
+/* contact */
+
+.contact_deco{display: block;width: 134px;}
+.contact_deco>img{width: 100%;}
