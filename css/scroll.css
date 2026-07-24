@@ -585,6 +585,7 @@ button {
     justify-content: space-around;
     position: relative;
     margin-left: auto;
+    cursor: none;
 }
 
 .btn_txt {
@@ -1658,7 +1659,7 @@ button {
 
 .about_list > ul > li {
     color: #666;
-    cursor: default;
+    cursor: none;
     padding: 10px 15px;
     border-radius: 5px;
     position: relative;
@@ -1701,7 +1702,7 @@ button {
 
 }
 .profile_info {
-    line-height: 28px;
+    line-height: 30px;
     text-align: right;
 }
 .glitter {
@@ -1723,7 +1724,7 @@ button {
 }
 .bio_wrap {
     margin-block: 300px 100px;
-    
+
 }
 .bio_wrap > ul > li > p {
     padding-bottom: 4px;
@@ -1736,5 +1737,25 @@ button {
 
 /* contact */
 
-.contact_deco{display: block;width: 134px;}
-.contact_deco>img{width: 100%;}
+.contact_deco {
+    display: block;
+    width: 116px;
+}
+.contact_deco > img {
+    width: 100%;
+}
+
+  @-webkit-keyframes pulsate-bck {
+    0% { -webkit-transform: scale(1); transform: scale(1); }
+    50% { -webkit-transform: scale(0.7); transform: scale(0.7); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+  @keyframes pulsate-bck {
+    0% { -webkit-transform: scale(1); transform: scale(1); }
+    50% { -webkit-transform: scale(0.7); transform: scale(0.7); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+.pulsate-bck {
+    -webkit-animation: pulsate-bck 2.5s ease-in-out infinite both;
+            animation: pulsate-bck 2.5s ease-in-out infinite both;
+}
