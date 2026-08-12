@@ -69,8 +69,8 @@
     list-style: none;
     color: #333;
 }
-
-.ppt_title {
+body{background-color: #FEFAF6;}
+/* .ppt_title {
     display: flex;
     align-items: flex-start;
 }
@@ -80,4 +80,63 @@
 }
 .ppt_title>span{    padding-top: 19px;
     font-size: 28px;
-    font-weight: 300;}
+    font-weight: 300;} */
+
+.ppt_header_wrap {
+    width: 100%;
+    display: block;
+}
+.ppt_hd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 360px;
+    gap: 30px;
+}
+.pt_c {
+    width: 70px;
+    height: 70px;
+}
+.ppt_color {
+    display: flex;
+    gap: 25px;
+}
+.ppt_color > li:nth-child(1) > .pt_c {
+    background: #42307C;
+    background: linear-gradient(90deg,rgba(66, 48, 124, 1) 0%, rgba(63, 71, 151, 1) 100%);
+}
+.ppt_color > li:nth-child(2) > .pt_c {
+    background: #42307C;
+    background: linear-gradient(90deg, rgba(66, 48, 124, 1) 0%, rgba(133, 99, 201, 1) 83%);
+}
+.ppt_color > li:nth-child(3) > .pt_c {
+    background: #8563C9;
+    background: linear-gradient(90deg, rgba(133, 99, 201, 1) 0%, rgba(197, 181, 229, 1) 100%);
+}
+.ppt_color > li:nth-child(4) > .pt_c {
+    background: #293077;
+    background: linear-gradient(90deg, rgba(41, 48, 119, 1) 0%, rgba(41, 166, 223, 1) 100%);
+}
+.ppt_color > li:nth-child(5) > .pt_c {
+    background: #29A6DF;
+    background: linear-gradient(90deg, rgba(41, 166, 223, 1) 0%, rgba(157, 215, 241, 1) 100%);
+}
+.ppt_color > li:nth-child(6) > .pt_c {
+    background: #545454;
+    background: linear-gradient(90deg, rgba(84, 84, 84, 1) 0%, rgba(14, 14, 14, 1) 100%);
+}
+.ppt_color > li:nth-child(7) > .pt_c {
+    background: #75727C;
+    background: linear-gradient(90deg, rgba(117, 114, 124, 1) 0%, rgba(177, 175, 181, 1) 100%);
+}
+
+.ppt_title{line-height: 58px;display: block;}
+.ppt_title > h1 {
+    font-size: 90px;
+    text-align: center;
+}
+.ppt_title > h3 {
+    font-weight: 400;
+    text-align: center;
+    font-size: 26px;
+}

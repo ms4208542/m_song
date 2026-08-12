@@ -892,3 +892,55 @@ width: 85%;
 }
 
 
+.more_btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #d2d2d2;
+    fill: rgb(155, 153, 153);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 14px;
+    width: 80px;
+    justify-content: space-around;
+    position: relative;
+    margin-left: auto;
+    cursor: none;
+}
+
+.btn_txt {
+    display: block;
+    margin-left: 0;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.more_btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: all 0.3s ease-in-out;
+}
+
+.more_btn:hover {
+    background-color: rgba(0, 166, 255, 0.08);
+}
+
+.more_btn:hover .icon_ctn {
+    transform: scale(1.25);
+    transition: 0.5s linear;
+}
+
+.more_btn:hover svg {
+    transform: translateX(1.4em) scale(1.3);
+    fill: #fff;
+}
+
+.more_btn:hover span {
+    opacity: 0;
+    transition: 0.5s linear;
+}
+.more_btn:active {
+    transform: scale(0.95);
+}
