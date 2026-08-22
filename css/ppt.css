@@ -68,21 +68,39 @@
     text-decoration: none;
     list-style: none;
     color: #333;
+    overflow-x: hidden;
 }
-body{background-color: #FEFAF6;}
-/* .ppt_title {
+body {
+    background-color: #FEFAF6;
+}
+.ppt_hd {
+    display: flex;
+    padding-bottom: 15px;
+    margin: 10px 30px;
+    border-bottom: 1px solid #000;
+}
+.ppt_title {
     display: flex;
     align-items: flex-start;
 }
 .ppt_title > h1 {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 110px;
 }
-.ppt_title>span{    padding-top: 19px;
-    font-size: 28px;
-    font-weight: 300;} */
 
-.ppt_header_wrap {
+.sub_title_wrap {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.sub_title_wrap > span {
+    font-size: 40px;
+    font-weight: 200;
+}
+.ppt_color_wrapa {
+    padding-top: 10px;
+    margin-left: 2px;
+}
+/* .ppt_header_wrap {
     width: 100%;
     display: block;
 }
@@ -92,14 +110,14 @@ body{background-color: #FEFAF6;}
     align-items: center;
     margin-top: 360px;
     gap: 30px;
-}
+} */
 .pt_c {
-    width: 70px;
-    height: 70px;
+    width: 25px;
+    height: 25px;
 }
 .ppt_color {
     display: flex;
-    gap: 25px;
+    gap: 8px;
 }
 .ppt_color > li:nth-child(1) > .pt_c {
     background: #42307C;
@@ -130,7 +148,7 @@ body{background-color: #FEFAF6;}
     background: linear-gradient(90deg, rgba(117, 114, 124, 1) 0%, rgba(177, 175, 181, 1) 100%);
 }
 
-.ppt_title{line-height: 58px;display: block;}
+/* .ppt_title{line-height: 58px;display: block;}
 .ppt_title > h1 {
     font-size: 90px;
     text-align: center;
@@ -139,4 +157,33 @@ body{background-color: #FEFAF6;}
     font-weight: 400;
     text-align: center;
     font-size: 26px;
+} */
+
+/* proposal */
+.ppt_section {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-inline: 30px;
+    margin-block: 70px;
 }
+.pro_img {
+    width: 325px;
+    height: auto;
+    margin-top: 20px;
+}
+.pro_date {
+    font-weight: 200;
+    font-size: 18px;
+}
+.pro_title {
+    font-size: 20px;
+}
+.intro_txt {
+    width: 520px;
+    font-size: 14px;
+    margin-top: auto;
+    text-align-last: right;
+    text-align: justify;
+}
+.intro_txt>p{line-height: 24px;}
