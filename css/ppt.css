@@ -186,4 +186,84 @@ body {
     text-align-last: right;
     text-align: justify;
 }
-.intro_txt>p{line-height: 24px;}
+.intro_txt > p {
+    line-height: 24px;
+}
+
+/* 실험 */
+
+#inc01 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+#inc01 .group-clinic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#inc01 .group-clinic .tab-list {
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f5;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+#inc01 .group-clinic .tab-item {
+    cursor: pointer;height: auto;
+}
+#inc01 .group-clinic .tab-item .clinic__tit {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 100%;
+    color: rgba(51,51,51,.4);
+    transition: color 0.2s;
+    will-change: color;
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+#inc01 .group-clinic .tab-item.on .clinic__tit {
+    color: #FBFBFD;
+    background-color:#0C0C0E;
+}
+
+#inc01 .group-clinic .fl-r {
+    flex: 0 0 200px;
+    min-width: 200px;
+}
+
+#inc01 .group-clinic .fl-r {
+    flex: 0 0 500px;
+    width: 500px;
+    height: auto;
+    position: relative;
+}
+
+#inc01 .group-clinic .fl-r .tab-con {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s,visibility 0.1s;
+}
+#inc01 .group-clinic .fl-r .tab-con.view {
+    opacity: 1;
+    visibility: visible;
+}
+#inc01 .group-clinic .fl-r .tab-con img {
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease,visibility 0.4s;
+}
+#inc01 .group-clinic .fl-r .tab-con.view img {
+    opacity: 1;
+    visibility: visible;
+}

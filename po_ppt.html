@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <title>PPT Design</title>
         <link rel="stylesheet" href="css/ppt.css">
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <meta
             name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -88,6 +88,73 @@
                 </div>
             </div>
         </div>
+        <article id="inc01">
+            <div class="group-clinic" data-aos="fade-up">
+                <div class="fl-l">
+                    <ul class="tab-list">
+                        <li class="tab-item on" data-idx=".tab01">
+                            <span class="clinic__tit">01</span>
+                        </li>
+                        <li class="tab-item" data-idx=".tab02">
+                            <span class="clinic__tit">02</span>
+                        </li>
+                        <li class="tab-item" data-idx=".tab03">
+                            <span class="clinic__tit">03</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fl-r">
+                    <div class="tab-con tab01 view">
+                        <img
+                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_01.png"
+                            alt="">
+                    </div>
+                    <div class="tab-con tab02 ">
+                        <img
+                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_02.png"
+                            alt="">
+                    </div>
+                    <div class="tab-con tab03 ">
+                        <img
+                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_03.png"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </article>
+        <script>
+            // 탭메뉴 공통
+            function changeTab(dataIdx, $tabItem) {
+                $('#inc01 .tab-item').removeClass('on');
+                $tabItem.addClass('on');
+
+                $('#inc01 .tab-con').removeClass('view');
+                $('#inc01 .link--moreicon').removeClass('view');
+                $(dataIdx).addClass('view');
+            }
+
+            // 탭 요소와 상태
+            let tabIndex = 0;
+            const $tabs = $('#inc01 .tab-item');
+            const tabCount = $tabs.length;
+            let tabInterval;
+
+            // 자동 전환 함수
+            
+
+            // 클릭 이벤트
+            $('#inc01 .tab-item').on("click", function () {
+                const dataIdx = $(this).attr('data-idx');
+                tabIndex = $(this).index();
+                changeTab(dataIdx, $(this));
+
+                clearInterval(tabInterval);
+                startAutoTab();
+            });
+
+            // 초기 자동 전환 시작
+            startAutoTab();
+        </script>
     </body>
 
 </html>
