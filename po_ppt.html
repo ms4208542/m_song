@@ -78,12 +78,12 @@
                 </div>
                 <div class="two_proposal">
                     <h3 class="pro_date">2025</h3>
-                    <h2 class="pro_title">2026-2027년 특송물품<br>자동분류시스템 유지관리 위탁용역</h2>
+                    <h2 class="pro_title">2026-2027년 해상특송물품<br>자동분류시스템 유지관리 위탁용역</h2>
                     <img class="pro_img" src="img/ppt/01_title.jpg" alt="">
                 </div>
                 <div class="three_proposal">
                     <h3 class="pro_date">2025</h3>
-                    <h2 class="pro_title">2026-2027년 특송물품<br>자동분류시스템 유지관리 위탁용역</h2>
+                    <h2 class="pro_title">2026-2027년 항공특송물품<br>자동분류시스템 유지관리 위탁용역</h2>
                     <img class="pro_img" src="img/ppt/02_title.jpg" alt="">
                 </div>
             </div>
@@ -104,26 +104,71 @@
                     </ul>
                 </div>
                 <div class="fl-r">
-                    <div class="tab-con tab01 view">
-                        <img
-                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_01.png"
-                            alt="">
+                    <div class="tab-con tab01 view tab_wrap">
+                        <div class="tab_title">
+                            <div class="tab_hd_title">
+                                <h1>01</h1>
+                            </div>
+                            <div class="tab_sub_hd">
+                                <h3>무선국 원격검침 사업 전기요금<br>
+                                    정산관리시스템 구축 용역</h3>
+                                <span>제안서 / 발표자료 / 책자</span>
+                                <img class="tab_color" src="img/ppt/01_color.png" alt="">
+                                <ul class="tab_ul">
+                                    <li><img src="img/ppt/01_1_rapa.jpg" alt=""></li>
+                                    <li><img src="img/ppt/01_2_rapa.jpg" alt=""></li>
+                                    <li><img src="img/ppt/01_3_rapa.jpg" alt=""></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tab_title_img"><img src="img/ppt/03_title.jpg" alt=""></div>
                     </div>
-                    <div class="tab-con tab02 ">
-                        <img
-                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_02.png"
-                            alt="">
+                    <div class="tab-con tab02 tab_wrap">
+                        <div class="tab_title">
+                            <div class="tab_hd_title">
+                                <h1>02</h1>
+                            </div>
+                            <div class="tab_sub_hd">
+                                <h3>2026-2027년 해상특송물품<br>
+                                    자동분류시스템 유지관리 위탁용역</h3>
+                                <span>제안서</span>
+                                <img class="tab_color" src="img/ppt/02_color.png" alt="">
+                                <ul class="tab_ul">
+                                    <li><img src="img/ppt/02_1.jpg" alt=""></li>
+                                    <li><img src="img/ppt/02_2.jpg" alt=""></li>
+                                    <li><img src="img/ppt/02_3.jpg" alt=""></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tab_title_img"><img src="img/ppt/01_title.jpg" alt=""></div>
                     </div>
-                    <div class="tab-con tab03 ">
-                        <img
-                            src="https://hos1038.shiningcorp.com/sh_img/include/inc01/img/clinic_03.png"
-                            alt="">
+                    <div class="tab-con tab03 tab_wrap">
+                        <div class="tab_title">
+                            <div class="tab_hd_title">
+                                <h1>03</h1>
+                            </div>
+                            <div class="tab_sub_hd">
+                                <h3>2026-2027년 항공특송물품<br>
+                                    자동분류시스템 유지관리 위탁용역</h3>
+                                <span>제안서</span>
+                                <img class="tab_color" src="img/ppt/03_color.png" alt="">
+                                <ul class="tab_ul">
+                                    <li><img src="img/ppt/02_1.jpg" alt=""></li>
+                                    <li><img src="img/ppt/02_2.jpg" alt=""></li>
+                                    <li><img src="img/ppt/02_3.jpg" alt=""></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tab_title_img"><img src="img/ppt/02_title.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
         </article>
         <script>
-            // 탭메뉴 공통
+
             function changeTab(dataIdx, $tabItem) {
                 $('#inc01 .tab-item').removeClass('on');
                 $tabItem.addClass('on');
@@ -133,16 +178,11 @@
                 $(dataIdx).addClass('view');
             }
 
-            // 탭 요소와 상태
             let tabIndex = 0;
             const $tabs = $('#inc01 .tab-item');
             const tabCount = $tabs.length;
             let tabInterval;
 
-            // 자동 전환 함수
-            
-
-            // 클릭 이벤트
             $('#inc01 .tab-item').on("click", function () {
                 const dataIdx = $(this).attr('data-idx');
                 tabIndex = $(this).index();
@@ -152,7 +192,6 @@
                 startAutoTab();
             });
 
-            // 초기 자동 전환 시작
             startAutoTab();
         </script>
     </body>

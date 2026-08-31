@@ -68,10 +68,11 @@
     text-decoration: none;
     list-style: none;
     color: #333;
-    overflow-x: hidden;
+
 }
 body {
     background-color: #FEFAF6;
+    overflow-x: hidden;
 }
 .ppt_hd {
     display: flex;
@@ -200,7 +201,7 @@ body {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
 }
 #inc01 .group-clinic {
     display: flex;
@@ -212,11 +213,12 @@ body {
     display: flex;
     justify-content: center;
     background-color: #f4f4f5;
-    padding: 10px 30px;
+    padding: 14px 8px;
     border-radius: 30px;
 }
 #inc01 .group-clinic .tab-item {
-    cursor: pointer;height: auto;
+    cursor: pointer;
+    height: auto;
 }
 #inc01 .group-clinic .tab-item .clinic__tit {
     font-size: 15px;
@@ -225,12 +227,12 @@ body {
     color: rgba(51,51,51,.4);
     transition: color 0.2s;
     will-change: color;
-    padding: 10px 25px;
+    padding: 10px 30px;
     border-radius: 30px;
 }
 #inc01 .group-clinic .tab-item.on .clinic__tit {
     color: #FBFBFD;
-    background-color:#0C0C0E;
+    background-color: #0C0C0E;
 }
 
 #inc01 .group-clinic .fl-r {
@@ -240,7 +242,7 @@ body {
 
 #inc01 .group-clinic .fl-r {
     flex: 0 0 500px;
-    width: 500px;
+    width: 1280px;
     height: auto;
     position: relative;
 }
@@ -258,7 +260,7 @@ body {
     visibility: visible;
 }
 #inc01 .group-clinic .fl-r .tab-con img {
-    width: 100%;
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease,visibility 0.4s;
@@ -266,4 +268,52 @@ body {
 #inc01 .group-clinic .fl-r .tab-con.view img {
     opacity: 1;
     visibility: visible;
+}
+.tab_wrap {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    margin-top: 80px;
+
+}
+.tab_title {
+    display: flex;
+    gap: 32px;
+}
+.tab_hd_title{width: 95px;}
+.tab_hd_title > h1 {
+    font-size: 80px;
+    letter-spacing: -5px;
+}
+.tab_sub_hd {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+.tab_sub_hd > h3 {
+    font-size: 24px;
+}
+.tab_sub_hd > span {
+    font-weight: 300;
+    margin-top: 4px;
+}
+.tab_color {
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 220px;
+    max-width: 220px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+.tab_title_img > img {
+    width: 400px;
+}
+.tab_ul {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+.tab_ul > li > img {
+    width: 214px;
 }
