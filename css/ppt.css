@@ -166,7 +166,7 @@ body {
     justify-content: flex-end;
     gap: 30px;
     margin-inline: 30px;
-    margin-block: 70px;
+    margin-block: 70px 100px;
 }
 .pro_img {
     width: 325px;
@@ -340,12 +340,13 @@ body {
 .one_content > img {
     width: 100%;
 }
-.pro_details_wrap{margin-top: 100px;}
-.pro_d_title{margin-bottom: 35px;}
+.pro_details_wrap{margin-top: 150px;}
+.pro_d_title{margin-bottom: 40px;}
 .pro_d_title > h1 {
     font-size: 80px;
     letter-spacing: -5px;
 }
+.pro_list{margin-bottom: 20px;}
 .pro_list > ul {
     display: flex;
     justify-content: space-between;
@@ -357,6 +358,7 @@ body {
     background-color: darkgray;
 }
 .pro_img_big{width: 620px;height: 435px;border-radius: 30px;background-color: darkgray;}
+.pro_img_bottom{width: 640px;height: 455px;border-radius: 30px;background-color: darkgray;}
 .rapa_one {
     background-image: url("../img/ppt/01_2_pro_rapa.jpg");
     background-size: 100%;
@@ -368,5 +370,13 @@ background-image: url("../img/ppt/01_1_pro_rapa.jpg");
     background-repeat: no-repeat;
 }
 .rapa_three{background-image: url("../img/ppt/01_3_pro_rapa.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;}
+
+.rapa_four{background-image: url("../img/ppt/01_4_rapa_data.png");
+    background-size: 100%;
+    background-repeat: no-repeat;}
+
+.rapa_five{background-image: url("../img/ppt/01_5_rapa_data.jpg");
     background-size: 100%;
     background-repeat: no-repeat;}
