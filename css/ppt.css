@@ -332,16 +332,18 @@ body {
     border-radius: 30px;
     margin-top: 180px;
 }
-.one_content {
+.content_width {
     width: 1030px;
     margin: 0 auto;
     padding-top: 110px;
 }
+.two_content{text-align: center;padding-top: 170px;}
+.two_content > img{width: 70%;}
 .one_content > img {
     width: 100%;
 }
-.pro_details_wrap{margin-top: 150px;}
-.pro_d_title{margin-bottom: 40px;}
+.pro_details_wrap{margin-top: 200px;}
+.pro_d_title{margin-bottom: 40px;display:flex;align-items: center;justify-content: space-between;}
 .pro_d_title > h1 {
     font-size: 80px;
     letter-spacing: -5px;
@@ -380,3 +382,49 @@ background-image: url("../img/ppt/01_1_pro_rapa.jpg");
 .rapa_five{background-image: url("../img/ppt/01_5_rapa_data.jpg");
     background-size: 100%;
     background-repeat: no-repeat;}
+
+.pro_d_title_line{border-bottom: 1px solid #000;width: 75%;height: 1px;}
+
+
+/* test */
+/* .pro_img_container{position: relative;width: 980px;height: 1000px;}
+.pro_img_container img{position: absolute;width: 100%;height: auto;object-fit: contain;border-radius: 20px;box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+.pro_img_1{z-index:1;top: 0;left: 0;}
+.pro_img_2{z-index:2;top: 50px ;right: 100px;width: 500px;} */
+
+
+.pro_img_container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: visible;
+}
+
+.pro_img_container img {
+  position: absolute;
+  width: 800px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 7px 11px 18px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pro_img_1 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.pro_img_2 {
+  top: 250px;
+  right: 0;
+  z-index: 2;
+}
+.rapa_paper{margin-block: 250px 80px;}
+.rapa_paper>ul{display:flex;justify-content: space-between;margin-top: 20px;}
+.rapa_paper>ul:nth-child(1)>li>img{width: 306px; border-radius: 20px;}
+.rapa_paper>ul:nth-child(2)>li>img{width: 630px; border-radius: 20px;}
+
+.sea_content{margin-top: 180px;}
+.sea_content>ul{display:flex;justify-content: space-between;}
+.sea_content>ul>li>img{width: 306px;border-radius: 20px;}
