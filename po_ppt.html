@@ -149,10 +149,8 @@
                                 <li><img src="img/ppt/01_5_pro_rapa.jpg" alt=""></li>
                                 <li><img src="img/ppt/01_6_pro_rapa.jpg" alt=""></li>
                             </ul>
-                            <!-- <ul>
-                                <li><img src="img/ppt/08_rapa.jpg" alt=""></li>
-                                <li><img src="img/ppt/06_rapa.jpg" alt=""></li>
-                            </ul> -->
+                            <!-- <ul> <li><img src="img/ppt/08_rapa.jpg" alt=""></li> <li><img
+                            src="img/ppt/06_rapa.jpg" alt=""></li> </ul> -->
                         </div>
                     </div>
                     <div class="tab-con tab02 tab_wrap">
@@ -187,6 +185,7 @@
                                 <li><img src="img/ppt/04_sea_content.jpg" alt=""></li>
                             </ul>
                         </div>
+                        <div class="sea_mock_wrap"><img src="img/ppt/sea_mockup_02.png" alt=""></div>
                     </div>
                     <div class="tab-con tab03 tab_wrap">
                         <div class="tab_flex">
@@ -205,9 +204,20 @@
                                         <li><img src="img/ppt/03_3.jpg" alt=""></li>
                                     </ul>
                                 </div>
-
                             </div>
                             <div class="tab_title_img"><img src="img/ppt/02_title.jpg" alt=""></div>
+                        </div>
+
+                        <div class="one_content_wrap">
+                            <div class="content_width three_content"><img src="img/ppt/air.png" alt=""></div>
+                        </div>
+                        <div class="sea_content">
+                            <ul>
+                                <li><img src="img/ppt/03_1_air.jpg" alt=""></li>
+                                <li><img src="img/ppt/03_2_air.jpg" alt=""></li>
+                                <li><img src="img/ppt/03_3_air.jpg" alt=""></li>
+                                <li><img src="img/ppt/03_4_air.jpg" alt=""></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="tab-con tab04 tab_wrap">
@@ -230,19 +240,60 @@
                             </div>
                             <div class="tab_title_img"><img src="img/ppt/05_title.jpg" alt=""></div>
                         </div>
+                        <div class="one_content_wrap">
+                            <div class="xray_width four_content"><img src="img/ppt/05_xray_sub_title.png" alt=""></div>
+                        </div>
+                        <div class="sea_content">
+                            <ul>
+                                <li><img src="img/ppt/05_1_xray.jpg" alt=""></li>
+                                <li><img src="img/ppt/05_2_xray.jpg" alt=""></li>
+                                <li><img src="img/ppt/05_3_xray.jpg" alt=""></li>
+                                <li><img src="img/ppt/05_4_xray.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                         <div class="sea_mock_wrap"><img src="img/ppt/05_5_xray.png" alt=""></div>
                     </div>
                 </div>
             </div>
         </article>
         <script>
-
             function changeTab(dataIdx, $tabItem) {
+                const $contents = $('#inc01 .fl-r .tab-con');
+                const $target = $(dataIdx);
+
                 $('#inc01 .tab-item').removeClass('on');
                 $tabItem.addClass('on');
 
-                $('#inc01 .tab-con').removeClass('view');
                 $('#inc01 .link--moreicon').removeClass('view');
-                $(dataIdx).addClass('view');
+
+                const $current = $contents.filter('.view');
+
+                if ($current.is($target)) 
+                    return;
+                
+                // 기존 콘텐츠의 페이드 아웃
+                $current
+                    .stop(true, true)
+                    .animate({
+                        opacity: 0
+                    }, 200, function () {
+                        $(this)
+                            .removeClass('view')
+                            .css({display: 'none', opacity: ''});
+
+                        // 새 콘텐츠만 표시
+                        $target
+                            .stop(true, true)
+                            .css({display: 'block', opacity: 0})
+                            .addClass('view')
+                            .animate({
+                                opacity: 1
+                            }, 300);
+
+                        $target
+                            .find('img')
+                            .css({opacity: '', visibility: ''});
+                    });
             }
 
             let tabIndex = 0;
@@ -250,12 +301,12 @@
             const tabCount = $tabs.length;
             let tabInterval;
 
-            $('#inc01 .tab-item').on("click", function () {
+            $tabs.on('click', function () {
                 const dataIdx = $(this).attr('data-idx');
                 tabIndex = $(this).index();
-                changeTab(dataIdx, $(this));
 
                 clearInterval(tabInterval);
+                changeTab(dataIdx, $(this));
                 startAutoTab();
             });
 
@@ -265,4 +316,3 @@
 
 </html>
 
-<!-- #EFEFEF -->
