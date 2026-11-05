@@ -340,13 +340,13 @@ body {
     padding-top: 110px;
 }
 .xray_width{width: 1230px; margin: 0 auto;padding-top: 110px;}
+.drone_width{width: 950px; margin: 0 auto;}
 .two_content {
     text-align: center;
     padding-top: 170px;
 }
 .three_content {
     text-align: center;
-    margin: 0!important !important;
     padding-top: 0!important;
 }
 .three_content > img {
@@ -354,6 +354,7 @@ body {
     margin-top: 50px;
 }
 .four_content>img{width: 100%; margin-top: 100px;}
+.five_content>img{width: 100%;margin-top: 70px;}
 .two_content > img {
     width: 70%;
 }
@@ -502,3 +503,5 @@ body {
     width: 100%;
     margin: 0 auto;
 }
+.xray_mock_wrap{width: 1280px;text-align: center;margin-block: 180px 50px;}
+.xray_mock_wrap>img{width: 80%;margin: 0 auto;}
