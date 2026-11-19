@@ -108,7 +108,7 @@ html {
     width: 100%;
     height: 200vh;
     z-index: -1;
-    background-image: url("../img/02_bg_2.svg");
+    background-image: url("../img/home_main_j.jpg");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -943,4 +943,37 @@ width: 85%;
 }
 .more_btn:active {
     transform: scale(0.95);
+}
+
+@-webkit-keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.pulsate-bck {
+    -webkit-animation: pulsate-bck 2.5s ease-in-out infinite both;
+    animation: pulsate-bck 2.5s ease-in-out infinite both;
 }

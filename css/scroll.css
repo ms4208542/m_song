@@ -1332,7 +1332,7 @@ button {
     width: 1280px;
     margin: 0 auto;
     align-items: flex-end;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 .ed_flex_title {
     font-size: 30px;
@@ -1467,6 +1467,27 @@ button {
     background-size: 100%;
     background-position: center;
 }
+.row_two_img_ppt{
+     width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/ppt/01_1_left.jpg");
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    background-size: 100%;
+    background-position: center;
+}
+.row_one_img_ppt{
+    width: 368px;
+    display: block;
+    height: 206px;
+    background-image: url("../img/ppt/01_2_left.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 -43px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
 .right_one_img {
     width: 368px;
     height: 422px;
@@ -1587,7 +1608,7 @@ button {
     height: 206px;
     display: block;
     flex-direction: column;
-    background-image: url("../img/ppt/03_1_bottom.jpg");
+    background-image: url("../img/ppt/03_1_bottom_emend.jpg");
     background-size: 100%;
     background-color: #ebe7e3;
     background-repeat: no-repeat;
@@ -1911,4 +1932,24 @@ button {
 
 .contact_info > ul > li a:hover::before {
   opacity: 1;
+}
+.tracking-in-expand {
+  
+    animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    transform-origin: right;
+    will-change: transform, opacity;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        transform: scaleX(0.7);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
 }
