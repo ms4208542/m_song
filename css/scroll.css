@@ -1913,6 +1913,7 @@ button {
   display: inline-block;
   color: inherit;
   text-decoration: none;
+  cursor: none;
 }
 
 .contact_info > ul > li a::before {
