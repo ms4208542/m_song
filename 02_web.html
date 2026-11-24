@@ -9,15 +9,68 @@
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="stylesheet" href="css/scroll.css"/>
         <link rel="stylesheet" href="lib/fullpage.min.css"/>
+        <link rel="stylesheet" href="css/loader.css">
+        <link rel="stylesheet" href="css/mobile.css">
         <script src="lib/jquery-latest.min.js"></script>
         <script src="https://kit.fontawesome.com/0c69fdf2c0.js" crossorigin="anonymous"></script>
     </head>
     <body>
-
+ <!-- 로딩 화면 -->
+        <div
+            id="loader"
+            class="loader"
+            role="status"
+            aria-live="polite"
+            aria-label="Loading">
+            <div class="loader-inner">
+                <svg
+                    class="loader-diamond"
+                    width="101"
+                    height="147"
+                    viewbox="0 0 101 147"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <defs>
+                        <clippath id="loaderClip">
+                            <path
+                                d="M50.6084 6.21777C51.0401 10.0208 51.7288 15.2573 52.7578 20.9893C54.8106 32.4242 58.2335 45.9353 63.7275 53.9316C69.2408 61.9558 78.5718 66.9644 86.4619 69.9648C90.4155 71.4683 94.0273 72.4748 96.6504 73.1055C97.2858 73.2582 97.8633 73.3895 98.374 73.5C97.8633 73.6105 97.2858 73.7418 96.6504 73.8945C94.0273 74.5252 90.4155 75.5317 86.4619 77.0352C78.5718 80.0356 69.2408 85.0442 63.7275 93.0684C58.2335 101.065 54.8106 114.576 52.7578 126.011C51.7288 131.743 51.0401 136.979 50.6084 140.782C50.5691 141.129 50.5351 141.464 50.5 141.786C50.4649 141.464 50.4309 141.129 50.3916 140.782C49.9599 136.979 49.2712 131.743 48.2422 126.011C46.1894 114.576 42.7665 101.065 37.2725 93.0684C31.7592 85.0442 22.4282 80.0356 14.5381 77.0352C10.5845 75.5317 6.97269 74.5252 4.34961 73.8945C3.71382 73.7417 3.13594 73.6105 2.625 73.5C3.13594 73.3895 3.71382 73.2583 4.34961 73.1055C6.97269 72.4748 10.5845 71.4683 14.5381 69.9648C22.4282 66.9644 31.7592 61.9558 37.2725 53.9316C42.7665 45.9353 46.1894 32.4242 48.2422 20.9893C49.2712 15.2573 49.9599 10.0208 50.3916 6.21777C50.431 5.87086 50.4648 5.53528 50.5 5.21289C50.5352 5.53528 50.569 5.87086 50.6084 6.21777Z"/>
+                        </clippath>
+                    </defs>
+                    <g clip-path="url(#loaderClip)">
+                        <g class="loader-water">
+                            <g class="loader-wave loader-wave--back" opacity="0.35">
+                                <path
+                                    d="M0 8Q12.625 0 25.25 8T50.5 8T75.75 8T101 8T126.25 8T151.5 8T176.75 8T202 8V170H0Z"
+                                    fill="#004ce1"/>
+                            </g>
+                            <g class="loader-wave">
+                                <path
+                                    d="M0 8Q12.625 0 25.25 8T50.5 8T75.75 8T101 8T126.25 8T151.5 8T176.75 8T202 8V170H0Z"
+                                    fill="#004ce1"/>
+                            </g>
+                        </g>
+                    </g>
+                    <path
+                        class="loader-line"
+                        pathlength="1"
+                        d="M50.6084 6.21777C51.0401 10.0208 51.7288 15.2573 52.7578 20.9893C54.8106 32.4242 58.2335 45.9353 63.7275 53.9316C69.2408 61.9558 78.5718 66.9644 86.4619 69.9648C90.4155 71.4683 94.0273 72.4748 96.6504 73.1055C97.2858 73.2582 97.8633 73.3895 98.374 73.5C97.8633 73.6105 97.2858 73.7418 96.6504 73.8945C94.0273 74.5252 90.4155 75.5317 86.4619 77.0352C78.5718 80.0356 69.2408 85.0442 63.7275 93.0684C58.2335 101.065 54.8106 114.576 52.7578 126.011C51.7288 131.743 51.0401 136.979 50.6084 140.782C50.5691 141.129 50.5351 141.464 50.5 141.786C50.4649 141.464 50.4309 141.129 50.3916 140.782C49.9599 136.979 49.2712 131.743 48.2422 126.011C46.1894 114.576 42.7665 101.065 37.2725 93.0684C31.7592 85.0442 22.4282 80.0356 14.5381 77.0352C10.5845 75.5317 6.97269 74.5252 4.34961 73.8945C3.71382 73.7417 3.13594 73.6105 2.625 73.5C3.13594 73.3895 3.71382 73.2583 4.34961 73.1055C6.97269 72.4748 10.5845 71.4683 14.5381 69.9648C22.4282 66.9644 31.7592 61.9558 37.2725 53.9316C42.7665 45.9353 46.1894 32.4242 48.2422 20.9893C49.2712 15.2573 49.9599 10.0208 50.3916 6.21777C50.431 5.87086 50.4648 5.53528 50.5 5.21289C50.5352 5.53528 50.569 5.87086 50.6084 6.21777Z"/>
+                </svg>
+                <p class="loader-text">LOADING</p>
+            </div>
+        </div>
+        <noscript>
+            <style>
+                .loader {
+                    display: none;
+                }
+            </style>
+        </noscript>
+        <script src="js/loader.js"></script>
         <div class="header_wrap">
             <div class="header">
                 <a href="01_home.html"><img src="img/logo_black.svg" alt=""/></a>
-                <div class="liquidGlass-wrapper menu">
+                <div class="liquidGlass-wrapper menu" id="mobileMenu">
                     <div class="liquidGlass-effect"></div>
                     <div class="liquidGlass-tint"></div>
                     <div class="liquidGlass-shine"></div>
@@ -39,6 +92,16 @@
                         <div class="highlight"></div>
                     </div>
                 </div>
+                 <button
+                    type="button"
+                    class="hamburger"
+                    aria-label="메뉴 열기"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
 
@@ -46,12 +109,12 @@
             <div class="section work_section">
                 <div class="work_content" style="margin-top: 30px;">
                     <h2 class="fade-up-item title-with-icon">WEB
-                        <span>D<img class="h_icon" src="img/t_deco.svg" alt=""></span>ESIGN
+                        <span>D<img class="h_icon pulsate-bck" src="img/t_deco.svg" alt=""></span>ESIGN
                     </h2>
-                    <img src="/img/01_1_web_mock.png" alt="" class="desk fade-up-item">
-                    <img src="/img/01_2_web_mock.png" alt="" class="fade-up-item">
-                    <img src="/img/01_3_web_mock.png" alt="" class="fade-up-item">
-                    <img src="/img/01_1_web_shadow.png" alt="" class="fade-up-item">
+                    <img src="img/01_1_web_mock.png" alt="" class="desk fade-up-item">
+                    <img src="img/01_2_web_mock.png" alt="" class="fade-up-item">
+                    <img src="img/01_3_web_mock.png" alt="" class="fade-up-item">
+                    <img src="img/01_1_web_shadow.png" alt="" class="fade-up-item">
                 </div>
                 <div class="down_arrow">
                     <svg
@@ -219,7 +282,7 @@
                         <img src="img/korea_ftp.png" alt=""></div>
                     <div class="four_title_wrap">
                         <img class="web_deco pulsate-bck" src="img/t_deco.svg" alt="">
-                        <h1 class="number">08</h1>
+                        <h1 class="number">04</h1>
                         <h2 class="one_title">실무 프로젝트 / KOREA FTP</h2>
                     </div>
                     <p class="web_text">KOREA-FTP는 국제민간항공기구 회원국을 대상으로 국토교통부가 운영하는 항공 분야 전문 교육훈련관리 담당
@@ -465,12 +528,6 @@
                             <span class="btn_txt">VIEW</span>
                         </a>
                     </div>
-                    <!-- </div> -->
-                    <!-- <div class="right-image animate-item"> <img src="img/sub1.png" alt="오른쪽
-                    이미지"/> </div> -->
-                    <!-- <div class="text-content animate-item"> <h2>포트폴리오 소개</h2> <p>스크롤 타이밍에 맞춰
-                    요소들이 순차적으로 나타납니다.</p> </div> -->
-                    <!-- </section> -->
                     <div class="pu_img_wrap">
                         <div class="pu_img"><img src="img/sub1.png" alt=""></div>
                         <div class="pu_img"><img src="img/sub2.png" alt=""></div>
@@ -616,6 +673,7 @@
                 }
             });
         </script>
+<script src="js/mobile.js"></script>
 
     </body>
 </html>

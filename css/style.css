@@ -492,6 +492,9 @@ button {
 .about > p {
     line-height: 1.5;
 }
+.about p .mobile-br {
+    display: none;
+}
 .about_li {
     line-height: 1.5;
 }

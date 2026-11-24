@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // --- 로딩 화면(loader.js) 연동 ---------------------------------------
+    // 로딩 화면이 떠 있는 동안에는 애니메이션을 대기시켰다가, 로딩이 끝나는 시점에 실행합니다.
+    //  - 'is-loading'    : 로딩 화면이 사라지기 시작하면 해제 (이벤트 'loaderdone')
+    //  - 'loader-active' : 로딩 화면이 완전히 사라지면 해제   (이벤트 'loaderremoved')
+    // 로딩 화면이 없는 페이지라면 클래스가 없으므로 바로 실행됩니다.
+    function afterLoader(activeClass, eventName, callback) {
+        if (document.documentElement.classList.contains(activeClass)) {
+            document.addEventListener(eventName, callback, { once: true });
+        } else {
+            callback();
+        }
+    }
+
     const fullpageBgContainer = document.getElementById(
         'fullpage-container-background'
     );
@@ -275,10 +288,12 @@ document.addEventListener('DOMContentLoaded', function () {
             diamondPath.style.strokeDasharray = diamondPathLength;
             diamondPath.style.strokeDashoffset = diamondPathLength;
 
-            setTimeout(() => {
-                diamondPath.style.animation = `drawDiamond 3s ease-out forwards`;
-                console.log("다이아몬드 & 가로선 애니메이션 동시 시작");
-            }, 1000);
+            afterLoader('is-loading', 'loaderdone', () => {
+                setTimeout(() => {
+                    diamondPath.style.animation = `drawDiamond 3s ease-out forwards`;
+                    console.log("다이아몬드 & 가로선 애니메이션 동시 시작");
+                }, 1000);
+            });
         }
     } else {
         console.warn("경고: '.diamond-path' 요소를 찾을 수 없습니다. 다이아몬드 애니메이션을 시작할 수 없습니다.");
@@ -420,6 +435,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, observerOptions);
 
-        observer.observe(workContent);
+        afterLoader('loader-active', 'loaderremoved', () => {
+            observer.observe(workContent);
+        });
     }
 });
