@@ -489,6 +489,9 @@
     .ed-movable-background {
         background-size: cover;
     }
+    .ed_design {
+        background-position: center 175px;
+    }
     .ed_design .ed_wrap {
         flex-direction: column;
         justify-content: flex-start;
@@ -500,7 +503,7 @@
         justify-content: flex-start;
         width: 100%;
         height: auto;
-        margin-top: 78px;
+        margin-top: 140px;
     }
     .ed_design .ed_img > img {
         display: block;
@@ -521,7 +524,8 @@
         align-content: flex-start;
         text-align: right;
         position: relative;
-        bottom: 71px;
+        bottom: 100px;
+        margin-top: 0;
     }
     .ed_icon {
         width: 20px;
@@ -536,6 +540,7 @@
         margin-block: 10px;
         font-size: 12px;
         line-height: 19px;
+        letter-spacing: 3px;
     }
 
     /* ------------------------------------------------------------------
@@ -627,7 +632,7 @@
         margin-top: 14px;
     }
     .web_design_wrap .number {
-        font-size: 32px;
+        font-size: 43px;
         flex-shrink: 0;
     }
     .web_design_wrap .one_title {
@@ -637,11 +642,20 @@
         line-height: 1.3;
         overflow-wrap: anywhere;
     }
+    .one_title .title_category,
+    .one_title .title_name {
+        display: block;font-size: 15px;
+    }
+
+    .one_title .title_divider {
+        display: none;
+    }
     .web_design_wrap .web_deco {
         width: 22px;
         bottom: 14px;
         left: 4px;
         flex-shrink: 0;
+        display: none;
     }
 
     .web_design_wrap .seven_text,
@@ -653,7 +667,6 @@
         font-size: 12px;
         line-height: 18px;
         overflow-wrap: anywhere;
-        padding-left: 22px;
     }
     .web_design_wrap .seven_text br,
     .web_design_wrap .six_text br,
@@ -667,7 +680,7 @@
 
     .web_design_wrap .work_details {
         margin-block: 14px 0;
-        padding-left: 22px;
+        padding-left: 0;
     }
     .web_design_wrap .work_details ul li {
         flex-wrap: wrap;
@@ -684,7 +697,7 @@
         align-items: stretch;
         gap: 6px;
         margin-top: 14px;
-        padding-inline: 22px 0;
+        padding-inline: 0;
     }
     .web_design_wrap .three_work,
     .web_design_wrap .two_work {
@@ -762,6 +775,7 @@
         margin-left: 0;
         padding-left: 0;
         align-self: center;
+        
     }
     .web_design_wrap .web_three .th_content_one > img {
         grid-column: 1 / 3;
@@ -791,7 +805,7 @@
         border-radius: 16px;
     }
     .web_design_wrap .four {
-        padding-inline: 0;
+        padding-left: 0;
     }
     .web_design_wrap .web_five_wrap {
         width: calc(100% + 32px);
@@ -817,11 +831,9 @@
         width: 100%;
     }
     .web_design_wrap .five_title {
-        padding-right: 20px;
+        padding-right: 0;
     }
-    .five_title_wrap > .web_text {
-        padding-right: 22px;
-    }
+
     .web_design_wrap .five_h {
         margin-bottom: 10px;
         font-size: 16px;
@@ -844,7 +856,7 @@
     }
     .web_design_wrap .six_pd,
     .web_design_wrap .six_text {
-        padding-left: 22px;
+        padding-left: 0;
     }
     .web_design_wrap .seven_title_wrap {
         flex-direction: column;
@@ -903,6 +915,371 @@
     .down_arrow {
         left: calc(50% - 28px);
         bottom: 16px;
+    }
+
+    /* ==================================================================
+       8. 04_about.html 전용 모바일 레이아웃
+       ================================================================== */
+
+    /* 배경 번짐(타원): 작은 화면에 맞게 크기/블러 축소 */
+    .about_main {
+        top: 28%;
+        height: 120px;
+        filter: blur(60px);
+    }
+    .ellipse:first-child {
+        height: 300px;
+        margin-top: 200px;
+    }
+    .ellipse:last-child {
+        height: 300px;
+    }
+
+    /* 첫 화면: 프로필 사진 + ABOUT Me + 태그 */
+    .about_content_wrap {
+        gap: 16px;
+        padding: 64px 16px 0;
+        /* 고정 헤더(64px) 아래에서 시작 */
+    }
+    .about_img {
+        width: 120px;
+        height: 158px;
+        border-radius: 16px;
+        background-size: 253px;
+        /* 134 x 176 → 0.9배 */
+        background-position: -71px -8px;
+    }
+    .about_content_wrap > h1 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+
+    /* 태그 10개: 5개씩 두 줄 (1~5 / 6~10), 화면 폭에 맞춰 글자 크기가 함께 줄어듦 */
+    .about_list {
+        width: 100%;
+    }
+    .about_list > ul {
+        display: grid;
+        grid-template-columns: repeat(5, max-content);
+        justify-content: space-between;
+        gap: 8px 4px;
+    }
+    .about_list > ul > li {
+        display: block;
+        padding: 6px 0;
+        font-size: clamp(8.5px, 2.65vw, 11px);
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* 소개글: 오른쪽 정렬 유지 */
+    .progfile_intro_wrap {
+        padding-inline: 24px;
+    }
+    .profile_intro {
+        width: 100%;
+        align-items: flex-end;
+        margin-left: auto;
+        gap: 24px;
+    }
+    .profile_info {
+        line-height: 22px;
+        text-align: right;
+    }
+    .profile_info p {
+        font-size: 13px;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    .profile_info br {
+        content: " ";
+        display: none;
+    }
+    .glitter {
+        width: 36px;
+    }
+
+    /* 이력(CERTIFICATION / WORK EXXPERIENCE / EDUCATION / EXHIBITION): 세로로 한 칸씩 */
+    .bio_wrap {
+        margin-block: 150px 80px;
+    }
+    .bio_wrap > ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 36px;
+    }
+    .bio_title {
+        margin-bottom: 4px;
+    }
+    .bio_title > img {
+        width: 22px;
+        height: auto;
+    }
+    .bio_title > h1 {
+        font-size: 20px;
+    }
+    .bio_wrap > ul > li > p {
+        left: 0;
+        padding-left: 24px;
+        padding-bottom: 2px;
+        font-size: 13px;
+        line-height: 1.5;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+    .bio_wrap > ul > li > p:nth-child(odd) {
+        margin-bottom: 12px;
+    }
+
+    /* ==================================================================
+       9. 03_editorial.html 전용 모바일 레이아웃
+          - 각 작업물 = [배너] + [이미지 콜라주(위)] + [제목/정보/글(아래)]  (01~05 모두 같은 패턴)
+          - 콜라주(.onu_img)는 웹의 배치(좌: 이미지 2장 세로 / 우: 큰 이미지 1장 / 하단: 와이드 1장)를
+            그대로 유지하고, 폭에 맞춰 비율대로 줄어듭니다.
+            (웹 기준 폭 746px → 모바일 폭. 크기/위치값은 컨테이너 폭 기준 cqw 단위로 환산)
+       ================================================================== */
+
+    /* 배너 (01 / ONU SKIN ...) */
+    .ed_all_wrap {
+        margin-top: 56px;
+    }
+    .ed_one {
+        height: 200px;
+    }
+    .ed_one_main {
+        padding: 18px 16px;
+    }
+    .black_text,
+    .white_text {
+        font-size: 16px;
+    }
+
+    /* 작업물 한 덩어리: 이미지(위) → 정보(아래) */
+    .ed_layout_wrap {
+        margin-top: 16px;
+    }
+    .ed_layout {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin: 0 auto 56px;
+        padding-inline: 16px;
+    }
+
+    /* ---- 이미지 콜라주: 웹 레이아웃 유지 + 위쪽으로 ---- */
+    .onu_img {
+        order: -1;
+        /* onu_info_wrap 보다 위 */
+        width: 100%;
+        gap: 0;
+        margin-bottom: 22px;
+        container-type: inline-size;
+        /* 아래 cqw 단위의 기준 = 이 박스의 폭 */
+    }
+    .content_one_img,
+    .content_row_img {
+        width: 49.33%;
+        /* 368 / 746 */
+    }
+    /* 좌측 2장 (368 x 206) */
+    .row_one_img,
+    .row_one_img_book,
+    .row_one_img_koshika,
+    .row_one_img_pig,
+    .row_one_img_ppt,
+    .row_two_img,
+    .row_two_img_book,
+    .row_two_img_koshika,
+    .row_two_img_pig,
+    .row_two_img_ppt {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 368 / 206;
+        border-radius: 4.02cqw;
+        /* 30px */
+    }
+    .row_one_img,
+    .row_one_img_book,
+    .row_one_img_koshika,
+    .row_one_img_pig,
+    .row_one_img_ppt,
+    .row_two_img_pig {
+        margin-bottom: 1.34cqw;
+        /* 10px */
+    }
+    /* 우측 큰 이미지 (368 x 422) */
+    .right_one_book,
+    .right_one_img,
+    .right_one_koshika,
+    .right_one_pig,
+    .right_one_ppt {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 368 / 422;
+        border-radius: 4.02cqw;
+    }
+    /* 하단 와이드 이미지 (746 x 206) */
+    .content_bottom,
+    .content_bottom_book,
+    .content_bottom_koshika,
+    .content_bottom_pig,
+    .content_bottom_ppt {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 746 / 206;
+        margin-top: 1.34cqw;
+        border-radius: 4.02cqw;
+    }
+    /* 이미지 안의 위치 보정값(px) → 컨테이너 폭 비율(cqw) */
+    .row_one_img {
+        background-position: -0.536cqw -5.362cqw;
+        /* 원래 -4px -40px */
+    }
+    .row_one_img_koshika {
+        background-position: 0 -6.702cqw;
+        /* 원래 0 -50px */
+    }
+    .row_one_img_pig {
+        background-position: 0 -6.702cqw;
+        /* 원래 0 -50px */
+    }
+    .row_one_img_book {
+        background-position: 0 -5.764cqw;
+        /* 원래 0 -43px */
+    }
+    .row_one_img_ppt {
+        background-position: 0 -5.764cqw;
+        /* 원래 0 -43px */
+    }
+    .row_two_img_pig {
+        background-position: 0 -25.737cqw;
+        /* 원래 0 -192px */
+    }
+    .right_one_img {
+        background-position: 0 -4.558cqw;
+        /* 원래 0 -34px */
+    }
+    .right_one_koshika {
+        background-position: 5.496cqw -9.786cqw;
+        /* 원래 41px -73px */
+    }
+    .right_one_pig {
+        background-position: -8.177cqw -19.437cqw;
+        /* 원래 -61px -145px */
+    }
+    .right_one_book {
+        background-position: -13.673cqw 0.134cqw;
+        /* 원래 -102px 1px */
+    }
+    .right_one_ppt {
+        background-position: -21.85cqw -1.206cqw;
+        /* 원래 -163px -9px */
+    }
+    .content_bottom {
+        background-position: -19.839cqw -26.81cqw;
+        /* 원래 -148px -200px */
+    }
+
+    /* ---- 정보 영역 ---- */
+    .onu_info_wrap {
+        width: 100%;
+    }
+    .onu_info {
+        align-items: center;
+    }
+    .ed_title_wrap {
+        margin-top: 0;
+    }
+    .title_flex {
+        bottom: 0;
+        min-width: 0;
+        margin-left: 12px;
+    }
+    .ed_flex_title {
+        font-size: 20px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+    .title_flex > p {
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .project_content {
+        padding-inline: 0;
+    }
+    .project_wrap {
+        gap: 6px;
+        margin-block: 14px 10px;
+    }
+    .project_content > p {
+        margin-bottom: 14px;
+        font-size: 12px;
+        line-height: 18px;
+        overflow-wrap: anywhere;
+    }
+
+    /* ==================================================================
+       10. 05_contact.html 전용 모바일 레이아웃
+           (웹 레이아웃 유지: 가운데 깜빡이는 장식 + 좌측 하단 연락처 정보)
+       ================================================================== */
+
+    /* 배경 번짐(타원): 모바일에 맞게 크기/블러 축소 */
+    .contact_main {
+        top: 28%;
+        height: 120px;
+        filter: blur(60px);
+    }
+    .co_ellipse:first-child {
+        height: 300px;
+    }
+    .co_ellipse:last-child {
+        height: 300px;
+        margin-top: 200px;
+    }
+
+    /* 한 화면 (장식은 정중앙, 정보는 하단) */
+    .contact_content_wrap {
+        min-height: 100vh;
+        min-height: 100svh;
+        /* 모바일 주소창을 뺀 실제 보이는 높이 */
+    }
+    .contact_deco {
+        width: 84px;
+        top: 35%;
+    }
+    .contact_info_wrap {
+        width: 100%;
+        padding: 0 20px 40px;
+    }
+    .contact_info {
+        line-height: 1.4;
+    }
+    .contact_info > h1 {
+        font-size: 36px;
+        line-height: 32px;
+    }
+    .contact_info > h2 {
+        padding-inline: 4px;
+        font-size: clamp(16px, 5.3vw, 22px);
+        line-height: 30px;
+    }
+    .contact_info > ul {
+        width: 100%;
+        padding-inline: 4px;
+        margin-top: 10px;
+    }
+    .contact_info > ul > li {
+        line-height: 26px;
+    }
+    .info_span {
+        width: 68px;
+    }
+    .contact_info > ul > li span {
+        font-size: 13px;
+    }
+    .contact_info > ul > li a {
+        overflow-wrap: anywhere;
     }
 }
 

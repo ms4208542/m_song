@@ -499,6 +499,11 @@ button {
     font-weight: 300;
     margin-left: 30px;
 }
+.title_category,
+.title_divider,
+.title_name {
+    display: inline;font-size: 30px;
+}
 .web_deco {
     width: 40px;
     position: relative;
